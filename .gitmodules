@@ -1,0 +1,3 @@
+[submodule "themes/starter"]
+	path = themes/starter
+	url = https://github.com/jimfrenette/hugo-starter.git
