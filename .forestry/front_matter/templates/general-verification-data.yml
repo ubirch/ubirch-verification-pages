@@ -27,3 +27,5 @@ fields:
     schema:
       format: markdown
   label: Custom Style
+pages:
+- data/v/ubirch-general-data.json
