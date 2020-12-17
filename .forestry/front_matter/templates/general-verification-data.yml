@@ -8,10 +8,14 @@ fields:
     maxSize: 64
   label: Company Logo
   description: Logo of the company/tenant
-- name: custom_style
-  type: text
+- name: custom_styles
+  type: textarea
+  default: ''
   config:
     required: false
+    wysiwyg: false
+    schema:
+      format: markdown
   label: Custom Style
 pages:
 - data/v/quade.json
