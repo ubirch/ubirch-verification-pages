@@ -1,6 +1,5 @@
 baseURL = "http://example.org/"
 defaultContentLanguage = "de"
-title = "ubirch Verification"
 theme = "starter"
 
 [languages]
@@ -8,8 +7,12 @@ theme = "starter"
     languageName = "Deutsch"
     contentDir = "content/de"
     weight = 1
+    [languages.de.params]
+      title = "Verifizierung"
 
   [languages.en]
     languageName = "English"
     contentDir = "content/en"
     weight = 2
+    [languages.en.params]
+      title = "Verification"

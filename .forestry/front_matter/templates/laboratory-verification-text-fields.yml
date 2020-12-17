@@ -28,9 +28,9 @@ fields:
   config:
     required: false
   label: layout
-  default: laboratory
+  default: coronalaboratory
   hidden: true
-  description: Layout of laboratory verification pages will always be "laboratory"
+  description: Layout of Corona laboratory verification pages will always be "coronalaboratory"
 pages:
 - content/de/v/quade.md
 - content/de/v/ubirch-de.md

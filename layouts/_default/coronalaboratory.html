@@ -1,0 +1,22 @@
+{{ define "header" }}
+{{/* We can override any block in the baseof file be defining it in the template */}}
+{{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<h1>Corona Laboratory Result!!!</h1>
+
+{{ $lang := printf "%s" .Site.Language }}
+{{ $formfields := (index .Site.Data.formfields $lang) }}
+{{ with $formfields }}
+<p>{{ .f }}:</p>
+<p>{{ .b }}:</p>
+<p>{{ .g }}:</p>
+<p>{{ .p }}:</p>
+<p>{{ .i }}:</p>
+<p>{{ .d }}:</p>
+<p>{{ .t }}:</p>
+<p>{{ .r }}:</p>
+<p>{{ .s }}:</p>
+{{ end }}
+{{ end }}
