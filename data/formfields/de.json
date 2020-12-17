@@ -1,3 +1,12 @@
 {
-  "laboratory.": ""
+  "laboratory.": "",
+  "f": "Familienname",
+  "g": "Vorname(n)",
+  "b": "Geburtsdatum",
+  "p": "Personalausweisnummer",
+  "i": "interne Labor ID",
+  "d": "Testdatum mit Uhrzeit",
+  "t": "Testtyp",
+  "r": "Testergebnis",
+  "s": "Zufallszahl (Secret)"
 }
