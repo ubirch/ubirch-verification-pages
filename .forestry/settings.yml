@@ -5,6 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: data
+  label: 'General-Data: Images, Colors, Styles, etc.'
+  create: documents
+  match: "**/*.json"
+  new_doc_ext: ".json"
+- type: directory
   path: content
   label: Pages
   create: all
