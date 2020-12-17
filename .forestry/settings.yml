@@ -9,7 +9,7 @@ sections:
   label: 'General-Data: Images, Colors, Styles, etc.'
   create: documents
   match: "**/*.json"
-  new_doc_ext: ".json"
+  new_doc_ext: json
 - type: directory
   path: content
   label: Pages
