@@ -33,5 +33,6 @@ fields:
   description: Layout of laboratory verification pages will always be "laboratory"
 pages:
 - content/de/v/quade.md
+- content/de/v/ubirch-de.md
 - content/en/v/quade.md
 - content/en/v/ubirch-en.md
