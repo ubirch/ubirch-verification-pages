@@ -32,4 +32,5 @@ fields:
   hidden: true
   description: Layout of laboratory verification pages will always be "laboratory"
 pages:
+- content/de/v/quade.md
 - content/en/v/quade.md
