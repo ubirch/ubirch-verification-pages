@@ -1,5 +1,5 @@
 ---
-label: general-verification-data
+label: general-laboratory-verification-data
 hide_body: true
 fields:
 - name: company_logo
@@ -8,34 +8,6 @@ fields:
     maxSize: 64
   label: Company Logo
   description: Logo of the company/tenant
-- name: background_color
-  type: color
-  label: Background Color
-  config:
-    required: false
-    color_format: Hex
-- name: font_color
-  type: color
-  label: Font Color
-  config:
-    required: false
-    color_format: Hex
-- name: font_style
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - Helvetica
-    - TimesNewRoman
-    - Arial
-    - Courier
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Font Style
 - name: custom_style
   type: text
   config:
