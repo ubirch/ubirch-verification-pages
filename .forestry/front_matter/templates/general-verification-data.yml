@@ -2,6 +2,16 @@
 label: general-laboratory-verification-data
 hide_body: true
 fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title (for forestry overview - not visible in UI)
+- name: company_name
+  type: text
+  config:
+    required: false
+  label: Company Name
 - name: company_logo
   type: file
   config:
