@@ -81,3 +81,10 @@ fields:
     label: 'Label for: random number (secret)'
     default: random number (secret)
   label: Verification Field Labels
+- name: layout
+  type: text
+  config:
+    required: false
+  label: layout
+  default: laboratory
+  hidden: true
