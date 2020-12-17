@@ -15,14 +15,14 @@ sections:
 - type: directory
   path: content/en
   label: English Pages
-  create: all
+  create: documents
   match: "**/*"
   templates:
   - laboratory-verification-text-fields
 - type: directory
   path: content/de
   label: Deutsche Seiten
-  create: all
+  create: documents
   match: "**/*"
   templates:
   - laboratory-verification-text-fields
