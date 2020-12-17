@@ -59,3 +59,4 @@ fields:
 pages:
 - data/formfields/de.json
 - data/formfields/en.json
+- data/formfields/fr.json
