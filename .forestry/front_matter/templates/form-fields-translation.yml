@@ -58,3 +58,4 @@ fields:
   default: random number (secret)
 pages:
 - data/formfields/de.json
+- data/formfields/en.json

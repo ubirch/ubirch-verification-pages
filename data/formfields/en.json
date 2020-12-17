@@ -1,0 +1,11 @@
+{
+  "f": "family name",
+  "g": "given name(s)",
+  "b": "birth date",
+  "p": "passport id",
+  "i": "internal laboratory id",
+  "d": "test date and time",
+  "t": "test type",
+  "r": "test result (positive, negative, unknown)",
+  "s": "random number (secret)"
+}
