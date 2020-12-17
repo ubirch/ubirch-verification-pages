@@ -31,3 +31,5 @@ fields:
   default: laboratory
   hidden: true
   description: Layout of laboratory verification pages will always be "laboratory"
+pages:
+- content/en/v/quade.md
