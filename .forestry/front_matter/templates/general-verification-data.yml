@@ -13,3 +13,5 @@ fields:
   config:
     required: false
   label: Custom Style
+pages:
+- data/v/quade.json
