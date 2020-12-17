@@ -9,7 +9,7 @@ sections:
   label: 'General-Data: Images, Colors, Styles, etc.'
   create: documents
   match: "*.json"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - general-verification-data
 - type: directory
@@ -31,7 +31,7 @@ sections:
   label: Form Fields Translations
   create: documents
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - form-fields-translation
 - type: directory
