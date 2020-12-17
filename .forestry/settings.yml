@@ -17,12 +17,12 @@ sections:
   match: "*"
 - type: directory
   path: content/en
-  label: En
+  label: English Pages
   create: all
   match: "**/*"
 - type: directory
   path: content/de
-  label: De
+  label: Deutsche Seiten
   create: all
   match: "**/*"
 upload_dir: static/uploads
