@@ -56,7 +56,3 @@ fields:
     required: false
   label: 'Label for: random number (secret)'
   default: random number (secret)
-pages:
-- data/formfields/de.json
-- data/formfields/en.json
-- data/formfields/fr.json

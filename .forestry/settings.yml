@@ -8,18 +8,32 @@ sections:
   path: data/v
   label: 'General-Data: Images, Colors, Styles, etc.'
   create: documents
-  match: "**/*.json"
+  match: "*.json"
   new_doc_ext: ".json"
+  templates:
+  - general-verification-data
 - type: directory
   path: content/en
   label: English Pages
   create: all
   match: "**/*"
+  templates:
+  - laboratory-verification-text-fields
 - type: directory
   path: content/de
   label: Deutsche Seiten
   create: all
   match: "**/*"
+  templates:
+  - laboratory-verification-text-fields
+- type: directory
+  path: data/formfields
+  label: Form Fields Translations
+  create: documents
+  match: "**/*"
+  new_doc_ext: ".json"
+  templates:
+  - form-fields-translation
 - type: directory
   path: content
   label: Other Pages
