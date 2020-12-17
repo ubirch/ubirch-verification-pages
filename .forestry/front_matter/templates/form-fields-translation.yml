@@ -1,54 +1,58 @@
-- name: f
-  type: text
-  config:
-    required: false
-  label: 'Label for: family name'
-  default: family name
-- name: g
-  type: text
-  config:
-    required: false
-  label: 'Label for: given name(s)'
-  default: given name(s)
-- name: b
-  type: text
-  config:
-    required: false
-  label: 'Label for: birth date'
-  default: birth date
-- name: p
-  type: text
-  config:
-    required: false
-  label: 'Label for: passport id'
-  default: passport id
-- name: i
-  type: text
-  config:
-    required: false
-  label: 'Label for: internal laboratory id'
-  default: internal laboratory id
-- name: d
-  type: text
-  config:
-    required: false
-  label: 'Label for: test date and time'
-  default: test date and time
-- name: t
-  type: text
-  config:
-    required: false
-  label: 'Label for: test type'
-  default: test type
-- name: r
-  type: text
-  config:
-    required: false
-  label: 'Label for: test result (positive, negative, unknown)'
-  default: test result (positive, negative, unknown)
-- name: s
-  type: text
-  config:
-    required: false
-  label: 'Label for: random number (secret)'
-  default: random number (secret)
+---
+label: form-fields-translation
+hide_body: true
+fields:
+  - name: f
+    type: text
+    config:
+      required: false
+    label: 'Label for: family name'
+    default: family name
+  - name: g
+    type: text
+    config:
+      required: false
+    label: 'Label for: given name(s)'
+    default: given name(s)
+  - name: b
+    type: text
+    config:
+      required: false
+    label: 'Label for: birth date'
+    default: birth date
+  - name: p
+    type: text
+    config:
+      required: false
+    label: 'Label for: passport id'
+    default: passport id
+  - name: i
+    type: text
+    config:
+      required: false
+    label: 'Label for: internal laboratory id'
+    default: internal laboratory id
+  - name: d
+    type: text
+    config:
+      required: false
+    label: 'Label for: test date and time'
+    default: test date and time
+  - name: t
+    type: text
+    config:
+      required: false
+    label: 'Label for: test type'
+    default: test type
+  - name: r
+    type: text
+    config:
+      required: false
+    label: 'Label for: test result (positive, negative, unknown)'
+    default: test result (positive, negative, unknown)
+  - name: s
+    type: text
+    config:
+      required: false
+    label: 'Label for: random number (secret)'
+    default: random number (secret)

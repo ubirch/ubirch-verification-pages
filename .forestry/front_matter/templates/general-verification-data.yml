@@ -2,14 +2,14 @@
 label: general-laboratory-verification-data
 hide_body: true
 fields:
-- name: company_logo
-  type: file
-  config:
-    maxSize: 64
-  label: Company Logo
-  description: Logo of the company/tenant
-- name: custom_style
-  type: text
-  config:
-    required: false
-  label: Custom Style
+  - name: company_logo
+    type: file
+    config:
+      maxSize: 64
+    label: Company Logo
+    description: Logo of the company/tenant
+  - name: custom_style
+    type: text
+    config:
+      required: false
+    label: Custom Style
