@@ -15,9 +15,15 @@ fields:
 - name: company_logo
   type: file
   config:
-    maxSize: 64
+    maxSize: 1
   label: Company Logo
   description: Logo of the company/tenant
+- name: favicon
+  type: file
+  config:
+    maxSize: 1
+  label: favicon of Company Logo
+  description: favicon from Logo of the company/tenant
 - name: custom_styles
   type: textarea
   default: ''
