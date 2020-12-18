@@ -12,11 +12,16 @@
 
 {{ define "main" }}
 
-{{ $company := substr $.File.LogicalName 0 -3 }}
-{{ $staticData := (index .Site.Data.v $company) }}
-{{ with $staticData }}
-{{ .company_name }}
-{{ end }}
+{{ partial "verification-script" . }}
 
+<form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 {{ partial "coronalaboratory.html" . }}
+
+<div id="verification-widget">
+</div>
+
+<div class="input-field">
+  <input type="submit" class="btn btnwhite" value="verifizieren">
+</div>
+</form>
 {{ end }}

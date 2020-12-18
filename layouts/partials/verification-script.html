@@ -1,0 +1,23 @@
+<script>
+  let ubirchVerification;
+  document.addEventListener("DOMContentLoaded", function() {
+    // create UbirchVerification instance
+    ubirchVerification = new UbirchFormVerification({
+      algorithm: 'sha512',
+      elementSelector: '#verification-widget',
+      formIds: ["f", "b", "g", "p", "i", "d", "t", "r", "s"]
+    });
+    var paramStr = ubirchVerification.getFormParamsFromUrl(window);
+    if (paramStr) {
+      ubirchVerification.setDataIntoForm(paramStr, document, ';');
+    }
+  });
+
+  function verifyForm() {
+    try {
+      const genJson = ubirchVerification.getJsonFromInputs(document);
+      ubirchVerification.verifyJSON(genJson);
+    } catch (e) {
+    }
+  }
+</script>

@@ -41,6 +41,11 @@
 	{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
 	{{ template "_internal/google_analytics_async.html" . }}
 	{{ end }}
+
+  {{ block "verificationjs" . }}
+  {{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
+  <script src="https://console.prod.ubirch.com/libs/verification/verification.js"></script>
+  {{ end }}
 </head>
 
 <body>
