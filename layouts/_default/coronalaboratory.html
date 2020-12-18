@@ -1,22 +1,23 @@
-{{ define "header" }}
-{{/* We can override any block in the baseof file be defining it in the template */}}
-{{ partial "page-header.html" . }}
-{{ end }}
-
 {{ define "main" }}
 <h1>Corona Laboratory Result!!!</h1>
+
+{{ $company := printf "%s" (substr $.File.LogicalName 0 -3) }}
+{{ $staticData := (index .Site.Data.v $company) }}
+{{ with $staticData }}
+{{ .company_name }}
+{{ end }}
 
 {{ $lang := printf "%s" .Site.Language }}
 {{ $formfields := (index .Site.Data.formfields $lang) }}
 {{ with $formfields }}
-<p>{{ .f }}:</p>
-<p>{{ .b }}:</p>
-<p>{{ .g }}:</p>
-<p>{{ .p }}:</p>
-<p>{{ .i }}:</p>
-<p>{{ .d }}:</p>
-<p>{{ .t }}:</p>
-<p>{{ .r }}:</p>
-<p>{{ .s }}:</p>
+<p>{{ .f }}:<input type="text" id="f" readonly></p>
+<p>{{ .b }}:<input type="text" id="b" readonly></p>
+<p>{{ .g }}:<input type="text" id="g" readonly></p>
+<p>{{ .p }}:<input type="text" id="p" readonly></p>
+<p>{{ .i }}:<input type="text" id="i" readonly></p>
+<p>{{ .d }}:<input type="text" id="d" readonly></p>
+<p>{{ .t }}:<input type="text" id="t" readonly></p>
+<p>{{ .r }}:<input type="text" id="r" readonly></p>
+<p>{{ .s }}:<input type="text" id="s" readonly></p>
 {{ end }}
 {{ end }}
