@@ -2,6 +2,6 @@
 {{ $staticData := (index .Site.Data.v $company) }}
 {{ with $staticData }}
 {{ if (gt (len .custom_styles) 0) }}
-<style>{{ .custom_styles }}</style>
+<link rel="stylesheet" href="{{ .custom_styles }}">
 {{ end }}
 {{ end }}

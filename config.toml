@@ -3,16 +3,21 @@ defaultContentLanguage = "de"
 theme = "starter"
 
 [languages]
-  [languages.de]
-    languageName = "Deutsch"
-    contentDir = "content/de"
-    weight = 1
-    [languages.de.params]
-      title = "Verifizierung"
+[languages.de]
+languageName = "Deutsch"
+contentDir = "content/de"
+weight = 1
+[languages.de.params]
+title = "Verifizierung"
 
-  [languages.en]
-    languageName = "English"
-    contentDir = "content/en"
-    weight = 2
-    [languages.en.params]
-      title = "Verification"
+[languages.en]
+languageName = "English"
+contentDir = "content/en"
+weight = 2
+[languages.en.params]
+title = "Verification"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

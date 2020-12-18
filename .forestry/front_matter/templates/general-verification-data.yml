@@ -25,13 +25,9 @@ fields:
   label: favicon of Company Logo
   description: favicon from Logo of the company/tenant
 - name: custom_styles
-  type: textarea
-  default: ''
+  type: file
   config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Custom Style
+    maxSize: 3
+  label: Custom Style .css file
 pages:
 - data/v/ubirch-general-data.json
