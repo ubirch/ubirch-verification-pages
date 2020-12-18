@@ -1,0 +1,4 @@
+{{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+<title> {{ with $staticData.company_name }}{{ . }}{{ end }} {{ $.Site.Params.title }}</title>

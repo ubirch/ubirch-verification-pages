@@ -1,12 +1,3 @@
-{{ define "main" }}
-<h1>Corona Laboratory Result!!!</h1>
-
-{{ $company := printf "%s" (substr $.File.LogicalName 0 -3) }}
-{{ $staticData := (index .Site.Data.v $company) }}
-{{ with $staticData }}
-{{ .company_name }}
-{{ end }}
-
 {{ $lang := printf "%s" .Site.Language }}
 {{ $formfields := (index .Site.Data.formfields $lang) }}
 {{ with $formfields }}
@@ -19,5 +10,4 @@
 <p>{{ .t }}:<input type="text" id="t" readonly></p>
 <p>{{ .r }}:<input type="text" id="r" readonly></p>
 <p>{{ .s }}:<input type="text" id="s" readonly></p>
-{{ end }}
 {{ end }}

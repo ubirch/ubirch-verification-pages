@@ -1,0 +1,27 @@
+{{ define "favicon" }}
+{{ partial "page-favicon.html" . }}
+{{ end }}
+
+{{ define "pagetitle" }}
+{{ partial "page-title.html" . }}
+{{ end }}
+
+{{ define "header" }}
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+{{ with $staticData }}
+{{ .company_name }}
+{{ end }}
+
+{{ end }}
+
+{{ define "main" }}
+
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+{{ with $staticData }}
+{{ .company_name }}
+{{ end }}
+
+{{ partial "coronalaboratory.html" . }}
+{{ end }}
