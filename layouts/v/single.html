@@ -12,7 +12,8 @@
 
 {{ define "main" }}
 
-{{ partial "verification-script" . }}
+{{ if (eq .Params.layout "coronalaboratory") }}
+{{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha512" "separator" ";") }}
 
 <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 {{ partial "coronalaboratory.html" . }}
@@ -24,4 +25,7 @@
   <input type="submit" class="btn btnwhite" value="verifizieren">
 </div>
 </form>
+{{ else }}
+For this layout is no form defined!!!
+{{ end }}
 {{ end }}

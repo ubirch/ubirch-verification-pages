@@ -3,13 +3,14 @@
   document.addEventListener("DOMContentLoaded", function() {
     // create UbirchVerification instance
     ubirchVerification = new UbirchFormVerification({
-      algorithm: 'sha512',
+      algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#verification-widget',
-      formIds: ["f", "b", "g", "p", "i", "d", "t", "r", "s"]
+      formIds: {{ .inputids }}
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {
-      ubirchVerification.setDataIntoForm(paramStr, document, ';');
+
+      ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");
     }
   });
 
