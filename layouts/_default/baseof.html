@@ -25,6 +25,10 @@
 	<link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
 	{{ end }}
 
+  {{ block "customstyles" . }}
+  {{/* NOTE: you can add custom styles to this page - default: no additional css */}}
+  {{ end }}
+
 	{{ block "favicon" . }}
 	{{ partial "site-favicon.html" . }}
 	{{ end }}

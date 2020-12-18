@@ -6,13 +6,8 @@
 {{ partial "page-title.html" . }}
 {{ end }}
 
-{{ define "header" }}
-{{ $company := substr $.File.LogicalName 0 -3 }}
-{{ $staticData := (index .Site.Data.v $company) }}
-{{ with $staticData }}
-{{ .company_name }}
-{{ end }}
-
+{{ define "customstyles" }}
+{{ partial "custom-styles.html" . }}
 {{ end }}
 
 {{ define "main" }}

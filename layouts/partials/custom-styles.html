@@ -1,0 +1,7 @@
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+{{ with $staticData }}
+{{ if (gt (len .custom_styles) 0) }}
+<style>{{ .custom_styles }}</style>
+{{ end }}
+{{ end }}
