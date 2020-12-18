@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 defaultContentLanguage = "de"
-theme = "starter"
+theme = "ubirch_verifier"
 
 [languages]
 [languages.de]

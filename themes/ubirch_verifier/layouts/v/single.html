@@ -10,6 +10,10 @@
 {{ partial "custom-styles.html" . }}
 {{ end }}
 
+{{ define "header" }}
+{{ partial "page-header.html" . }}
+{{ end }}
+
 {{ define "main" }}
 
 {{ if (eq .Params.layout "coronalaboratory") }}
