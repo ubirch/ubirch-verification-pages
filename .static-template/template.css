@@ -53,6 +53,8 @@ body {
     align-self: center;
     justify-self: center;
     width: 100%;
+    height: auto;
+
 }
 
 #header #languageSelectDiv {
@@ -220,7 +222,7 @@ body {
 
 
     #header #logo {
-        width: 300px;
+        max-width: 300px;
     }
 
     #textArea p {
