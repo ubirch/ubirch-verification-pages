@@ -23,20 +23,28 @@ html {
 
 body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 #page-content {
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 5fr auto auto 2fr;
+    grid-template-rows: 64px auto fit-content(100%);
     grid-template-areas:
                 "header"
-                "titleCard"
-                "verification"
-                "textArea"
+                "main"
                 "footer";
+}
+
+main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+            "titleCard"
+            "verification"
+            "textArea";
 
 }
 
@@ -58,6 +66,7 @@ body {
 }
 
 #header #languageSelectDiv {
+    height: 100%;
     grid-area: language;
 }
 
@@ -82,10 +91,9 @@ body {
     display: grid;
     grid-gap: 0.5rem;
     grid-template-columns: 3rem auto 3rem;
-    grid-template-rows: 5fr 3fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
-                ".  form     ."
-                ".  widget   .";
+                ".  form     .";
 }
 
 #verification #form {
@@ -145,8 +153,7 @@ body {
     padding: 10px;
 }
 
-#verification .verificationButton:active,
-#verification .verificationButton:hover {
+#verification .verificationButton:active {
     -webkit-transition: background-color 90ms linear, color 90ms linear;
     -moz-transition: background-color 90ms linear, color 90ms linear;
     -o-transition: background-color 90ms linear, color 90ms linear;
@@ -155,8 +162,7 @@ body {
     cursor: pointer;
 }
 
-#verification .buttonHighlightColor:active,
-#verification .buttonHighlightColor:hover {
+#verification .buttonHighlightColor:active{
     background-color: var(--form-accent-color);
     border: 1px solid var(--form-accent-color);
     color: var(--form-button-higlight-text-color)
@@ -199,13 +205,22 @@ body {
     }
 
     #page-content {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 3fr 8fr 2fr;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 72px auto fit-content(100%) ;
         grid-template-areas:
-                "header header"
+                "header"
+                "main"
+                "footer";
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  auto auto;
+        grid-template-areas:
                 "titleCard titleCard"
                 "verification textArea"
-                "footer footer";
 
     }
 }
@@ -225,24 +240,53 @@ body {
         max-width: 300px;
     }
 
+
     #textArea p {
         padding: 8rem;
         font-size: 3.5rem;
     }
 
-    #page-content {
+    main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 8fr 1fr;
+        grid-template-rows: auto auto;
         grid-template-areas:
-                "header header"
                 "titleCard titleCard"
                 "verification textArea"
-                "footer footer";
 
     }
 
     #titleCard p {
         padding-left: 10rem;
         padding-right: 10rem;
+    }
+
+    #verification .verificationButton:hover {
+        -webkit-transition: background-color 90ms linear, color 90ms linear;
+        -moz-transition: background-color 90ms linear, color 90ms linear;
+        -o-transition: background-color 90ms linear, color 90ms linear;
+        transition: background-color 90ms linear, color 90ms linear;
+        background-image: url('https://ubirch.de/fileadmin/Icons/Doppelpfeile_weiss.svg');
+        cursor: pointer;
+    }
+
+    #verification .buttonHighlightColor:hover{
+        background-color: var(--form-accent-color);
+        border: 1px solid var(--form-accent-color);
+        color: var(--form-button-higlight-text-color)
+    }
+
+    #verification .verificationButton:active {
+        -webkit-transition: unset;
+        -moz-transition: unset;
+        -o-transition: unset;
+        transition: unset;
+        background-image:unset;
+        cursor:unset;
+    }
+
+    #verification .buttonHighlightColor:active{
+        background-color: unset;
+        border: unset;
+        color: unset
     }
 }
