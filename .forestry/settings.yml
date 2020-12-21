@@ -16,7 +16,7 @@ sections:
   path: content/en/v
   label: English Pages
   create: documents
-  match: "**/*"
+  match: "*"
   templates:
   - laboratory-verification-text-fields
 - type: directory

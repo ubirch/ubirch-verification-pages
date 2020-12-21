@@ -36,6 +36,3 @@ fields:
   default: coronalaboratory
   hidden: true
   description: Layout of Corona laboratory verification pages will always be "coronalaboratory"
-pages:
-- content/de/v/quade.md
-- content/en/v/quade.md
