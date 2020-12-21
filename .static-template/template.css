@@ -1,0 +1,248 @@
+:root {
+    --title-backround-color: #ffffff;
+    --section1-backround-color: #67d4ef;
+    --section1-text-color: #696969;
+    --form-backround-color: #ffffff;
+    --form-label-text-color: #4e4e4e;
+    --form-input-underline-color: #000000;
+    --form-button-color: #ffffff;
+    --form-buton-text-color: #000000;
+    --form-button-higlight-text-color: #ffffff;
+    --section2-backround-color: #e0e0e0;
+    --section2-text-color: #696969;
+    --footer-backround-color: #67d4ef;
+    --footer-text-color: #4e4e4e;
+    --form-accent-color: #67d4ef;
+
+    font-size: 7px;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+#page-content {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 5fr auto auto 2fr;
+    grid-template-areas:
+                "header"
+                "titleCard"
+                "verification"
+                "textArea"
+                "footer";
+
+}
+
+#header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-areas: "logo . language";
+    padding: 1rem
+}
+
+#header #logo {
+    grid-area: logo;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+
+}
+
+#header #languageSelectDiv {
+    grid-area: language;
+}
+
+#titleCard {
+    display: flex;
+    grid-area: titleCard;
+    background-color: var(--section1-backround-color);
+    justify-items: center;
+    align-items: center;
+}
+
+#titleCard p {
+    padding: 4rem;
+    font-size: 3rem;
+    color: var(--section1-text-color);
+}
+
+#verification {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    grid-area: verification;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 3rem auto 3rem;
+    grid-template-rows: 5fr 3fr;
+    grid-template-areas:
+                ".  form     ."
+                ".  widget   .";
+}
+
+#verification #form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#verification .formLabel {
+    font-size: 2rem;
+    color: var(--form-label-text-color);
+}
+
+#verification .formInput {
+    font-size: 3rem;
+    width: calc(100% - 2px);
+    overflow-clip: true;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--form-input-underline-color);
+    transition: border-bottom ease-in-out 75ms;
+    margin-bottom: 1rem;
+}
+
+#verification .formInput:focus {
+    border-bottom: 1px solid var(--form-accent-color);
+}
+
+#verification #resutlDiv {
+    grid-area: widget;
+}
+
+#widgetDiv {
+}
+
+#verification .verificationButton {
+    text-align: left;
+    margin-top: 1rem;
+    grid-area: button;
+    font-size: 2.25rem;
+    -webkit-transition: background-color 90ms linear, color 90ms linear;
+    -moz-transition: background-color 90ms linear, color 90ms linear;
+    -o-transition: background-color 90ms linear, color 90ms linear;
+    transition: background-color 90ms linear, color 90ms linear;
+    background-color: var(--form-button-color);
+    background-image: url('http://ubirch.de/fileadmin/Icons/Doppelpfeile_Magenta.svg');
+    background-position: right 10px center;
+    border: 1px solid var(--form-buton-text-color);
+    background-repeat: no-repeat;
+    box-shadow: none;
+    color: var(--form-buton-text-color);
+    font-family: MuseoSansRounded-900, calibri, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+}
+
+#verification .verificationButton:active,
+#verification .verificationButton:hover {
+    -webkit-transition: background-color 90ms linear, color 90ms linear;
+    -moz-transition: background-color 90ms linear, color 90ms linear;
+    -o-transition: background-color 90ms linear, color 90ms linear;
+    transition: background-color 90ms linear, color 90ms linear;
+    background-image: url('https://ubirch.de/fileadmin/Icons/Doppelpfeile_weiss.svg');
+    cursor: pointer;
+}
+
+#verification .buttonHighlightColor:active,
+#verification .buttonHighlightColor:hover {
+    background-color: var(--form-accent-color);
+    border: 1px solid var(--form-accent-color);
+    color: var(--form-button-higlight-text-color)
+}
+
+
+#textArea {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    grid-area: textArea;
+    background: var(--section2-backround-color);
+    color: var(--section2-text-color);
+}
+
+#textArea p {
+    padding: 4rem;
+    font-size: 2.5rem;
+}
+
+#textArea h1 {
+    padding-top: 4rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#footer {
+    font-size: 1.5rem;
+    padding: 5rem;
+    grid-area: footer;
+    background-color: var(--footer-backround-color);
+    color: var(--footer-text-color);
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    :root {
+        font-size: 6px;
+    }
+
+    #page-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3fr 8fr 2fr;
+        grid-template-areas:
+                "header header"
+                "titleCard titleCard"
+                "verification textArea"
+                "footer footer";
+
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    html {
+        justify-self: center;
+    }
+
+    #page-content {
+        height: 100vh;
+        width: 100%;
+    }
+
+
+    #header #logo {
+        max-width: 300px;
+    }
+
+    #textArea p {
+        padding: 8rem;
+        font-size: 3.5rem;
+    }
+
+    #page-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 8fr 1fr;
+        grid-template-areas:
+                "header header"
+                "titleCard titleCard"
+                "verification textArea"
+                "footer footer";
+
+    }
+
+    #titleCard p {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}

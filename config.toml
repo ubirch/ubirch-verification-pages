@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://verification.dev.ubirch.com/"
 defaultContentLanguage = "de"
 theme = "ubirch_verifier"
 
