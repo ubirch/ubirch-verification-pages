@@ -40,3 +40,19 @@
   n(2)
 }, function (e, t, n) {
 }]);
+
+function openPageInLanguage(langLink) {
+  var formContent = getFragmentFromUrl(window);
+  if (!formContent) {
+    formContent = getQueryFromUrl(window);
+  }
+  console.log('formContent: ' + formContent);
+  window.open(langLink + formContent, '_self');
+}
+
+function getFragmentFromUrl(windowRef) {
+  return windowRef.location.hash;
+}
+function getQueryFromUrl(windowRef) {
+  return windowRef.location.search;
+}

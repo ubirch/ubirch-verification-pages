@@ -6,7 +6,7 @@
     </li>
     {{ range .Translations }}
     <li>
-      <a href="{{ .Permalink }}">{{ .Lang }}</a>
+      <a onclick="openPageInLanguage({{ .Permalink }})">{{ .Lang }}</a>
     </li>
     {{ end}}
   </ul>
