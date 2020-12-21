@@ -37,4 +37,5 @@ fields:
   hidden: true
   description: Layout of Corona laboratory verification pages will always be "coronalaboratory"
 pages:
+- content/de/v/gov-digital.md
 - content/en/v/gov-digital.md
