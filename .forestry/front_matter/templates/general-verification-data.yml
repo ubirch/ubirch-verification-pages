@@ -6,7 +6,11 @@ fields:
   type: text
   config:
     required: false
-  label: Title (for forestry overview - not visible in UI)
+  label: Title + initial filename (for forestry overview - not visible in UI)
+  description: When creating a new page the filename is created from this title; the
+    corresponding text files are found via the filename; so ensure to use the same
+    title during creation of new data pages and check that a page with the same title
+    doesn't exist already. (when struggling check filenames on GitHub)
 - name: company_name
   type: text
   config:
@@ -30,4 +34,4 @@ fields:
     maxSize: 3
   label: Custom Style .css file
 pages:
-- data/v/ubirch-general-data.json
+- data/v/gov-digital.json
