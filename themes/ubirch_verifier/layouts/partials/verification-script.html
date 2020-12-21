@@ -5,7 +5,9 @@
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#widgetDiv',
+      NO_LINK_TO_CONSOLE: true,
       formIds: {{ .inputids }}
+
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {
