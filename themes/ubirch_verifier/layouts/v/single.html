@@ -39,11 +39,7 @@
 
         <div id="widgetDiv"></div>
 
-        {{ $lang := printf "%s" .Site.Language }}
-        {{ $formfields := (index .Site.Data.formfields $lang) }}
-        {{ with $formfields }}
-        <input type="submit" name="verify" value="{{ .button_verify }}" class="verificationButton buttonHighlightColor">
-        {{ end }}
+        <input type="submit" name="verify" value="{{ i18n "formfield.button_verify" }}" class="verificationButton buttonHighlightColor">
       </div>
 
     </form>

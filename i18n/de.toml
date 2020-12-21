@@ -1,0 +1,24 @@
+[formfield.button_verify]
+other = "verifizieren"
+[formfield.f]
+other = "Familienname"
+[formfield.g]
+other = "Vorname(n)"
+[formfield.b]
+other = "Geburtsdatum"
+[formfield.p]
+other = "Personalausweisnummer"
+[formfield.i]
+other = "interne Labor ID"
+[formfield.d]
+other = "Testdatum mit Uhrzeit"
+[formfield.t]
+other = "Testtyp"
+[formfield.r]
+other = "Testergebnis"
+[formfield.s]
+other = "Zufallszahl (Secret)"
+[link.imprint]
+other = "Impressum"
+[link.privacy]
+other = "Datenschutz"

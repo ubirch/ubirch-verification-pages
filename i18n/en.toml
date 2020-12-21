@@ -1,0 +1,24 @@
+[formfield.button_verify]
+other = "verify"
+[formfield.f]
+other = "family name"
+[formfield.g]
+other = "given name(s)"
+[formfield.b]
+other = "birth date"
+[formfield.p]
+other = "passport id"
+[formfield.i]
+other = "internal laboratory id"
+[formfield.d]
+other = "test date and time"
+[formfield.t]
+other = "test type"
+[formfield.r]
+other = "test result (positive, negative, unknown)"
+[formfield.s]
+other = "random number (secret)"
+[link.imprint]
+other = "Imprint"
+[link.privacy]
+other = "Privacy"
