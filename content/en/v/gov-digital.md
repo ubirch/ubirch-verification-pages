@@ -4,7 +4,7 @@ imprint_link = "https://www.govdigital.de/impressum"
 layout = "coronalaboratory"
 privacy_link = "https://www.govdigital.de/datenschutz"
 title = "gov-digital"
-verification_description_long = "YOU HAVE SCANNED A QR-CODE ON A TEST RESULT AND CAN NOW VERIFY THIS RESULT. THIS IS USEFUL IF YOU NEED ACCESS TO SENSITIVE LOCATIONS, LIKE CARE FACILITIES, HOSPITALS OR AIRPLANES"
+verification_description_long = "You have scanned a QR code on a test result and can now have that result verified. This is useful when you need to provide a negative test result, such as in care facilities, hospitals or airplanes.  Since testing is required in many places, the number of faked test results is increasing. Your test result is tamper-proof with UBIRCH's Digital Corona Test Certificate. Such a secured test result creates safety - for you and your surrounding and helps to overcome the pandemic."
 verification_summary = ""
 
 +++
