@@ -27,14 +27,6 @@ sections:
   templates:
   - laboratory-verification-text-fields
 - type: directory
-  path: data/formfields
-  label: Form Fields Translations
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - form-fields-translation
-- type: directory
   path: content
   label: Other Pages
   create: all
