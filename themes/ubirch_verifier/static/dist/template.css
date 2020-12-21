@@ -8,10 +8,12 @@
     --form-button-color: #ffffff;
     --form-buton-text-color: #000000;
     --form-button-higlight-text-color: #ffffff;
-    --section2-backround-color: #e0e0e0;
-    --section2-text-color: #696969;
+    --textArea-backround-color: #e0e0e0;
+    --testArea-text-color: #4e4e4e;
+    --textArea-highlight-color: #ababab;
     --footer-backround-color: #67d4ef;
     --footer-text-color: #4e4e4e;
+    --footer-highlight-color: #6b6b6b;
     --form-accent-color: #67d4ef;
 
     font-size: 7px;
@@ -66,8 +68,38 @@ main{
 }
 
 #header #languageSelectDiv {
+    display: flex;
+    justify-items: center;
+    align-items: center;
     height: 100%;
     grid-area: language;
+}
+
+#header #languageSelectDiv ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#header #languageSelectDiv ul li{
+    float: left;
+}
+
+#header #languageSelectDiv ul a,
+#header #languageSelectDiv ul span {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+#header #languageSelectDiv ul a::before{
+    content: '|';
+    padding:1rem
+}
+
+#header #languageSelectDiv ul span {
+    font-weight: bold;
 }
 
 #titleCard {
@@ -193,12 +225,33 @@ main{
 }
 
 #footer {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 5rem;
     grid-area: footer;
     background-color: var(--footer-backround-color);
     color: var(--footer-text-color);
     text-align: center;
+}
+
+.textAreaLink{
+    text-decoration: none;
+    color: var(--testArea-text-color);
+    font-weight: bold;
+
+}
+
+.textAreaLink:active{
+    color: var(--textArea-highlight-color);
+}
+
+.footerLink{
+    text-decoration: none;
+    color: var(--footer-text-color);
+    font-weight: bold;
+}
+
+.footerLink:active{
+    color: var(--footer-highlight-color);
 }
 
 @media (min-width: 600px) {
@@ -242,6 +295,10 @@ main{
         max-width: 300px;
     }
 
+    #header #languageSelectDiv ul a,
+    #header #languageSelectDiv ul span {
+        font-size: 3rem;
+    }
 
     #textArea p {
         padding: 8rem;
@@ -290,5 +347,13 @@ main{
         background-color: unset;
         border: unset;
         color: unset
+    }
+
+    .textAreaLink:hover{
+        color: var(--textArea-highlight-color);
+    }
+
+    .footerLink:hover{
+        color: var(--footer-highlight-color);
     }
 }

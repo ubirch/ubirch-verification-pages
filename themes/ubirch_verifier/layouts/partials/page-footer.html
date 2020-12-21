@@ -11,10 +11,10 @@
 
   <p>
     {{ with .Params.imprint_link }}
-    <a href="{{ . }}" target="_blank">{{ i18n "link.imprint" }}</a>
+    <a href="{{ . }}" target="_blank" class="footerLink">{{ i18n "link.imprint" }}</a>
     {{ end }}
     {{ with .Params.privacy_link }}
-    <a href="{{ . }}" target="_blank">{{ i18n "link.privacy" }}</a>
+    <a href="{{ . }}" target="_blank" class="footerLink">{{ i18n "link.privacy" }}</a>
     {{ end }}
   </p>
 </div>
