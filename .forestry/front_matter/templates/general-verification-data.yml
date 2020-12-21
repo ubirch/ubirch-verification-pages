@@ -8,10 +8,9 @@ fields:
     required: false
   label: Title + initial filename (for forestry overview - not visible in UI)
   description: When creating a new page the filename is created from this title; the
-    translated file is found via the filename; so ensure to use the same title during
-    creation of new pages for textfiles of the same content for different languages
-    and check that a page with the same title doesn't exist already. (when struggling
-    check filenames on GitHub)
+    corresponding text files are found via the filename; so ensure to use the same
+    title during creation of new data pages and check that a page with the same title
+    doesn't exist already. (when struggling check filenames on GitHub)
 - name: company_name
   type: text
   config:
