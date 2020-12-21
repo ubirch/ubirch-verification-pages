@@ -6,7 +6,7 @@ fields:
   type: text
   config:
     required: false
-  label: 'Verification Button Label'
+  label: Verification Button Label
   default: verify
 - name: f
   type: text
