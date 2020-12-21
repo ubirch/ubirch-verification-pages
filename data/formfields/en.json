@@ -1,4 +1,5 @@
 {
+  "button_verify": "verify",
   "f": "family name",
   "g": "given name(s)",
   "b": "birth date",

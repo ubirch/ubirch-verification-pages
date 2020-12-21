@@ -4,7 +4,7 @@
     // create UbirchVerification instance
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
-      elementSelector: '#verification-widget',
+      elementSelector: '#widgetDiv',
       formIds: {{ .inputids }}
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);

@@ -16,20 +16,53 @@
 
 {{ define "main" }}
 
+{{ with .Params.verification_description_long }}
+<div id="titleCard">
+  <p>
+    {{ . }}
+  </p>
+</div>
+{{ end }}
+
 {{ if (eq .Params.layout "coronalaboratory") }}
+
 {{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha512" "separator" ";") }}
 
-<form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
-{{ partial "coronalaboratory.html" . }}
+<div id="verification">
+  <div id="form">
 
-<div id="verification-widget">
-</div>
+    <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
-<div class="input-field">
-  <input type="submit" class="btn btnwhite" value="verifizieren">
+      {{ partial "coronalaboratory.html" . }}
+
+      <div id="resutlDiv">
+
+        <div id="widgetDiv"></div>
+
+        {{ $lang := printf "%s" .Site.Language }}
+        {{ $formfields := (index .Site.Data.formfields $lang) }}
+        {{ with $formfields }}
+        <input type="submit" name="verify" value="{{ .button_verify }}" class="verificationButton buttonHighlightColor">
+        {{ end }}
+      </div>
+
+    </form>
+  </div>
 </div>
-</form>
 {{ else }}
 For this layout is no form defined!!!
 {{ end }}
+
+<div id="textArea">
+  <h1>ÜBER UBIRCH</h1>
+  <p>
+    Ubirch ist der Spezialist für Cybersecurity in Deutschland, Israel und den Emiraten. Unser Team besteht aus
+    erfahrenen Kryptografie- und Blockchain Spezialisten. Dank robuster Kryptografie und innovativer
+    Blockchain-Technologie garantiert UBIRCH die Vertrauenswürdigkeit von Daten und beschleunigt so die
+    Marktreife von datengetriebenen Geschäftsmodellen. Weitere Informationen unter www.ubirch.com
+  </p>
+</div>
+
 {{ end }}
+
+{{ define "footer" }}{{ partial "page-footer.html" . }}{{ end }}

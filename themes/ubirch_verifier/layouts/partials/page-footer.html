@@ -1,0 +1,16 @@
+<div id="footer">
+  <p>
+    {{ $company := substr $.File.LogicalName 0 -3 }}
+    {{ $staticData := (index .Site.Data.v $company) }}
+    {{ with $staticData }}
+
+    ©Copyright {{ .company_name }} {{ now.Format "2006" }}
+
+    {{ end }}
+  </p>
+
+  <p>
+    <a>Impressum</a>
+    <a>Datenshutz</a>
+  </p>
+</div>

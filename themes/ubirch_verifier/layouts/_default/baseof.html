@@ -33,15 +33,6 @@
 	{{ partial "site-favicon.html" . }}
 	{{ end }}
 
-	{{ if .RSSLink }}
-	<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-	<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-	{{ end }}
-
-	{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-	{{ template "_internal/google_analytics_async.html" . }}
-	{{ end }}
-
   {{ block "verificationjs" . }}
   {{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
   <script src="https://console.prod.ubirch.com/libs/verification/verification.js"></script>
@@ -49,6 +40,7 @@
 </head>
 
 <body>
+<div id="page-content">
 	{{ block "header" . }}
   {{ partial "site-header.html" .}}
   {{ end }}
@@ -58,6 +50,7 @@
 	</main>
 	{{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
 	{{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+</div>
 </body>
 
 </html>

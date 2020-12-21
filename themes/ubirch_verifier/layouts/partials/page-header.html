@@ -1,15 +1,11 @@
-<header>
-  <div>
-    {{ $company := substr $.File.LogicalName 0 -3 }}
-    {{ $staticData := (index .Site.Data.v $company) }}
-    {{ with $staticData }}
-    {{ with .company_logo }}
-    <div class="logo">
-      <img src="{{ . }}" alt="{{ $company }}">
-    </div>
-    {{ end }}
-    {{ end }}
+<div id="header">
+  {{ $company := substr $.File.LogicalName 0 -3 }}
+  {{ $staticData := (index .Site.Data.v $company) }}
+  {{ with $staticData }}
+  {{ with .company_logo }}
+  <img src="{{ . }}" alt="{{ $company }}" id="logo">
+  {{ end }}
+  {{ end }}
 
-    {{ partial "i18nlist.html" . }}
-  </div>
-</header>
+  {{ partial "i18nlist.html" . }}
+</div>

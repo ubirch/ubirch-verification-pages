@@ -2,6 +2,12 @@
 label: form-fields-translation
 hide_body: true
 fields:
+- name: button_verify
+  type: text
+  config:
+    required: false
+  label: 'Verification Button Label'
+  default: verify
 - name: f
   type: text
   config:

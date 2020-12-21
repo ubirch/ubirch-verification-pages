@@ -1,13 +1,31 @@
 {{ $lang := printf "%s" .Site.Language }}
 {{ $formfields := (index .Site.Data.formfields $lang) }}
 {{ with $formfields }}
-<p>{{ .f }}:<input type="text" id="f" readonly></p>
-<p>{{ .b }}:<input type="text" id="b" readonly></p>
-<p>{{ .g }}:<input type="text" id="g" readonly></p>
-<p>{{ .p }}:<input type="text" id="p" readonly></p>
-<p>{{ .i }}:<input type="text" id="i" readonly></p>
-<p>{{ .d }}:<input type="text" id="d" readonly></p>
-<p>{{ .t }}:<input type="text" id="t" readonly></p>
-<p>{{ .r }}:<input type="text" id="r" readonly></p>
-<p>{{ .s }}:<input type="text" id="s" readonly></p>
+<label for="f" class="formLabel">{{ .f }}</label>
+<input type="text" id="f" class="formInput" readonly>
+
+<label for="b" class="formLabel">{{ .b }}</label>
+<input type="text" id="b" class="formInput" readonly>
+
+<label for="g" class="formLabel">{{ .g }}</label>
+<input type="text" id="g" class="formInput" readonly>
+
+<label for="p" class="formLabel">{{ .p }}</label>
+<input type="text" id="p" class="formInput" readonly>
+
+<label for="i" class="formLabel">{{ .i }}</label>
+<input type="text" id="i" class="formInput" readonly>
+
+<label for="d" class="formLabel">{{ .d }}</label>
+<input type="text" id="d" class="formInput" readonly>
+
+<label for="t" class="formLabel">{{ .t }}</label>
+<input type="text" id="t" class="formInput" readonly>
+
+<label for="r" class="formLabel">{{ .r }}</label>
+<input type="text" id="r" class="formInput" readonly>
+
+<label for="s" class="formLabel">{{ .s }}</label>
+<input type="text" id="s" class="formInput" readonly>
+
 {{ end }}

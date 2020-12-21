@@ -1,4 +1,4 @@
-<header>
+<div id="header">
   <div>
     <h1>
       {{ .Title | default $.Site.Title }}
@@ -9,4 +9,6 @@
     </h2>
     {{ end }}
   </div>
-</header>
+
+  {{ partial "i18nlist.html" . }}
+</div>
