@@ -1,7 +1,9 @@
 {{ if .IsTranslated }}
 <div id="languageSelectDiv">
-  <h4>{{ i18n "translations" }}</h4>
   <ul>
+    <li>
+      <span class="current-lang">{{ .Site.Language }}</span>
+    </li>
     {{ range .Translations }}
     <li>
       <a href="{{ .Permalink }}">{{ .Lang }}</a>
