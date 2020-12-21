@@ -1,9 +1,9 @@
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
 {{ if $staticData }}
-<link rel="shortcut icon" href="/{{ $staticData.favicon }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ $staticData.favicon }}" type="image/x-icon" />
 {{ else }}
 {{ if .Site.Params.favicon }}
-<link rel="shortcut icon" href="/{{ .Site.Params.favicon }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
 {{ end }}
 {{ end }}

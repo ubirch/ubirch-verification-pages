@@ -1,0 +1,14 @@
+{{ $lang := printf "%s" .Site.Language }}
+{{ $ubirchinfo := (index .Site.Data.ubirchinfo $lang) }}
+
+{{ with $ubirchinfo }}
+<div id="textArea">
+  <h1>{{ .ubirch_description_header }}</h1>
+  <p>
+    {{ .ubirch_description_long }}
+  </p>
+  <p>
+    {{ .ubirch_link_intro }}<a href="{{ .ubirch_link }}" target="_blank">{{ .ubirch_link }}</a>
+  </p>
+</div>
+{{ end }}

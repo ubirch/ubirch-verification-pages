@@ -4,5 +4,7 @@
   "layout": "coronalaboratory",
   "company_slogan": "",
   "verification_summary": "",
-  "verification_description_long": ""
+  "verification_description_long": "",
+  "imprint_link": "",
+  "privacy_link": ""
 }
