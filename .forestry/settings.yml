@@ -13,14 +13,14 @@ sections:
   templates:
   - general-verification-data
 - type: directory
-  path: content/en
+  path: content/en/v
   label: English Pages
   create: documents
   match: "**/*"
   templates:
   - laboratory-verification-text-fields
 - type: directory
-  path: content/de
+  path: content/de/v
   label: Deutsche Seiten
   create: documents
   match: "**/*"
