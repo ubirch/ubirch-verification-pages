@@ -10,7 +10,11 @@
   </p>
 
   <p>
-    <a>Impressum</a>
-    <a>Datenshutz</a>
+    {{ with .Params.imprint_link }}
+    <a href="{{ . }}" target="_blank">Impressum</a>
+    {{ end }}
+    {{ with .Params.privacy_link }}
+    <a href="{{ . }}" target="_blank">Datenshutz</a>
+    {{ end }}
   </p>
 </div>
