@@ -1,4 +1,4 @@
-baseURL = "https://verification.dev.ubirch.com/"
+baseURL = "https://verify.govdigital.de/"
 defaultContentLanguage = "de"
 theme = "ubirch_verifier"
 
