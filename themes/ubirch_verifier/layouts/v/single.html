@@ -26,7 +26,7 @@
 
 {{ if (eq .Params.layout "coronalaboratory") }}
 
-{{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha512" "separator" ";" "language" .Site.Language  ) }}
+{{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
 <div id="verification">
   <div id="form">
