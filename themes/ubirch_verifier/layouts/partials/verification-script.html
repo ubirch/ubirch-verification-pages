@@ -1,6 +1,7 @@
 <script>
   let ubirchVerification;
   document.addEventListener("DOMContentLoaded", function() {
+    console.log("Version 1.0");
     // create UbirchVerification instance
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
