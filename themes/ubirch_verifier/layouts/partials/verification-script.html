@@ -8,6 +8,9 @@
       elementSelector: '#widgetDiv',
       NO_LINK_TO_CONSOLE: true,
       language: "{{ .language }}",
+    {{ with .formIdMapping }}
+      paramsFormIdsMapping: {{ . }},
+    {{ end }}
       formIds: {{ .inputids }}
 
     });

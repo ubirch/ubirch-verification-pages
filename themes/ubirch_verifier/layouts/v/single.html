@@ -31,7 +31,7 @@
 {{ else if (eq .Params.layout "trafficsignsinventory") }}
 
 {{/* partial "verification-script" (dict "inputids" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) */}}
-{{ partial "verification-script" (dict "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ partial "verification-script" (dict "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
 {{ end }}
 
