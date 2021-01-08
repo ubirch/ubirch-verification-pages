@@ -33,3 +33,5 @@ fields:
   config:
     maxSize: 3
   label: Custom Style .css file
+pages:
+- data/v/gelsenkirchen.json
