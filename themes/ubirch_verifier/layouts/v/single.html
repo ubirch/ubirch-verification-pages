@@ -28,26 +28,37 @@
 
 {{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
+{{ else if (eq .Params.layout "trafficsignsinventory") }}
+
+{{/* partial "verification-script" (dict "inputids" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) */}}
+{{ partial "verification-script" (dict "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+
+{{ end }}
+
 <div id="verification">
   <div id="form">
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
+      {{ if (eq .Params.layout "coronalaboratory") }}
+
       {{ partial "coronalaboratory.html" . }}
+
+      {{ else if (eq .Params.layout "trafficsignsinventory") }}
+
+      {{ partial "trafficsignsinventory.html" . }}
+
+      {{ end }}
 
       <div id="resutlDiv">
 
         <div id="widgetDiv"></div>
 
-        <input type="submit" name="verify" value="{{ i18n "formfield.button_verify" }}" class="verificationButton buttonHighlightColor">
       </div>
 
     </form>
   </div>
 </div>
-{{ else }}
-For this layout is no form defined!!!
-{{ end }}
 
 {{ partial "about-ubirch-area.html" . }}
 

@@ -18,6 +18,36 @@ other = "test type"
 other = "test result (positive, negative, unknown)"
 [formfield.s]
 other = "random number (secret)"
+[formfield.trafsigninv.ActionReferenceNumber]
+other = "reference number of the certification"
+[formfield.trafsigninv.ActionID]
+other = "internal identity number"
+[formfield.trafsigninv.SpecialUseDesc]
+other = "description of the case"
+[formfield.trafsigninv.PeriodBeginDate]
+other = "start date"
+[formfield.trafsigninv.PeriodBeginTime]
+other = "start time"
+[formfield.trafsigninv.PeriodEndDate]
+other = "end date"
+[formfield.trafsigninv.PeriodEndTime]
+other = "end time"
+[formfield.trafsigninv.PostCode]
+other = "post code"
+[formfield.trafsigninv.City]
+other = "address city"
+[formfield.trafsigninv.District]
+other = "address distict name"
+[formfield.trafsigninv.Street]
+other = "address street name"
+[formfield.trafsigninv.FromHouseNumber]
+other = "starting house number"
+[formfield.trafsigninv.ToHouseNumber]
+other = "ending house number"
+[formfield.trafsigninv.FromCrossroad]
+other = "from crossroad"
+[formfield.trafsigninv.ToCrossroad]
+other = "to crossroad"
 [link.imprint]
 other = "Imprint"
 [link.privacy]

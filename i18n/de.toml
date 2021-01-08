@@ -18,6 +18,36 @@ other = "Testtyp"
 other = "Testergebnis"
 [formfield.s]
 other = "Zufallszahl (Secret)"
+[formfield.trafsigninv.ActionReferenceNumber]
+other = "Maßnahmennummer / Aktenzeichen"
+[formfield.trafsigninv.ActionID]
+other = "eindeutige ID der Maßnahme"
+[formfield.trafsigninv.SpecialUseDesc]
+other = "Art der Sondernutzung"
+[formfield.trafsigninv.PeriodBeginDate]
+other = "Zeitraum Beginn (Datum)"
+[formfield.trafsigninv.PeriodBeginTime]
+other = "Zeitraum Beginn (Uhrzeit)"
+[formfield.trafsigninv.PeriodEndDate]
+other = "Zeitraum Ende (Datum)"
+[formfield.trafsigninv.PeriodEndTime]
+other = "Zeitraum Ende (Uhrzeit)"
+[formfield.trafsigninv.PostCode]
+other = "Postleitzahl"
+[formfield.trafsigninv.City]
+other = "Ort"
+[formfield.trafsigninv.District]
+other = "Ortsteil"
+[formfield.trafsigninv.Street]
+other = "Straße"
+[formfield.trafsigninv.FromHouseNumber]
+other = "Hausnummer von"
+[formfield.trafsigninv.ToHouseNumber]
+other = "Hausnummer bis"
+[formfield.trafsigninv.FromCrossroad]
+other = "von (Querstraße)"
+[formfield.trafsigninv.ToCrossroad]
+other = "bis (Querstraße)"
 [link.imprint]
 other = "Impressum"
 [link.privacy]

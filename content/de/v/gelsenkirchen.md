@@ -1,10 +1,10 @@
 +++
 company_slogan = ""
 imprint_link = ""
-layout = "coronalaboratory"
+layout = "trafficsignsinventory"
 privacy_link = ""
 title = "gelsenkirchen"
-verification_description_long = ""
+verification_description_long = "Sie haben einen QR-Code gescannt und können diesen Eintrag jetzt verifizieren lassen."
 verification_summary = ""
 
 +++
