@@ -48,3 +48,4 @@ fields:
   description: Layout of Corona laboratory verification pages will always be "coronalaboratory"
 pages:
 - content/de/v/gelsenkirchen.md
+- content/en/v/ubirch.md
