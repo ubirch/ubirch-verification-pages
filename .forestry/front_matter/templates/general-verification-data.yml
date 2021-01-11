@@ -28,6 +28,11 @@ fields:
     maxSize: 1
   label: favicon of Company Logo
   description: favicon from Logo of the company/tenant
+- name: show_ubirch_info
+  type: text
+  config:
+    required: true
+  label: Show ubirch info or not
 - name: custom_styles
   type: file
   config:
