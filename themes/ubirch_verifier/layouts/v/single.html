@@ -32,6 +32,10 @@
 
 {{ partial "verification-script" (dict "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
+{{ else if (eq .Params.layout "vaccinationcertificate") }}
+
+{{ partial "verification-script" (dict "formIdMapping" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+
 {{ end }}
 
 <div id="verification">

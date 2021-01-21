@@ -48,6 +48,25 @@ other = "Hausnummer bis"
 other = "von (Querstraße)"
 [formfield.trafsigninv.ToCrossroad]
 other = "bis (Querstraße)"
+[formfield.vaccinationCert.f]
+other = "Name"
+[formfield.vaccinationCert.g]
+other = "Vorname"
+[formfield.vaccinationCert.b]
+other = "Geburtsdatum"
+[formfield.vaccinationCert.p]
+other = "Ausweis-Nr."
+[formfield.vaccinationCert.i]
+other = "ImpfZentrum-Nr"
+[formfield.vaccinationCert.d]
+other = "Datum Impfung"
+[formfield.vaccinationCert.t]
+other = "Typ"
+[formfield.vaccinationCert.r]
+other = "Impfstoff"
+[formfield.vaccinationCert.s]
+other = "Zufallszahl"
+
 [link.imprint]
 other = "Impressum"
 [link.privacy]
