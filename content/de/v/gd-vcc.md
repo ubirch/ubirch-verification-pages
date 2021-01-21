@@ -1,6 +1,5 @@
 +++
 company_slogan = ""
-draft = true
 imprint_link = ""
 layout = "coronalaboratory"
 privacy_link = ""
