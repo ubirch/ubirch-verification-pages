@@ -39,5 +39,6 @@ fields:
     maxSize: 3
   label: Custom Style .css file
 pages:
+- data/v/gd-vcc.json
 - data/v/gelsenkirchen.json
 - data/v/ubirch.json
