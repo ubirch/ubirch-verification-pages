@@ -34,7 +34,7 @@
 
 {{ else if (eq .Params.layout "vaccinationcertificate") }}
 
-{{ partial "verification-script" (dict "formIdMapping" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ partial "verification-script" (dict "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
 {{ end }}
 
@@ -50,6 +50,10 @@
       {{ else if (eq .Params.layout "trafficsignsinventory") }}
 
       {{ partial "trafficsignsinventory.html" . }}
+
+      {{ else if (eq .Params.layout "vaccinationcertificate") }}
+
+      {{ partial "vaccinationcertificate.html" . }}
 
       {{ end }}
 

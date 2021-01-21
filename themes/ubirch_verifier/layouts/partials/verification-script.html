@@ -27,6 +27,7 @@
       const genJson = ubirchVerification.getJsonFromInputs(document);
       ubirchVerification.verifyJSON(genJson);
     } catch (e) {
+      console.log("Fehler! " + e);
       // TODO: error handling
     }
   }
