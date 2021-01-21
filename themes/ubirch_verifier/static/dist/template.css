@@ -44,8 +44,8 @@ main{
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-            "titleCard"
             "verification"
+            "titleCard"
             "textArea";
 
 }
