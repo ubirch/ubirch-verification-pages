@@ -1,4 +1,4 @@
-baseURL = "https://verify.govdigital.de/"
+baseURL = "@@VERIFICATION_HUGO_BASE_URL@@"
 defaultContentLanguage = "de"
 theme = "ubirch_verifier"
 
@@ -23,4 +23,4 @@ title = "Verification"
 unsafe = true
 
 [params]
-verificationScriptUrl = "http://localhost:9101/libs/verification/verification.js"
+verificationScriptUrl = "@@VERIFICATION_SCRIPT_URL@@"
