@@ -24,11 +24,6 @@
 </div>
 {{ end }}
 
-{{ block "verificationjs" . }}
-{{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
-<script src="http://localhost:9101/libs/verification/verification.js"></script>
-{{ end }}
-
 {{ if (eq .Params.layout "coronalaboratory") }}
 
 {{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
