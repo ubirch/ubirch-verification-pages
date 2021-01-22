@@ -23,4 +23,8 @@ For the different stages please
     - https://console.dev.ubirch.com/libs/verification/verification.js
     - https://console.demo.ubirch.com/libs/verification/verification.js
 
+  * @@SHOW_DEMO_DISCLAIMER@@
+    On some pages (e.g. /v/gd-vcc) a demo disclaimer can be displayed across the form.
+    To activate it set this Parameter to "demo" otherwise to "none"
+
 2. Replace <code>config.toml</code> with <code>config.prod.toml</code>
