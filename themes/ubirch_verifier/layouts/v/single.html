@@ -47,6 +47,11 @@
 <div id="verification">
 
   <div id="form">
+    {{ if eq $.Site.BaseURL "https://verification.dev.ubirch.com" }}
+    <div id="demo-disclaimer">
+      <p>DEMO</p>
+    </div>
+    {{ end }}
     {{ if eq $.Site.Params.disclaimer "demo" }}
     <div id="demo-disclaimer">
       <p>DEMO</p>
