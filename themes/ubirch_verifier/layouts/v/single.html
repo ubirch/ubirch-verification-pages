@@ -47,7 +47,8 @@
 <div id="verification">
 
   <div id="form">
-    {{ if (eq $.Site.Params.demoDisclaimer "demo") }}
+    <p style="font-size: 40px;">{{ $.Site.Params.demoDisclaimer }}</p>
+    {{ if eq $.Site.Params.demodisclaimer "demo" }}
     <div id="demo-disclaimer">
       <p>DEMO</p>
     </div>
