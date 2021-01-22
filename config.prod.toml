@@ -1,4 +1,4 @@
-baseURL = "@@VERIFICATION_HUGO_BASE_URL@@"
+baseURL = "https://__VERIFICATION_HUGO_BASE_URL__"
 defaultContentLanguage = "de"
 theme = "ubirch_verifier"
 
@@ -23,4 +23,4 @@ title = "Verification"
 unsafe = true
 
 [params]
-verificationScriptUrl = "@@VERIFICATION_SCRIPT_URL@@"
+verificationScriptUrl = "https://__VERIFICATION_SCRIPT_URL__"
