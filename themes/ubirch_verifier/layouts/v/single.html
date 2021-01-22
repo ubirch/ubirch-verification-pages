@@ -47,12 +47,9 @@
 <div id="verification">
 
   <div id="form">
-    <p style="font-size: 40px;">{{ $.Site.Params.demoDisclaimer }}</p>
-    {{ if eq $.Site.Params.demodisclaimer "demo" }}
     <div id="demo-disclaimer">
       <p>DEMO</p>
     </div>
-    {{ end }}
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
       {{ if (eq .Params.layout "coronalaboratory") }}
