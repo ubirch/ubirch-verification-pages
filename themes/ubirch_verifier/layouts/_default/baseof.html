@@ -39,7 +39,7 @@
 </head>
 
 <body>
-{{ if isset $.Site.Params "demo-disclaimer" }}
+{{ if (eq $.Site.Params.demoDisclaimer "true") }}
   <div id="demo-disclaimer"></div>
 {{ end }}
 
