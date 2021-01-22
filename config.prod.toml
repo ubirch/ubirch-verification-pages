@@ -24,4 +24,4 @@ unsafe = true
 
 [params]
 verificationScriptUrl = "https://__VERIFICATION_SCRIPT_URL__"
-demoDisclaimer = "@@SHOW_DEMO_DISCLAIMER@@"
+demoDisclaimer = "__VERIFICATION_SCRIPT_URL__"
