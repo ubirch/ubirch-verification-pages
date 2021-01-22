@@ -254,6 +254,18 @@ main{
     color: var(--footer-highlight-color);
 }
 
+#demo-disclaimer{
+    position: absolute;
+    width: 75%;
+    height: 100%;
+}
+
+#demo-disclaimer p{
+    color: rgba(255, 0, 0, 0.6);
+    transform: rotate(75deg);
+    font-size: 25rem;
+}
+
 @media (min-width: 600px) {
     :root {
         font-size: 6px;
@@ -277,6 +289,18 @@ main{
                 "titleCard titleCard"
                 "verification textArea"
 
+    }
+    #demo-disclaimer{
+        position: absolute;
+        top: 50%;
+        width: 75%;
+        height: 100%;
+    }
+
+    #demo-disclaimer p{
+        color: rgba(255, 0, 0, 0.6);
+        transform: rotate(45deg);
+        font-size: 25rem;
     }
 }
 
@@ -355,5 +379,18 @@ main{
 
     .footerLink:hover{
         color: var(--footer-highlight-color);
+    }
+
+    #demo-disclaimer{
+        position: absolute;
+        top: 35%;
+        width: 75%;
+        height: 100%;
+    }
+
+    #demo-disclaimer p{
+        color: rgba(255, 0, 0, 0.6);
+        transform: rotate(45deg);
+        font-size: 45rem;
     }
 }

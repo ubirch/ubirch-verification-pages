@@ -24,4 +24,4 @@ unsafe = true
 
 [params]
 verificationScriptUrl = "http://localhost:9101/libs/verification/verification.js"
-demoDisclaimer = "false"
+demoDisclaimer = "true"

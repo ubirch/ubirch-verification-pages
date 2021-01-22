@@ -21,6 +21,7 @@
 
 {{ define "main" }}
 
+
 {{ with .Params.verification_description_long }}
 <div id="titleCard">
   <p>
@@ -44,8 +45,13 @@
 {{ end }}
 
 <div id="verification">
-  <div id="form">
 
+  <div id="form">
+    {{ if (eq $.Site.Params.demoDisclaimer "true") }}
+    <div id="demo-disclaimer">
+      <p>DEMO</p>
+    </div>
+    {{ end }}
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
       {{ if (eq .Params.layout "coronalaboratory") }}
