@@ -40,6 +40,10 @@
 </head>
 
 <body>
+{{ if isset $.Site.Params "demo-disclaimer" }}
+  <div id="demo-disclaimer"></div>
+{{ end }}
+
 <div id="page-content">
 	{{ block "header" . }}
   {{ partial "site-header.html" .}}
