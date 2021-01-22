@@ -23,5 +23,5 @@ title = "Verification"
 unsafe = true
 
 [params]
-verificationScriptUrl = "@@VERIFICATION_SCRIPT_URL@@"
+verificationScriptUrl = "https://__VERIFICATION_SCRIPT_URL__"
 demo-disclaimer = "@@SHOW_DEMO_DISCLAIMER@@"

@@ -34,8 +34,7 @@
 	{{ end }}
 
   {{ block "verificationjs" . }}
-  {{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
-  <script src="https://console.prod.ubirch.com/libs/verification/verification.js"></script>
+  <script src="{{ $.Site.Params.verificationScriptURL }}"></script>
   {{ end }}
 </head>
 
