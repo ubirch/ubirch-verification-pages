@@ -33,12 +33,17 @@ fields:
   config:
     required: true
   label: Show ubirch info or not
+- name: access_token
+  type: text
+  config:
+    required: false
+  label: (optional) Access Token to use the ubirch verification (version 2) -
 - name: custom_styles
   type: file
   config:
     maxSize: 3
   label: Custom Style .css file
 pages:
+- data/v/gd.json
 - data/v/gd-vcc.json
 - data/v/gelsenkirchen.json
-- data/v/ubirch.json
