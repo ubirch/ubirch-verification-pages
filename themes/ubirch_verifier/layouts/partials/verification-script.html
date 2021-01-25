@@ -12,7 +12,10 @@
     {{ with .formIdMapping }}
       paramsFormIdsMapping: {{ . }},
     {{ end }}
-      formIds: {{ .inputids }}
+    {{ with .accessToken }}
+    accessToken: {{ . }},
+    {{ end }}
+    formIds: {{ .inputids }}
 
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);

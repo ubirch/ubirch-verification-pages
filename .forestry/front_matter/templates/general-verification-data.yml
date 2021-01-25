@@ -48,9 +48,9 @@ fields:
       - test
       source:
         type: simple
-        section: 
-        file: 
-        path: 
+        section:
+        file:
+        path:
     label: stage
     description: on which stage is this data anchored?
   - name: token
@@ -60,9 +60,9 @@ fields:
     label: token
     description: UUID containing the tokenID
   config:
-    min: 
-    max: 
-    labelField: 
+    min:
+    max:
+    labelField:
   label: "(optional) Access Token to use the ubirch verification (version 2) -"
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
