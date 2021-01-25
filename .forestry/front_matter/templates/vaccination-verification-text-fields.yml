@@ -1,5 +1,5 @@
 ---
-label: laboratory-verification-text-fields
+label: vaccination-verification-text-fields
 hide_body: true
 fields:
 - name: title
@@ -43,9 +43,8 @@ fields:
   config:
     required: false
   label: layout
-  default: coronalaboratory
+  default: vaccinationcertificate
   hidden: true
-  description: Layout of Corona laboratory verification pages will always be "coronalaboratory"
+  description: Layout of vaccination certificate verification pages will always be "vaccinationcertificate"
 pages:
-- content/de/v/gd.md
-- content/de/v/gelsenkirchen.md
+- content/de/v/gd-vcc.md
