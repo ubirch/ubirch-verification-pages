@@ -33,17 +33,47 @@ fields:
   config:
     required: true
   label: Show ubirch info or not
-- name: access_token
-  type: text
-  config:
-    required: false
-  label: (optional) Access Token to use the ubirch verification (version 2) -
 - name: custom_styles
   type: file
   config:
     maxSize: 3
   label: Custom Style .css file
+- name: access_token
+  type: field_group_list
+  fields:
+  - name: stage
+    type: select
+    default: prod
+    config:
+      required: false
+      options:
+      - dev
+      - demo
+      - prod
+      - test
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: stage
+    description: on which stage is this data anchored?
+  - name: token
+    type: text
+    config:
+      required: false
+    label: token
+    description: UUID containing the tokenID
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: "(optional) Access Token to use the ubirch verification (version 2) -"
+  description: "(optional) Access Token to use the ubirch verification (version 2)
+    - get it from the one that anchored the data you want to verify"
+  hidden: false
 pages:
-- data/v/gd.json
 - data/v/gd-vcc.json
+- data/v/gd.json
 - data/v/gelsenkirchen.json
+- data/v/ubirch.json
