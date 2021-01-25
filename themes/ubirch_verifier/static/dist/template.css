@@ -258,6 +258,11 @@ main{
     position: absolute;
     width: 75%;
     height: 100%;
+  visibility: hidden;
+}
+
+div#demo-disclaimer.demo {
+  visibility: visible;
 }
 
 #demo-disclaimer p{
