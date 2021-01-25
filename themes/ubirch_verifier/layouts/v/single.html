@@ -43,6 +43,7 @@
 {{ else if (eq .Params.layout "vaccinationcertificate") }}
 
 {{ $stage := $.Site.Params.stage }}
+<h1>stage: {{ $stage }}</h1>
 
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
