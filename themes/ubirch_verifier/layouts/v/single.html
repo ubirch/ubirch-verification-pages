@@ -14,12 +14,15 @@
 {{ partial "page-header.html" . }}
 {{ end }}
 
-{{ define "main" }}
-
+{{ define "verificationjs" }}
 {{ if eq .Params.layout "vaccinationcertificate" }}
-{{ partial "verification-v2-script-include" . }}
+<script src="{{ $.Site.Params.verificationV2ScriptUrl }}"></script>
+{{ else }}
+<script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
+{{ end }}
 {{ end }}
 
+{{ define "main" }}
 
 {{ with .Params.verification_description_long }}
 <div id="titleCard">
