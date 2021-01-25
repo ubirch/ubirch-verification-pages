@@ -42,17 +42,14 @@
 
 {{ else if (eq .Params.layout "vaccinationcertificate") }}
 
-{{ $stage := $.Site.Params.stage }}
-<h1>stage: {{ $stage }}</h1>
-
+<input id="deploymentStage" hidden value="{{ $.Site.Params.stage }}">
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
+
 {{ with $staticData }}
-{{ range .access_token }}
-{{ if eq .stage $stage }}
-{{ partial "verification-script" (dict "accessToken" .token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
-{{ end }}
-{{ end }}
+
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+
 {{ end }}
 
 {{ end }}

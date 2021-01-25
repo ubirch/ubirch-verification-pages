@@ -1,3 +1,7 @@
+{{ define "verificationjs" }}
+<script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
+{{ end }}
+
 <script>
   let ubirchVerification;
   document.addEventListener("DOMContentLoaded", function() {
@@ -11,9 +15,6 @@
       language: "{{ .language }}",
     {{ with .formIdMapping }}
       paramsFormIdsMapping: {{ . }},
-    {{ end }}
-    {{ with .accessToken }}
-    accessToken: {{ . }},
     {{ end }}
     formIds: {{ .inputids }}
 
