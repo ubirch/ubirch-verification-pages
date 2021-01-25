@@ -45,6 +45,7 @@ fields:
   label: layout
   default: vaccinationcertificate
   hidden: true
-  description: Layout of vaccination certificate verification pages will always be "vaccinationcertificate"
+  description: Layout of vaccination certificate verification pages will always be
+    "vaccinationcertificate"
 pages:
 - content/de/v/gd-vcc.md
