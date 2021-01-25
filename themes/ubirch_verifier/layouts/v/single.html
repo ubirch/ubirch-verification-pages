@@ -47,14 +47,10 @@
 <div id="verification">
 
   <div id="form">
-    <div id="demo-disclaimer">
+    <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
       <p>DEMO</p>
     </div>
-    {{ if eq $.Site.Params.disclaimer "demo" }}
-    <div id="demo-disclaimer">
-      <p>DEMO</p>
-    </div>
-    {{ end }}
+
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
       {{ if (eq .Params.layout "coronalaboratory") }}
