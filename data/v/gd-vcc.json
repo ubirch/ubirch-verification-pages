@@ -4,5 +4,11 @@
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": "true",
-  "custom_styles": ""
+  "custom_styles": "",
+  "access_token": [
+    {
+      "stage": "dev",
+      "token": "c5e10ccc-43ed-408b-b11c-444e5290b4d5"
+    }
+  ]
 }
