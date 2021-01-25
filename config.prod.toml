@@ -23,6 +23,7 @@ title = "Verification"
 unsafe = true
 
 [params]
+stage = "__DEPLOYMENT_STAGE__"
 verificationScriptUrl = "https://__VERIFICATION_SCRIPT_URL__"
 verificationV2ScriptUrl = "https://__VERIFICATION_V2_SCRIPT_URL__"
 disclaimer = "__SHOW_DEMO_DISCLAIMER__"

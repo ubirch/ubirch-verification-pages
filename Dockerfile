@@ -10,7 +10,8 @@ ENV \
     VERIFICATION_HUGO_BASE_URL=https://verify.govdigital.de/ \
     VERIFICATION_SCRIPT_URL=https://console.prod.ubirch.com/libs/verification/verification.js \
     VERIFICATION_V2_SCRIPT_URL=https://console.prod.ubirch.com/libs/verification/verification-v2.js \
-    SHOW_DEMO_DISCLAIMER=none
+    SHOW_DEMO_DISCLAIMER=none \
+    DEPLOYMENT_STAGE=prod
 
 COPY docker/replace-markers.sh /docker-entrypoint.d/
 COPY --from=builder /app/public/ /usr/share/nginx/html/
