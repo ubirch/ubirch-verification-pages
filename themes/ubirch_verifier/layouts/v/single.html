@@ -14,12 +14,11 @@
 {{ partial "page-header.html" . }}
 {{ end }}
 
-{{ define "verificationjs" }}
-{{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
-<script src="{{ .Site.Params.verificationScriptUrl }}"></script>
-{{ end }}
-
 {{ define "main" }}
+
+{{ if eq .Params.layout "vaccinationcertificate" }}
+{{ partial "verification-v2-script-include" . }}
+{{ end }}
 
 
 {{ with .Params.verification_description_long }}
