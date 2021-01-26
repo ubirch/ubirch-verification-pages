@@ -4,5 +4,15 @@
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": "true",
-  "custom_styles": ""
+  "custom_styles": "",
+  "access_token": [
+    {
+      "stage": "dev",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiNTlkZWY2NmEtNWM3OS00ZmFiLTkwZDctMzEwNmZmODRiZDI4IiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE3Mzc4MjQ0MTgsIm5iZiI6MTYxMTU5MDQxOSwiaWF0IjoxNjExNTk0MDU0LCJqdGkiOiI0MjI0MTY2NS1iN2M0LTQzMzAtOWIwMC0xNzNkMjk0ZDQxYjYiLCJwdXJwb3NlIjoiY2VydGlmeSIsInRhcmdldF9pZGVudGl0aWVzIjpbIjAzZWJkNTE4LThiMDktNDVlYy1hMDM5LTYwNGZjOGE5ZTY4NyIsImNmOTNmOWVlLThiZjQtNGNjMS1iNzE1LTdiZjQxZDg4ZTYxNiJdLCJyb2xlIjoidmVyaWZpZXIiLCJzY29wZSI6InZlciJ9.4dmXGuyIGT2IgEaMXJRnKORCXsf8OH1KoC9-6NvUtqvuh04a7DBZSC-r-dZ3jpL5RPq2IUfMg_hUqrM1tQscAw"
+    },
+    {
+      "stage": "prod",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLnByb2QudWJpcmNoLmNvbSIsInN1YiI6ImE0MWZiYjgxLWVkOTktNDY5My1hMGE4LWMxMjViMjQ0YmZkMyIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LnByb2QudWJpcmNoLmNvbSIsImV4cCI6MTczNzg0ODAyNiwibmJmIjoxNjExNTMxMjI3LCJpYXQiOjE2MTE2MTc2NTQsImp0aSI6Ijg3MjYzYTIzLTgzNTItNDdmZC05YTQ5LWViY2FhNzcyNDgzYSIsInB1cnBvc2UiOiJWYWMtQ2VydGlmaWNhdGlvbiIsInRhcmdldF9pZGVudGl0aWVzIjpbIjdhZjU1YTg5LWQ5YTAtNDkyOS1iNWFhLTFiMTY1N2IwNmE1NiIsIjgyOWQ0NmViLTA4OTAtNGM4NC1iOTYwLWZiYjhkYjRkN2UxNCJdLCJyb2xlIjoidmVyaWZpZXIiLCJzY29wZSI6InZlciJ9.1Rov_Oa5C70sghK5W1R_aESKLTmYskrROLQaDS0Qt6ev5P53-DOUT5Ut51BRhghTTprdPf_yDfJh5HgE3oP29Q"
+    }
+  ]
 }

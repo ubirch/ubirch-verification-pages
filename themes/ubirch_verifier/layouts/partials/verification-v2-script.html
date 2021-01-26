@@ -1,0 +1,61 @@
+<script>
+  let ubirchVerification;
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log("Version 2.0");
+
+    // create UbirchVerification instance
+    ubirchVerification = new UbirchFormVerification({
+      algorithm: "{{ .hashalgorithm }}",
+      elementSelector: '#widgetDiv',
+      NO_LINK_TO_CONSOLE: true,
+      CHECK_FORM_FILLED: false,
+      language: "{{ .language }}",
+      accessToken: parseToken(),
+    {{ with .formIdMapping }} paramsFormIdsMapping: {{ . }}, {{ end }}
+    formIds: {{ .inputids }}
+
+    });
+    var paramStr = ubirchVerification.getFormParamsFromUrl(window);
+    if (paramStr) {
+
+      ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");
+      verifyForm();
+    }
+  });
+
+  function parseToken() {
+    const deploymentStage = document.getElementById('deploymentStage') ? document.getElementById('deploymentStage').value : undefined;
+    if (!deploymentStage) {
+      throw new Error('Please set stage parameter in project config!!');
+    }
+
+    const accessTokensVal = '{{ .accessTokens }}';
+    if (!accessTokensVal) {
+      throw new Error('Please provide accessTokens to use version 2 of verification widget with token support!!');
+    }
+
+    let accessToken = undefined;
+
+    const keyIndex = accessTokensVal.indexOf('stage:' + deploymentStage + ' token:');
+    if (keyIndex > -1) {
+      const valIndex = accessTokensVal.indexOf(' token:', keyIndex) + 7;
+      const valEndIndex = accessTokensVal.indexOf(']', valIndex);
+      accessToken = accessTokensVal.substr(valIndex, valEndIndex - valIndex);
+    }
+
+    if (!accessToken || accessToken.length === 0){
+      throw new Error(`Please provide accessToken for stage ${deploymentStage}!!`);
+    }
+    return accessToken;
+  }
+
+  function verifyForm() {
+    try {
+      const genJson = ubirchVerification.getJsonFromInputs(document);
+      ubirchVerification.verifyJSON(genJson);
+    } catch (e) {
+      console.log("Fehler! " + e);
+      // TODO: error handling
+    }
+  }
+</script>

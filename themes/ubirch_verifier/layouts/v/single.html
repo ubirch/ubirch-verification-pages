@@ -15,12 +15,14 @@
 {{ end }}
 
 {{ define "verificationjs" }}
-{{/* NOTE: change this in you template if you want to verify to another stage than prod */}}
-<script src="{{ .Site.Params.verificationScriptUrl }}"></script>
+{{ if eq .Params.layout "vaccinationcertificate" }}
+<script src="{{ $.Site.Params.verificationV2ScriptUrl }}"></script>
+{{ else }}
+<script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
+{{ end }}
 {{ end }}
 
 {{ define "main" }}
-
 
 {{ with .Params.verification_description_long }}
 <div id="titleCard">
@@ -40,21 +42,25 @@
 
 {{ else if (eq .Params.layout "vaccinationcertificate") }}
 
-{{ partial "verification-script" (dict "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+<input id="deploymentStage" hidden value="{{ $.Site.Params.stage }}">
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+
+{{ with $staticData }}
+
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+
+{{ end }}
 
 {{ end }}
 
 <div id="verification">
 
   <div id="form">
-    <div id="demo-disclaimer">
+    <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
       <p>DEMO</p>
     </div>
-    {{ if eq $.Site.Params.disclaimer "demo" }}
-    <div id="demo-disclaimer">
-      <p>DEMO</p>
-    </div>
-    {{ end }}
+
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
       {{ if (eq .Params.layout "coronalaboratory") }}

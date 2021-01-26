@@ -1,3 +1,7 @@
+{{ define "verificationjs" }}
+<script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
+{{ end }}
+
 <script>
   let ubirchVerification;
   document.addEventListener("DOMContentLoaded", function() {
@@ -12,7 +16,7 @@
     {{ with .formIdMapping }}
       paramsFormIdsMapping: {{ . }},
     {{ end }}
-      formIds: {{ .inputids }}
+    formIds: {{ .inputids }}
 
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
