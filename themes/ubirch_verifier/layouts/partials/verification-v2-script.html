@@ -17,9 +17,13 @@
     });
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {
-
-      ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");
-      verifyForm();
+        // TODO this check is just temporary has to be replaced with something more solid
+        if (paramStr.match(/\/%3E/) || paramStr.match(/%3E/) ||  paramStr.match(/%22\//g) || paramStr.match(/%22/g)){
+            console.log('verbotenes Sonderzeichen entdeckt')
+        }else{
+            ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");
+            verifyForm();
+        }
     }
   });
 
