@@ -53,10 +53,18 @@
 {{ end }}
 
 {{ end }}
-
 <div id="verification">
+  <div id="errorDiv" style="display: none">
+    <div id="errorTextContainer">
+      <p id="errorTitle">
+      </p>
+      <p id="errorP">
+      </p>
+    </div>
+  </div >
 
   <div id="form">
+
     <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
       <p>DEMO</p>
     </div>

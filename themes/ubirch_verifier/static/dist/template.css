@@ -117,22 +117,24 @@ main{
 }
 
 #verification {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     grid-area: verification;
     display: grid;
     grid-gap: 0.5rem;
-    grid-template-columns: 3rem auto 3rem;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas:
-                ".  form     .";
 }
 
 #verification #form {
-    grid-area: form;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 90%;
+    align-self: center;
+    justify-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 #verification .formLabel {
@@ -141,6 +143,8 @@ main{
 }
 
 #verification .formInput {
+    height: auto;
+    overflow:auto;
     font-size: 3rem;
     width: calc(100% - 2px);
     overflow-clip: true;
@@ -148,6 +152,7 @@ main{
     border: none;
     border-bottom: 1px solid var(--form-input-underline-color);
     transition: border-bottom ease-in-out 75ms;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
