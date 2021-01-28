@@ -8,13 +8,13 @@
       algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#widgetDiv',
       NO_LINK_TO_CONSOLE: true,
-      CHECK_FORM_FILLED: false,
       language: "{{ .language }}",
       accessToken: parseToken(),
-    {{ with .formIdMapping }} paramsFormIdsMapping: {{ . }}, {{ end }}
-    formIds: {{ .inputids }}
-
+      {{ with .formIdMapping }} paramsFormIdsMapping: {{ . }}, {{ end }}
+      {{ with .optionalFormFieldIds }} optionalFormFieldIds: {{ . }}, {{ end }}
+      formIds: {{ .inputids }}
     });
+
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {
       ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");

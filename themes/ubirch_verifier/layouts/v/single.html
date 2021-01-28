@@ -48,7 +48,7 @@
 
 {{ with $staticData }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "optionalFormFieldIds" (slice "p") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
 {{ end }}
 
