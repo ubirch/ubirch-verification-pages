@@ -59,14 +59,28 @@
       console.log(e);
 
       switch (e.code){
-          case 20: {
+          case 'VERIFICATION_CURRENTLY_UNAVAILABLE': {
+              errorTitle.innerText = "Fehler!"
+              errorP.innerText = "Die Verifizierung ist zur Zeit leider nicht möglich. Versuchen sie es später noch einmal.";
+              errorDiv.setAttribute('style', 'visibility: visible')
+              errorDiv.classList.add('error');
+              break;
+          }
+          case 'JSON_MALFORMED': {
+              errorTitle.innerText = "Fehler!"
+              errorP.innerText = "Es wurden unerwartete Zeichen in den Parametern gefunden.";
+              errorDiv.setAttribute('style', 'visibility: visible')
+              errorDiv.classList.add('error');
+              break;
+          }
+          case 'URL_PARAMS_CORRUPT': {
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Die URL Parameter scheinen fehlerhaft zu sein.";
               errorDiv.setAttribute('style', 'visibility: visible')
               errorDiv.classList.add('error');
               break;
           }
-          case 26: {
+          case 'MANDATORY_FIELD_MISSING': {
               console.log(25)
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Nicht alle Pflichtfelder wurden gesetzt.";
@@ -74,35 +88,28 @@
               errorDiv.classList.add('error');
               break;
           }
-          case 27: {
+          case 'FILLING_FORM_WITH_PARAMS_FAILED': {
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Beim Befüllen des Formulars ist ein Fehler aufgetreten.";
               errorDiv.setAttribute('style', 'visibility: visible')
               errorDiv.classList.add('error');
               break;
           }
-          case 30: {
+          case 'JSON_PARSE_FAILED': {
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Beim Umwandeln der Daten ist ein Fehler aufgetreten.";
               errorDiv.setAttribute('style', 'visibility: visible')
               errorDiv.classList.add('error');
               break;
           }
-          case 31: {
-              errorTitle.innerText = "Fehler!"
-              errorP.innerText = "Es wurden unerwartete Zeichen in den Parametern gefunden.";
-              errorDiv.setAttribute('style', 'visibility: visible')
-              errorDiv.classList.add('error');
-              break;
-          }
-          case 40: {
+          case 'CANNOT_ACCESS_FORM_FIELD': {
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Der Zugriff auf das Formular ist fehlgeschlagen";
               errorDiv.setAttribute('style', 'visibility: visible')
               errorDiv.classList.add('error');
               break;
           }
-          case 99: {
+          case 'UNKNOWN_ERROR': {
               errorTitle.innerText = "Fehler!"
               errorP.innerText = "Es ist ein unerwarteter Fehler aufgetreten.";
               errorDiv.setAttribute('style', 'visibility: visible')
