@@ -103,7 +103,6 @@ main{
 }
 
 #titleCard {
-    display: flex;
     grid-area: titleCard;
     background-color: var(--section1-backround-color);
     justify-items: center;
@@ -111,7 +110,7 @@ main{
 }
 
 #titleCard p {
-    padding: 4rem;
+    padding: 1rem 4rem;
     font-size: 3rem;
     color: var(--section1-text-color);
 }

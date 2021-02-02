@@ -18,11 +18,6 @@ fields:
     required: false
   label: company slogan
   description: optional - if your company has a slogan
-- name: verification_description_long
-  type: text
-  config:
-    required: true
-  label: Description of Verification
 - name: verification_info_text
   type: textarea
   default: ''

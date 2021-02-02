@@ -29,11 +29,9 @@
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
 
-{{ with .Params.verification_description_long }}
+{{ with .Params.verification_info_text }}
 <div id="titleCard">
-  <p>
-    {{ . }}
-  </p>
+    {{ . | markdownify }}
 </div>
 {{ end }}
 
