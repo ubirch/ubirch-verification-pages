@@ -21,8 +21,20 @@ fields:
 - name: verification_description_long
   type: text
   config:
-    required: false
+    required: true
   label: Description of Verification
+- name: verification_info_text
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Verification Info Text
+  description: A short description of what a user that opens the page actually sees.
+    Have to be provided in all requested languages. Can be defined as markdown or
+    plain text
 - name: imprint_link
   type: text
   config:
