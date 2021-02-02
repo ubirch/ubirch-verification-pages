@@ -4,6 +4,7 @@
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": "true",
+  "layout": "vaccinationcertificate",
   "custom_styles": "",
   "access_token": [
     {

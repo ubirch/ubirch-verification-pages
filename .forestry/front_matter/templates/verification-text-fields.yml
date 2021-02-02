@@ -35,18 +35,6 @@ fields:
     required: false
   label: optional - link to the privacy page of tenant in the right language; default
     is the govdigital privacy page (only available in german language)
-- name: layout
-  type: text
-  config:
-    required: true
-    options:
-    - coronalaboratory
-    - vaccinationcertificate
-    - trafficsignsinventory
-  label: layout
-  default: coronalaboratory
-  description: Layout of the verification form - defines which form fields this verification
-    provides; default is "coronalaboratory"
 pages:
 - content/de/v/gd-vcc.md
 - content/de/v/gd.md

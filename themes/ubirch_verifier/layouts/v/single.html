@@ -15,7 +15,10 @@
 {{ end }}
 
 {{ define "verificationjs" }}
-{{ if eq .Params.layout "vaccinationcertificate" }}
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
+
+{{ if eq $staticData.layout "vaccinationcertificate" }}
 <script src="{{ $.Site.Params.verificationV2ScriptUrl }}"></script>
 {{ else }}
 <script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
@@ -23,6 +26,8 @@
 {{ end }}
 
 {{ define "main" }}
+{{ $company := substr $.File.LogicalName 0 -3 }}
+{{ $staticData := (index .Site.Data.v $company) }}
 
 {{ with .Params.verification_description_long }}
 <div id="titleCard">
@@ -32,19 +37,17 @@
 </div>
 {{ end }}
 
-{{ if (eq .Params.layout "coronalaboratory") }}
+{{ if (eq $staticData.layout "coronalaboratory") }}
 
 {{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
-{{ else if (eq .Params.layout "trafficsignsinventory") }}
+{{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
 {{ partial "verification-script" (dict "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
-{{ else if (eq .Params.layout "vaccinationcertificate") }}
+{{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
 <input id="deploymentStage" hidden value="{{ $.Site.Params.stage }}">
-{{ $company := substr $.File.LogicalName 0 -3 }}
-{{ $staticData := (index .Site.Data.v $company) }}
 
 {{ with $staticData }}
 
@@ -63,15 +66,15 @@
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
-      {{ if (eq .Params.layout "coronalaboratory") }}
+      {{ if (eq $staticData.layout "coronalaboratory") }}
 
       {{ partial "coronalaboratory.html" . }}
 
-      {{ else if (eq .Params.layout "trafficsignsinventory") }}
+      {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
       {{ partial "trafficsignsinventory.html" . }}
 
-      {{ else if (eq .Params.layout "vaccinationcertificate") }}
+      {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
       {{ partial "vaccinationcertificate.html" . }}
 

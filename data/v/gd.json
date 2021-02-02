@@ -4,5 +4,6 @@
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": "y",
-  "custom_styles": ""
+  "custom_styles": "",
+  "layout": "coronalaboratory"
 }
