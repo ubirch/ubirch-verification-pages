@@ -20,8 +20,15 @@ fields:
   type: file
   config:
     maxSize: 1
-  label: Company Logo
+  label: Company Logo (left)
   description: Logo of the company/tenant
+- name: second_logo
+  type: file
+  config:
+    maxSize: 1
+  label: Second Logo (right, optional)
+  description: Second logo for cooperation - e.g. govdigital, ubirch - shown on the
+    right side
 - name: favicon
   type: file
   config:
@@ -48,9 +55,9 @@ fields:
       - test
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: stage
     description: on which stage is this data anchored?
   - name: token
@@ -60,9 +67,9 @@ fields:
     label: token
     description: UUID containing the tokenID
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: "(optional) Access Token to use the ubirch verification (version 2) -"
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
