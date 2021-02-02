@@ -20,7 +20,7 @@ fields:
   type: file
   config:
     maxSize: 1
-  label: Company Logo (left)
+  label: Company Logo (header)
   description: Logo of the company/tenant
 - name: favicon
   type: file
@@ -28,6 +28,31 @@ fields:
     maxSize: 1
   label: favicon of Company Logo
   description: favicon from Logo of the company/tenant
+- name: cooperation_logos
+  type: field_group_list
+  fields:
+  - name: cooperation_logo
+    type: file
+    config:
+      maxSize: 1
+    label: Logo of the cooperating company or organisation
+  - name: cooperation_name
+    type: text
+    config:
+      required: false
+    label: Name of the cooperating company / organisation
+  - name: link_to_cooperation
+    type: text
+    config:
+      required: false
+    label: link to cooperating company or organisation (optional)
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Cooperation_logos (Footer)
+  description: List of cooperation companies and organisations with logo, name and
+    (optional) external link
 - name: show_ubirch_info
   type: text
   config:
@@ -48,9 +73,9 @@ fields:
       - test
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: stage
     description: on which stage is this data anchored?
   - name: token
@@ -60,9 +85,9 @@ fields:
     label: token
     description: UUID containing the tokenID
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: "(optional) Access Token to use the ubirch verification (version 2) -"
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
@@ -72,6 +97,12 @@ fields:
   config:
     maxSize: 3
   label: Custom Style .css file
+- name: make_form_editable
+  type: boolean
+  label: make form editable
+- name: show_verification_button
+  type: boolean
+  label: show verification button
 pages:
 - data/v/gd-vcc.json
 - data/v/gd.json
