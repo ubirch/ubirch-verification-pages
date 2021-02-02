@@ -1,9 +1,21 @@
 {
   "title": "ubirch",
   "company_name": "Ubirch",
-  "company_logo": "/uploads/ubirch_wort_bildmarke_wonb.jpg",
+  "company_logo": "/uploads/Ubirch_Logo_weiss.svg",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": "y",
   "custom_styles": "/uploads/ubirch_verification.css",
-  "layout": "coronalaboratory"
+  "layout": "coronalaboratory",
+  "cooperation_logos": [
+    {
+      "cooperation_logo": "/uploads/logo-2x.png",
+      "cooperation_name": "govdigital eG",
+      "link_to_cooperation": ""
+    }
+  ],
+  "access_token": [
+
+  ],
+  "make_form_editable": false,
+  "show_verification_button": false
 }
