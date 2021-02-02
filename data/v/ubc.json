@@ -1,0 +1,21 @@
+{
+  "layout": "coronalaboratory",
+  "title": "ubc",
+  "company_name": "UBC COMPOSITES GMBH",
+  "company_logo": "/uploads/ubc-logo-150.png",
+  "favicon": "/uploads/favicon_ubc.ico",
+  "cooperation_logos": [
+    {
+      "cooperation_logo": "/uploads/Ubirch_Logo_weiss.svg",
+      "cooperation_name": "Ubirch GmbH",
+      "link_to_cooperation": ""
+    }
+  ],
+  "show_ubirch_info": "y",
+  "access_token": [
+
+  ],
+  "custom_styles": "",
+  "make_form_editable": false,
+  "show_verification_button": false
+}
