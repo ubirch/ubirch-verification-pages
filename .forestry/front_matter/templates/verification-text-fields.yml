@@ -1,5 +1,5 @@
 ---
-label: vaccination-verification-text-fields
+label: verification-text-fields
 hide_body: true
 fields:
 - name: title
@@ -18,34 +18,34 @@ fields:
     required: false
   label: company slogan
   description: optional - if your company has a slogan
-- name: verification_summary
-  type: text
-  config:
-    required: false
-  label: Summary of Description of Verification
 - name: verification_description_long
   type: text
   config:
     required: false
-  label: Long Description of Verification
+  label: Description of Verification
 - name: imprint_link
   type: text
   config:
     required: false
-  label: Link to the imprint page of tenant in the right language
+  label: optional - link to the imprint page of tenant in the right language; default is the govdigital imprint (only available in german language)
 - name: privacy_link
   type: text
   config:
     required: false
-  label: Link to the privacy page of tenant in the right language
+  label: optional - link to the privacy page of tenant in the right language; default is the govdigital privacy page (only available in german language)
 - name: layout
   type: text
-  config:
-    required: false
+    config:
+      required: true
+      options:
+        - coronalaboratory
+        - vaccinationcertificate
+        - trafficsignsinventory
   label: layout
-  default: vaccinationcertificate
-  hidden: true
-  description: Layout of vaccination certificate verification pages will always be
-    "vaccinationcertificate"
+  default: coronalaboratory
+  description: Layout of the verification form - defines which form fields this verification provides; default is "coronalaboratory"
 pages:
+- content/de/v/gd.md
+- content/de/v/gelsenkirchen.md
+- content/en/v/ubirch.md
 - content/de/v/gd-vcc.md
