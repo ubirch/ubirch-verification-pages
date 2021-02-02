@@ -67,9 +67,10 @@ fields:
   description: Layout of the verification form - defines which form fields this verification
     provides; default is "coronalaboratory"
 - name: show_ubirch_info
-  type: text
+  type: boolean
   config:
     required: true
+  default: true
   label: Show ubirch info or not
 - name: access_token
   type: field_group_list
@@ -112,9 +113,15 @@ fields:
   label: Custom Style .css file
 - name: make_form_editable
   type: boolean
+  config:
+    required: true
+  default: false
   label: make form editable
 - name: show_verification_button
   type: boolean
+  config:
+    required: true
+  default: false
   label: show verification button
 pages:
 - data/v/gd-vcc.json

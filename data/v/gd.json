@@ -3,7 +3,9 @@
   "company_name": "GOVDIGITAL",
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
-  "show_ubirch_info": "y",
+  "show_ubirch_info": true,
   "custom_styles": "",
-  "layout": "coronalaboratory"
+  "layout": "coronalaboratory",
+  "make_form_editable": false,
+  "show_verification_button": false
 }

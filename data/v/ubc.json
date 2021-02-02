@@ -11,7 +11,7 @@
       "link_to_cooperation": ""
     }
   ],
-  "show_ubirch_info": "y",
+  "show_ubirch_info": true,
   "access_token": [
 
   ],
