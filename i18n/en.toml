@@ -48,6 +48,18 @@ other = "ending house number"
 other = "from crossroad"
 [formfield.trafsigninv.ToCrossroad]
 other = "to crossroad"
+[formfield.componentauthenticity.mfr]
+other = "Manufacturer"
+[formfield.componentauthenticity.pn]
+other = "Part Name"
+[formfield.componentauthenticity.sn]
+other = "Serialnummer"
+[formfield.componentauthenticity.md]
+other = "Manufactured at (YYYYMMDD)"
+[formfield.componentauthenticity.mf]
+other = "Manufactured for"
+[formfield.componentauthenticity.tid]
+other = "Tag ID"
 [link.imprint]
 other = "Imprint"
 [link.privacy]

@@ -6,6 +6,7 @@
   "show_ubirch_info": true,
   "layout": "vaccinationcertificate",
   "custom_styles": "",
+  "use_without_access_token": false,
   "access_token": [
     {
       "stage": "dev",

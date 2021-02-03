@@ -12,6 +12,7 @@
     }
   ],
   "show_ubirch_info": true,
+  "use_without_access_token": false,
   "access_token": [
 
   ],

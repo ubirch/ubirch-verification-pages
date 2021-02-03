@@ -13,6 +13,7 @@
       "link_to_cooperation": ""
     }
   ],
+  "use_without_access_token": true,
   "access_token": [
 
   ],

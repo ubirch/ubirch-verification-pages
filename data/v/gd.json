@@ -7,5 +7,6 @@
   "custom_styles": "",
   "layout": "coronalaboratory",
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "use_without_access_token": true
 }
