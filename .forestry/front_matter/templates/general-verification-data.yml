@@ -117,7 +117,7 @@ fields:
   config:
     required: true
   default: false
-  label: If true a DEMO disclaimer will be added the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
+  label: If true a DEMO disclaimer will be added also to productive stage
 - name: custom_styles
   type: file
   config:
