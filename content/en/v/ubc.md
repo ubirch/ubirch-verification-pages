@@ -1,6 +1,6 @@
 +++
 company_slogan = ""
-draft = false
+draft = true
 imprint_link = "https://ubirch.de/en/imprint"
 privacy_link = "https://ubirch.de/en/data-protection"
 title = "ubc"
