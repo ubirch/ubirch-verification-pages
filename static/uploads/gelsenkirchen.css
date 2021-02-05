@@ -1,0 +1,16 @@
+main{
+    grid-template-areas:
+            "titleCard"
+            "verification"
+            "textArea";
+
+}
+
+#titleCard p{
+    padding: 2rem;
+    margin: 0;
+}
+
+#textArea p{
+    padding: 2rem
+}
