@@ -1,0 +1,38 @@
+:root {
+    --title-backround-color: #ffffff;
+    --section1-backround-color: #004898;
+    --section1-text-color: #cdcdcd;
+    --form-backround-color: #ffffff;
+    --form-label-text-color: #4e4e4e;
+    --form-input-underline-color: #000000;
+    --form-button-color: #ffffff;
+    --form-buton-text-color: #000000;
+    --form-button-higlight-text-color: #ffffff;
+    --textArea-backround-color: #e0e0e0;
+    --testArea-text-color: #4e4e4e;
+    --textArea-highlight-color: #ababab;
+    --footer-backround-color: #004898;
+    --footer-text-color: #cdcdcd;
+    --footer-highlight-color: #6b6b6b;
+    --form-accent-color: #004898;
+
+    font-size: 7px;
+}
+
+#header #logo {
+    max-width: 100px;
+}
+
+
+@media (min-width: 600px) {
+    #header #logo {
+        max-width: 150px;
+    }
+}
+
+
+@media only screen and (min-width: 800px) {
+    #header #logo {
+        max-width: 150px;
+    }
+}
