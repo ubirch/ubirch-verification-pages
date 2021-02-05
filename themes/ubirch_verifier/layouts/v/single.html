@@ -26,6 +26,8 @@
 {{ end }}
 
 {{ define "main" }}
+<input id="deploymentStage" hidden value="{{ $.Site.Params.stage }}">
+
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
 
@@ -47,11 +49,17 @@
 
 {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
-<input id="deploymentStage" hidden value="{{ $.Site.Params.stage }}">
-
 {{ with $staticData }}
 
 {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "optionalFormFieldIds" (slice "p") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+
+{{ end }}
+
+{{ else if (eq $staticData.layout "componentauthenticity") }}
+
+{{ with $staticData }}
+
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
 
 {{ end }}
 
@@ -77,6 +85,10 @@
       {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
       {{ partial "vaccinationcertificate.html" . }}
+
+      {{ else if (eq $staticData.layout "componentauthenticity") }}
+
+      {{ partial "componentauthenticity.html" . }}
 
       {{ end }}
 

@@ -112,6 +112,12 @@ fields:
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
   hidden: false
+- name: demo_discaimer
+  type: boolean
+  config:
+    required: true
+  default: false
+  label: If true a DEMO disclaimer will be added the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
 - name: custom_styles
   type: file
   config:
