@@ -71,14 +71,15 @@
 
 <div id="verification">
 
-  <div id="form">
-    {{ if eq $staticData.demo_discaimer true }}
-    <div id="demo-disclaimer" class="demo">
+  {{ if eq $staticData.demo_discaimer true }}
+  <div id="demo-disclaimer" class="demo">
     {{ else }}
     <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
-    {{ end }}
-      <p>DEMO</p>
+      {{ end }}
+      <p>DEMO DEMO DEMO DEMO</p>
     </div>
+
+  <div id="form">
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 

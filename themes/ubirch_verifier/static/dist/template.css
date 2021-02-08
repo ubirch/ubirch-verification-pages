@@ -255,8 +255,8 @@ main{
 
 #demo-disclaimer{
     position: absolute;
-    width: 75%;
-    height: 100%;
+    width: 100%;
+    height: 55%;
   visibility: hidden;
 }
 
@@ -265,14 +265,39 @@ div#demo-disclaimer.demo {
 }
 
 #demo-disclaimer p{
-    color: rgba(255, 0, 0, 0.6);
-    transform: rotate(75deg);
-    font-size: 25rem;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: fragments;
+    color: rgba(255, 0, 0, 0.4);
+    font-size: 15rem;
+    margin: 1rem;
 }
 
-@media (min-width: 600px) {
+@media only screen and (min-width: 600px) {
     :root {
         font-size: 6px;
+    }
+
+    #demo-disclaimer{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        visibility: hidden;
+    }
+
+    #demo-disclaimer p{
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 15rem;
+        line-height: 100%;
+        margin: 1rem;
     }
 
     #page-content {
@@ -294,23 +319,18 @@ div#demo-disclaimer.demo {
                 "verification textArea"
 
     }
-    #demo-disclaimer{
-        position: absolute;
-        top: 50%;
-        width: 75%;
-        height: 100%;
-    }
-
-    #demo-disclaimer p{
-        color: rgba(255, 0, 0, 0.6);
-        transform: rotate(45deg);
-        font-size: 25rem;
-    }
 }
 
 @media only screen and (min-width: 800px) {
     html {
         justify-self: center;
+    }
+
+    #demo-disclaimer{
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        visibility: hidden;
     }
 
     #page-content {
@@ -385,16 +405,14 @@ div#demo-disclaimer.demo {
         color: var(--footer-highlight-color);
     }
 
-    #demo-disclaimer{
-        position: absolute;
-        top: 35%;
-        width: 75%;
-        height: 100%;
-    }
-
     #demo-disclaimer p{
-        color: rgba(255, 0, 0, 0.6);
-        transform: rotate(45deg);
-        font-size: 45rem;
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 25rem;
+        line-height: 100%;
+        margin: 1rem;
     }
 }
