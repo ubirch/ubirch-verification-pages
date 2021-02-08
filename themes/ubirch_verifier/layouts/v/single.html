@@ -49,7 +49,11 @@
 
 {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
-{{ partial "verification-script" (dict "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
+{{ with $staticData }}
+
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
+
+{{ end }}
 
 {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 

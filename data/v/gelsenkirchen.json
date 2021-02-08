@@ -13,8 +13,16 @@
       "link_to_cooperation": ""
     }
   ],
-  "use_without_access_token": true,
+  "use_without_access_token": false,
   "access_token": [
+    {
+      "stage": "dev",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiZDYzZWNjMDMtZjVhNy00ZDQzLTkxZDAtYTMwZDAzNGQ4ZGEzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2MTk4MjA2MzAsImlhdCI6MTYxMjQzNTI4MCwianRpIjoiOGJkMzExZDItZGEyYi00ZWJhLWExMmMtODYxYjRiYWU2MjliIiwidGFyZ2V0X2lkZW50aXRpZXMiOiIqIiwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIiLCJwdXJwb3NlIjoiVWJpcmNoIERlZmF1bHQgVG9rZW4iLCJvcmlnaW5fZG9tYWlucyI6W119.tDovGseqjwaJZNX0ZtoGmZVvkcdVltR1nXYYAFpF4DHGAQ8MiRAfeJIYL0TNHsqBt_-60fw2j65neje_ThJ7Eg"
+    },
+    {
+      "stage": "prod",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLnByb2QudWJpcmNoLmNvbSIsInN1YiI6ImE0MWZiYjgxLWVkOTktNDY5My1hMGE4LWMxMjViMjQ0YmZkMyIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LnByb2QudWJpcmNoLmNvbSIsImV4cCI6MTY3MjU5NDcxMCwibmJmIjoxNjEyNzE5NTExLCJpYXQiOjE2MTI4MDU5NzcsImp0aSI6ImYzNmEzNWQ5LTJkZjctNGQwMi1iZjE2LWNmNWYzMTFhNmZjOSIsInB1cnBvc2UiOiJHZWxzZW5raXJjaGVuX3ZlcmlmeS10cmFmZmljc2lnbnMiLCJ0YXJnZXRfaWRlbnRpdGllcyI6WyIxYmIyOTkwMC01ZWQ2LTQ2YjktYWYwMi0wNDQ0NTc0MWYzZWQiXSwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIifQ.YIGF_E7nPQKKdDYGYSkYeGbDREP2QN1adNex-gjLqqmhO_ewGsAlDB-b62K7a84B3JeFBo-LPVeCkB1NC97Rnw"
+    }
 
   ],
   "make_form_editable": false,
