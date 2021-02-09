@@ -53,7 +53,7 @@ other = "Manufacturer"
 [formfield.componentauthenticity.pn]
 other = "Part Name"
 [formfield.componentauthenticity.sn]
-other = "Serialnummer"
+other = "Serial Number"
 [formfield.componentauthenticity.md]
 other = "Manufactured at (YYYYMMDD)"
 [formfield.componentauthenticity.mf]
