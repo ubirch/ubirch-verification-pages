@@ -76,13 +76,14 @@
 <div id="verification">
 
   <div id="form">
+
     {{ if eq $staticData.demo_discaimer true }}
     <div id="demo-disclaimer" class="demo">
-    {{ else }}
-    <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
-    {{ end }}
-      <p>DEMO</p>
-    </div>
+      {{ else }}
+      <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
+        {{ end }}
+        <p>DEMO DEMO DEMO DEMO</p>
+      </div>
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
@@ -103,14 +104,12 @@
       {{ partial "componentauthenticity.html" . }}
 
       {{ end }}
-
-      <div id="resutlDiv">
+    </form>
+      <div id="resultDiv">
 
         <div id="widgetDiv"></div>
 
       </div>
-
-    </form>
   </div>
 </div>
 
