@@ -422,8 +422,22 @@ div#demo-disclaimer.demo {
         max-height: 100%;
         overflow: fragments;
         color: rgba(255, 0, 0, 0.4);
-        font-size: 25rem;
+        font-size: 20rem;
         line-height: 100%;
         margin: 1rem;
     }
 }
+
+@media (min-width: 1010px) {
+    #demo-disclaimer p{
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: fragments;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 22rem;
+        line-height: 100%;
+        margin: 1rem;
+    }
+}
+
