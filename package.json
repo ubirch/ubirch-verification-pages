@@ -1,0 +1,15 @@
+{
+ "comments": {
+  "dependencies": {},
+  "devDependencies": {}
+ },
+  "scripts": {
+    "start": "npm run clean && npm run sass:build && npm run babel:build && parallelshell 'npm run sass:watch' 'npm run babel:watch' 'hugo serve'"
+  },
+ "dependencies": {
+  "@ubirch/ubirch-verification-widget": "^1.0.1"
+ },
+ "devDependencies": {},
+ "name": "hugo-verification",
+ "version": "0.1.0"
+}

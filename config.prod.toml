@@ -1,6 +1,5 @@
 baseURL = "https://__VERIFICATION_HUGO_BASE_URL__"
 defaultContentLanguage = "de"
-theme = "ubirch_verifier"
 
 [languages]
 [languages.de]

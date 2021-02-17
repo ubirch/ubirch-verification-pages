@@ -1,0 +1,4 @@
+{{ $styles := getJSON "./assets/css/styles.json" }}
+{{ range $styles.styles }}
+<link href="{{ relURL . }}" rel="stylesheet">
+{{ end }}

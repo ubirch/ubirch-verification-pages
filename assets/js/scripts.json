@@ -1,0 +1,10 @@
+{
+  "scripts": [
+    "dependencies/convert-hex/convert-hex.js",
+    "dependencies/convert-string/convert-string.js",
+    "dependencies/js-sha256/build/sha256.min.js",
+    "dependencies/js-sha512/build/sha512.min.js",
+    "dependencies/@ubirch/ubirch-verification-widget/dist/ubirch-verification-widget.min.js",
+    "js/app.js"
+  ]
+}

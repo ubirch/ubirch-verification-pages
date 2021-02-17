@@ -41,6 +41,8 @@
 }, function (e, t, n) {
 }]);
 
+const verify = require("@ubirch/ubirch-verification-widget");
+
 function openPageInLanguage(langLink) {
   var formContent = getFragmentFromUrl(window);
   if (!formContent) {
