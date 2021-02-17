@@ -1,10 +1,10 @@
 :root {
-    --title-backround-color: #ffffff;
     --section1-backround-color: #67d4ef;
     --section1-text-color: #696969;
     --form-backround-color: #ffffff;
     --form-label-text-color: #4e4e4e;
     --form-input-underline-color: #000000;
+    --form-input-text-color: #000000;
     --form-button-color: #ffffff;
     --form-buton-text-color: #000000;
     --form-button-higlight-text-color: #ffffff;
@@ -15,7 +15,19 @@
     --footer-text-color: #4e4e4e;
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #67d4ef;
-
+    --mobile-page-layout:
+            "verification"
+            "titleCard"
+            "textArea";
+    --tablet-page-layout:
+            "titleCard titleCard"
+            "verification textArea";
+    --desktop-layout:
+            "titleCard titleCard"
+            "verification textArea";
+    --header-height:64px;
+    --header-logo-width: 100%;
+    --header-logo-height: auto;
     font-size: 7px;
 }
 
@@ -32,7 +44,7 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 64px auto fit-content(100%);
+    grid-template-rows: var(--header-height) auto fit-content(100%);
     grid-template-areas:
                 "header"
                 "main"
@@ -43,10 +55,7 @@ main{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
-    grid-template-areas:
-            "verification"
-            "titleCard"
-            "textArea";
+    grid-template-areas: var(--mobile-page-layout);
 
 }
 
@@ -62,8 +71,8 @@ main{
     grid-area: logo;
     align-self: center;
     justify-self: center;
-    width: 100%;
-    height: auto;
+    width: var(--header-logo-width);
+    height: var(--header-logo-height);
 
 }
 
@@ -145,6 +154,7 @@ main{
     overflow-clip: true;
     outline: none;
     border: none;
+    color: var(--form-input-text-color);
     border-bottom: 1px solid var(--form-input-underline-color);
     transition: border-bottom ease-in-out 75ms;
     margin-bottom: 1rem;
@@ -289,9 +299,7 @@ div#demo-disclaimer.demo {
     main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows:  auto auto;
-        grid-template-areas:
-                "titleCard titleCard"
-                "verification textArea"
+        grid-template-areas: var(--tablet-page-layout)
 
     }
     #demo-disclaimer{
@@ -336,9 +344,7 @@ div#demo-disclaimer.demo {
     main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        grid-template-areas:
-                "titleCard titleCard"
-                "verification textArea"
+        grid-template-areas: var(--desktop-layout)
 
     }
 
