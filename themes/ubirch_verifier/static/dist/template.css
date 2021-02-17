@@ -140,13 +140,14 @@ main{
     grid-area: form;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #verification .formLabel {
     font-size: 2rem;
     color: var(--form-label-text-color);
 }
+
 
 #verification .formInput {
     font-size: 3rem;
@@ -164,7 +165,8 @@ main{
     border-bottom: 1px solid var(--form-accent-color);
 }
 
-#verification #resutlDiv {
+#verification #resultDiv {
+    z-index: 2;
     grid-area: widget;
 }
 
@@ -264,10 +266,13 @@ main{
 }
 
 #demo-disclaimer{
+    z-index: 1;
+    display: flex;
+    justify-items: center;
+    align-items: center;
     position: absolute;
-    width: 75%;
-    height: 100%;
-  visibility: hidden;
+    width: 90%;
+    visibility: hidden;
 }
 
 div#demo-disclaimer.demo {
@@ -275,14 +280,39 @@ div#demo-disclaimer.demo {
 }
 
 #demo-disclaimer p{
-    color: rgba(255, 0, 0, 0.6);
-    transform: rotate(75deg);
-    font-size: 25rem;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: fragments;
+    color: rgba(255, 0, 0, 0.4);
+    font-size: 15rem;
+    margin: 1rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (orientation: portrait){
     :root {
         font-size: 6px;
+    }
+
+    #demo-disclaimer{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        visibility: hidden;
+    }
+
+    #demo-disclaimer p{
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 15rem;
+        line-height: 100%;
+        margin: 1rem;
     }
 
     #page-content {
@@ -302,23 +332,18 @@ div#demo-disclaimer.demo {
         grid-template-areas: var(--tablet-page-layout)
 
     }
-    #demo-disclaimer{
-        position: absolute;
-        top: 50%;
-        width: 75%;
-        height: 100%;
-    }
-
-    #demo-disclaimer p{
-        color: rgba(255, 0, 0, 0.6);
-        transform: rotate(45deg);
-        font-size: 25rem;
-    }
 }
 
-@media only screen and (min-width: 800px) {
+@media (min-width: 800px) {
     html {
         justify-self: center;
+    }
+
+    #demo-disclaimer{
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        visibility: hidden;
     }
 
     #page-content {
@@ -392,15 +417,33 @@ div#demo-disclaimer.demo {
     }
 
     #demo-disclaimer{
-        position: absolute;
-        top: 35%;
-        width: 75%;
-        height: 100%;
+        -webkit-column-width: 150px; //You can't use 100%
+        column-width: 150px;
+        height: 60%;
     }
 
     #demo-disclaimer p{
-        color: rgba(255, 0, 0, 0.6);
-        transform: rotate(45deg);
-        font-size: 45rem;
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: fragments;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 20rem;
+        line-height: 100%;
+        margin: 1rem;
     }
 }
+
+@media (min-width: 1010px) {
+    #demo-disclaimer p{
+        text-align: center;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: fragments;
+        color: rgba(255, 0, 0, 0.4);
+        font-size: 22rem;
+        line-height: 100%;
+        margin: 1rem;
+    }
+}
+
