@@ -1,5 +1,11 @@
 baseURL = "https://verify.govdigital.de/"
 defaultContentLanguage = "de"
+disableKinds = ["section", "taxonomy"]
+
+[module]
+[[module.mounts]]
+source = "node_modules"
+target = "assets/dependencies"
 
 [languages]
 [languages.de]
