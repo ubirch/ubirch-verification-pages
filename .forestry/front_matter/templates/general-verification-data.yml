@@ -47,9 +47,9 @@ fields:
       required: false
     label: link to cooperating company or organisation (optional)
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: Cooperation_logos (Footer)
   description: List of cooperation companies and organisations with logo, name and
     (optional) external link
@@ -77,7 +77,8 @@ fields:
   config:
     required: true
   default: false
-  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
+  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!!
+    without access token)
 - name: access_token
   type: field_group_list
   fields:
@@ -93,9 +94,9 @@ fields:
       - test
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: stage
     description: on which stage is this data anchored?
   - name: token
@@ -105,9 +106,9 @@ fields:
     label: token
     description: UUID containing the tokenID
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: "(optional) Access Token to use the ubirch verification (version 2) -"
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
@@ -136,6 +137,7 @@ fields:
   default: false
   label: show verification button
 pages:
+- data/v/bvdw-qr-code.json
 - data/v/gd-vcc.json
 - data/v/gd.json
 - data/v/gelsenkirchen.json
