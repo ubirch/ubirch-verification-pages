@@ -18,15 +18,14 @@
   --footer-text-color: #4e4e4e;
   --footer-highlight-color: #6b6b6b;
   --form-accent-color: #67d4ef;
-}
-
-main{
-    grid-template-areas:
+    --mobile-page-layout:
             "titleCard"
             "verification"
             "textArea";
-
+    --header-logo-width: 100%;
+    --header-logo-height: auto;
 }
+
 
 #titleCard p{
     padding: 2rem;
