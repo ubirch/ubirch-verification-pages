@@ -1,3 +1,44 @@
 {{ define "main" }}
-General Page Layout
+{{ with .Params.headline }}
+<h1>{{ . }}</h1>
+{{ end }}
+
+{{ with .Params.contact }}
+<div class="page-contact">
+  <h2>{{ .company_name }}</h2>
+  {{ with .address }}
+  <div class="address">
+    <p>{{ .street }}</p>
+    <p>{{ .zip }} {{ .city }}</p>
+    <p>{{ .country }}</p>
+    <p>Phone: {{ .phone }}</p>
+    <p>Email: {{ .email }}</p>
+  </div>
+  {{ end }}
+
+  {{ with .vat }}
+  <div id="vat">
+    VAT {{ . }}
+  </div>
+  {{ end }}
+
+  {{ with .ceo }}
+  <div id="ceo">
+    Represented by: Executive director {{ . }}
+  </div>
+  {{ end }}
+
+  {{ with .email_privacy }}
+  <div id="email_privacy">
+    Our data privacy office can be achieved via email:<br>
+    {{ . }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+<div class="general-content">
+  {{ .Content }}
+</div>
+
 {{ end }}

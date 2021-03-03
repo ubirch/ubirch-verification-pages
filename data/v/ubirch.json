@@ -4,7 +4,7 @@
   "company_logo": "/uploads/Ubirch_Logo_weiss.svg",
   "favicon": "/uploads/7044ubirch_bildmarke_black_favicon.ico",
   "show_ubirch_info": true,
-  "custom_styles": "/uploads/ubirch_verification.css",
+  "custom_styles": "",
   "layout": "coronalaboratory",
   "cooperation_logos": [
     {

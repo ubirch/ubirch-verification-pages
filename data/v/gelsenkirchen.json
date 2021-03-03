@@ -5,7 +5,7 @@
   "favicon": "/uploads/favicon.ico",
   "show_ubirch_info": false,
   "layout": "trafficsignsinventory",
-  "custom_styles": "",
+  "custom_styles": "/uploads/gelsenkirchen.css",
   "cooperation_logos": [
     {
       "cooperation_logo": "/uploads/logo-2x.png",

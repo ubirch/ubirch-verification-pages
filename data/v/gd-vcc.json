@@ -5,7 +5,7 @@
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": true,
   "layout": "vaccinationcertificate",
-  "custom_styles": "",
+  "custom_styles": "/uploads/govdigital.css",
   "use_without_access_token": false,
   "access_token": [
     {
