@@ -62,6 +62,7 @@ fields:
     - vaccinationcertificate
     - trafficsignsinventory
     - componentauthenticity
+    - bvdw
   label: layout
   default: coronalaboratory
   description: Layout of the verification form - defines which form fields this verification
@@ -77,7 +78,8 @@ fields:
   config:
     required: true
   default: false
-  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
+  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!!
+    without access token)
 - name: access_token
   type: field_group_list
   fields:
@@ -117,7 +119,7 @@ fields:
   config:
     required: true
   default: false
-  label: If true a DEMO disclaimer will be added the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
+  label: If true a DEMO disclaimer will be added also to productive stage
 - name: custom_styles
   type: file
   config:
@@ -136,6 +138,7 @@ fields:
   default: false
   label: show verification button
 pages:
+- data/v/bvdw-qr-code.json
 - data/v/gd-vcc.json
 - data/v/gd.json
 - data/v/gelsenkirchen.json

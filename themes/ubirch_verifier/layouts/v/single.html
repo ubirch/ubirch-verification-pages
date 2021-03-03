@@ -39,27 +39,42 @@
 </div>
 {{ end }}
 
-{{ if (eq $staticData.layout "coronalaboratory") }}
+{{ with $staticData }}
 
-{{ partial "verification-script" (dict "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ $scratch := newScratch }}
+
+{{ if (eq .layout "coronalaboratory") }}
+
+{{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
 
 {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
-{{ partial "verification-script" (dict "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
+{{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
 
 {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
-{{ with $staticData }}
-
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") "optionalFormFieldIds" (slice "p") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
-
-{{ end }}
+{{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
+{{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
 
 {{ else if (eq $staticData.layout "componentauthenticity") }}
 
-{{ with $staticData }}
+{{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") "hashalgorithm" "sha256" "separator" ";" "language" .Site.Language  ) }}
+{{ else if (eq $staticData.layout "bvdw") }}
+
+{{ $scratch.Set "inputids" (slice "company" "from" "realm" "until") }}
+{{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bereich" "bis") }}
+
+{{ end }}
+
+{{ if (eq .use_without_access_token true) }}
+
+{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
+
+{{ else }}
+
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
 
 {{ end }}
 
@@ -68,37 +83,25 @@
 <div id="verification">
 
   <div id="form">
+
+    {{ if eq $staticData.demo_discaimer true }}
+    <div id="demo-disclaimer" class="demo">
+      {{ else }}
     <div id="demo-disclaimer" class="{{$.Site.Params.disclaimer}}">
-      <p>DEMO</p>
+        {{ end }}
+        <p>DEMO DEMO DEMO DEMO</p>
     </div>
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
-      {{ if (eq $staticData.layout "coronalaboratory") }}
+      {{ partial (printf "%s.html" $staticData.layout) . }}
 
-      {{ partial "coronalaboratory.html" . }}
-
-      {{ else if (eq $staticData.layout "trafficsignsinventory") }}
-
-      {{ partial "trafficsignsinventory.html" . }}
-
-      {{ else if (eq $staticData.layout "vaccinationcertificate") }}
-
-      {{ partial "vaccinationcertificate.html" . }}
-
-      {{ else if (eq $staticData.layout "componentauthenticity") }}
-
-      {{ partial "componentauthenticity.html" . }}
-
-      {{ end }}
-
-      <div id="resutlDiv">
+    </form>
+      <div id="resultDiv">
 
         <div id="widgetDiv"></div>
 
       </div>
-
-    </form>
   </div>
 </div>
 

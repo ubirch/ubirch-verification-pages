@@ -48,12 +48,30 @@ other = "ending house number"
 other = "from crossroad"
 [formfield.trafsigninv.ToCrossroad]
 other = "to crossroad"
+[formfield.vaccinationCert.f]
+other = "family name"
+[formfield.vaccinationCert.g]
+other = "given name(s)"
+[formfield.vaccinationCert.b]
+other = "date of birth"
+[formfield.vaccinationCert.p]
+other = "ID"
+[formfield.vaccinationCert.i]
+other = "vaccination centre"
+[formfield.vaccinationCert.d]
+other = "date of vaccination"
+[formfield.vaccinationCert.t]
+other = "type"
+[formfield.vaccinationCert.r]
+other = "medical product name"
+[formfield.vaccinationCert.s]
+other = "random secret"
 [formfield.componentauthenticity.mfr]
 other = "Manufacturer"
 [formfield.componentauthenticity.pn]
 other = "Part Name"
 [formfield.componentauthenticity.sn]
-other = "Serialnummer"
+other = "Serial Number"
 [formfield.componentauthenticity.md]
 other = "Manufactured at (YYYYMMDD)"
 [formfield.componentauthenticity.mf]

@@ -1,0 +1,69 @@
+:root {
+  // Below are all customizable values of the verification page.
+  // the values currently set in this file are the default values and can be changed.
+
+  // page customization
+
+    // the font sizes on the whole page are
+    // calculated based on this base size
+    font-size: 7px;
+
+
+  // layout customization
+  // imagine the layouts as a grid. In desktop and tablet mode we use a 2x2 grid.
+  // On mobile we use a 1x3 grid.
+
+  // To change the layout use the identifiers "verification" "titlecard" and "textArea"
+  // A row is listed as a string between "" two columns are separated with a whitespace
+  // Header and footer are not affected by this layout and will always be on top/bottom of the page
+
+  // "verification": contains the form and result of the verification
+  // "titlecard": the titlecard contains information for the user regarding the functionality of the site
+  //              or how/why they have been redirected to this site
+  // "textArea":  the textarea is an additional info block. As a default this contains info about Ubirch.
+
+   --mobile-page-layout:
+          "verification"
+          "titleCard"
+          "textArea";
+
+  --tablet-page-layout:
+          "titleCard titleCard"
+          "verification textArea";
+
+  --desktop-layout:
+
+          "titleCard titleCard"
+          "verification textArea";
+
+  // Header customization
+  --header-height: 64px;
+  --header-logo-width: 100%;
+  --header-logo-height: auto;
+
+  // Titlecard customization
+  // the titlecard contains information for the user regarding the functionality of the site
+  // or how/why they have been redirected to this site
+  --section1-backround-color: #67d4ef;
+  --section1-text-color: #696969;
+
+  // Form customization
+  --form-backround-color: #ffffff;
+  --form-label-text-color: #4e4e4e;
+  --form-input-text-color: #000000;
+  --form-input-underline-color: #000000;
+  --form-button-color: #ffffff;
+  --form-buton-text-color: #000000;
+  --form-button-higlight-text-color: #ffffff;
+  --form-accent-color: #67d4ef;
+
+  // Textarea customization
+  --textArea-backround-color: #e0e0e0;
+  --testArea-text-color: #4e4e4e;
+  --textArea-highlight-color: #ababab;
+
+  // Footer customization
+  --footer-backround-color: #67d4ef;
+  --footer-text-color: #4e4e4e;
+  --footer-highlight-color: #6b6b6b;
+}
