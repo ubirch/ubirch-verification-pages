@@ -11,26 +11,19 @@
     --textArea-backround-color: #e0e0e0;
     --testArea-text-color: #4e4e4e;
     --textArea-highlight-color: #ababab;
-    --header-backround-color: #000000;
-    --header-text-color: #ffffff;
+    --header-backround-color: #ffffff;
+    --header-text-color: #000000;
     --header-highlight-color: #6b6b6b;
-    --footer-backround-color: #000000;
-    --footer-text-color: #ffffff;
-    --footer-highlight-color: #ff007f;
-    --form-accent-color: #ff007f;
-    --mobile-page-layout:
-            "verification"
-            "titleCard"
-            "textArea";
-    --tablet-page-layout:
-            "titleCard titleCard"
-            "verification textArea";
-    --desktop-layout:
-            "titleCard titleCard"
-            "verification textArea";
-    --header-height:64px;
-    --header-logo-width: auto;
-    --header-logo-height: 50px;
+    --footer-backround-color: #67d4ef;
+    --footer-text-color: #4e4e4e;
+    --footer-highlight-color: #6b6b6b;
+    --form-accent-color: #67d4ef;
+    --mobile-page-layout: "titleCard" "textArea" "verification";
+    --tablet-page-layout: "titleCard textArea" "verification verification";
+    --desktop-layout: "titleCard textArea" "verification verification";
+    --header-height: 64px;
+    --header-logo-width: 100%;
+    --header-logo-height: auto;
     font-size: 7px;
 }
 
@@ -112,22 +105,6 @@ main{
 
 #header #languageSelectDiv ul span {
     font-weight: bold;
-}
-
-.page-title {
-  box-sizing: border-box;
-  display: inline;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-family: MuseoSansRounded-900, calibri, sans-serif;
-  padding: 3px 25px 0 15px;
-  margin: 15px;
-  line-height: 150%;
-  font-size: 3.5rem;
-  color: #4eff00;
-}
-.page-title h1 span {
-  background-color: black;
 }
 
 #titleCard {
@@ -320,16 +297,39 @@ div#demo-disclaimer.demo {
     margin: 1rem;
 }
 
-.title{
-    padding: 2rem;
+.page-title {
+    box-sizing: border-box;
+    display: inline;
+    font-family: MuseoSansRounded-900, calibri, sans-serif;
+    line-height: 150%;
+    font-size: 3.5rem;
+    color: #67d4ef;
+    padding: 1rem 6rem 1rem;
+    grid-area: titleCard
+}
+.page-title h1 span {
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.page-contact{
-    padding: 2rem
+.page-title h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem
 }
 
-.general-content{
-    padding: 2rem
+.page-contact {
+    padding: 1rem 6rem 1rem;
+    grid-area: textArea;
+}
+
+.page-contact h2 {
+    margin-top: 3rem;
+}
+
+.general-content {
+    padding: 1rem 6rem 1rem;
+    grid-area: verification;
 }
 
 @media (min-width: 600px) and (orientation: portrait){
@@ -374,6 +374,41 @@ div#demo-disclaimer.demo {
         grid-template-rows:  auto auto;
         grid-template-areas: var(--tablet-page-layout)
 
+    }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #67d4ef;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
     }
 }
 
@@ -474,6 +509,41 @@ div#demo-disclaimer.demo {
         font-size: 20rem;
         line-height: 100%;
         margin: 1rem;
+    }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #67d4ef;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
     }
 }
 
