@@ -1,6 +1,10 @@
 {{ define "main" }}
 {{ with .Params.headline }}
-<h1 class="title">{{ . }}</h1>
+<div class="page-title">
+  <h1>
+    <span class="page-title">{{ . }}</span>
+  </h1>
+</div>
 {{ end }}
 
 {{ with .Params.contact }}
@@ -38,7 +42,7 @@
 {{ end }}
 
 <div class="general-content">
-  {{ .Content }}
+  {{ .Content | markdownify }}
 </div>
 
 {{ end }}

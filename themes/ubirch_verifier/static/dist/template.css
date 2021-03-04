@@ -114,6 +114,22 @@ main{
     font-weight: bold;
 }
 
+.page-title {
+  box-sizing: border-box;
+  display: inline;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: MuseoSansRounded-900, calibri, sans-serif;
+  padding: 3px 25px 0 15px;
+  margin: 15px;
+  line-height: 150%;
+  font-size: 3.5rem;
+  color: #4eff00;
+}
+.page-title h1 span {
+  background-color: black;
+}
+
 #titleCard {
     grid-area: titleCard;
     background-color: var(--section1-backround-color);
@@ -215,6 +231,18 @@ main{
     color: var(--form-button-higlight-text-color)
 }
 
+.general-content, .page-contact {
+  padding: 4rem;
+  font-size: 2rem;
+}
+
+.page-contact p {
+  margin: 0.8rem 0;
+}
+
+#vat, #ceo, #email_privacy {
+  padding: 1.5rem 0;
+}
 
 #textArea {
     display: flex;
