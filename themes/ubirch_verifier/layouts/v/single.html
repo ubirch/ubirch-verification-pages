@@ -61,7 +61,7 @@
 
 {{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
 
-{{ else if (eq $staticData.layout "bvdw") }}
+{{ else if (eq $staticData.layout "bvdw-form") }}
 
 {{ $scratch.Set "inputids" (slice "company" "from" "realm" "until") }}
 {{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bereich" "bis") }}

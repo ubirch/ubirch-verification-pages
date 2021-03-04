@@ -1,10 +1,9 @@
 {
-  "layout": "coronalaboratory",
   "show_ubirch_info": true,
   "title": "bvdw-qr-code",
   "company_name": "BVDW",
   "company_logo": "/uploads/bundesverband_digitale_wirtschaft_logo.svg",
-  "layout": "bvdw",
+  "layout": "bvdw-form",
   "favicon": "",
   "cooperation_logos": [
 

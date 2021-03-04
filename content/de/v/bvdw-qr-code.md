@@ -1,6 +1,5 @@
 +++
 company_slogan = ""
-draft = true
 imprint_link = ""
 privacy_link = ""
 title = "BVDW-qr-code"
