@@ -18,10 +18,18 @@
   --footer-text-color: #4e4e4e;
   --footer-highlight-color: #6b6b6b;
   --form-accent-color: #67d4ef;
-    --mobile-page-layout:
-            "verification"
-            "titleCard"
-            "textArea";
+  --mobile-page-layout:
+          "verification"
+          "titleCard"
+          "textArea";
+
+  --tablet-page-layout:
+          "titleCard titleCard"
+          "verification textArea";
+
+  --desktop-layout:
+          "titleCard titleCard"
+          "verification textArea";
     --header-logo-width: 100%;
     --header-logo-height: auto;
 }
