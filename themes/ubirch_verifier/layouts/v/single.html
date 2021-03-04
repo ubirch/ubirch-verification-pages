@@ -43,6 +43,8 @@
 
 {{ $scratch := newScratch }}
 
+{{ $scratch.Set "hashalgorithm" "sha256" }}
+
 {{ if (eq .layout "coronalaboratory") }}
 
 {{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
@@ -65,16 +67,17 @@
 
 {{ $scratch.Set "inputids" (slice "company" "from" "realm" "until") }}
 {{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bereich" "bis") }}
+{{ $scratch.Set "hashalgorithm" "sha512" }}
 
 {{ end }}
 
 {{ if (eq .use_without_access_token true) }}
 
-{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
+{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language  ) }}
 
 {{ else }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" "sha256" "separator" ";" "language" $.Site.Language  ) }}
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language  ) }}
 
 {{ end }}
 
