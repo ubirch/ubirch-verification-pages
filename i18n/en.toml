@@ -1,3 +1,15 @@
+[address.phone.short]
+other = "phone"
+[address.email]
+other = "email"
+[imprint.vat]
+other = "VAT"
+[imprint.ceo]
+other = "Represented by: Executive director"
+[imprint.graphics_sources]
+other = "Sources for the images and graphics used"
+[imprint.email_privacy]
+other = "Our data privacy office can be achieved via email"
 [formfield.button_verify]
 other = "verify"
 [formfield.f]

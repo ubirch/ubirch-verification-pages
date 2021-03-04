@@ -15,26 +15,31 @@
     <p>{{ .street }}</p>
     <p>{{ .zip }} {{ .city }}</p>
     <p>{{ .country }}</p>
-    <p>Phone: {{ .phone }}</p>
-    <p>Email: {{ .email }}</p>
+    <p>{{ i18n "address.phone.short" }}: {{ .phone }}</p>
+    <p>{{ i18n "address.email" }}: {{ .email }}</p>
   </div>
   {{ end }}
 
   {{ with .vat }}
   <div id="vat">
-    VAT {{ . }}
+    {{ i18n "imprint.vat" }} {{ . }}
   </div>
   {{ end }}
 
   {{ with .ceo }}
   <div id="ceo">
-    Represented by: Executive director {{ . }}
+    {{ i18n "imprint.ceo" }} {{ . }}
   </div>
   {{ end }}
 
+  <div id="graphics_sources">
+    {{ i18n "imprint.graphics_sources" }}:<br>
+    UBIRCH, shutterstock.com, istockphoto.com
+  </div>
+
   {{ with .email_privacy }}
   <div id="email_privacy">
-    Our data privacy office can be achieved via email:<br>
+    {{ i18n "imprint.email_privacy" }}:<br>
     {{ . }}
   </div>
   {{ end }}
