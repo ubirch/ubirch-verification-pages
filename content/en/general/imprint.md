@@ -10,7 +10,7 @@ vat = "DE298960294"
 ceo = "Stephan Noller, Matthias Leo Jugel"
 email_privacy = "datenschutz@ubirch.com"
 [contact.address]
-street = "Im Mediapark 5"
+street = "Im MediaPark 5"
 zip = "50670"
 city = "Köln"
 country = "Germany"
