@@ -13,7 +13,7 @@
     {{ if .Params.imprint_link }}
       <a href="{{ .Params.imprint_link }}" target="_blank" class="footerLink">{{ i18n "link.imprint" }}</a>
     {{ else }}
-    <a href="{{ "general/imprint/" | relLangURL }}" target="_blank" class="footerLink">{{ i18n "link.imprint" }}</a>
+    <a target="_self" href="{{ "general/imprint/" | relLangURL }}" target="_blank" class="footerLink">{{ i18n "link.imprint" }}</a>
     {{ end }}
     {{ if .Params.privacy_link }}
     <a href="{{ .Params.privacy_link }}" target="_blank" class="footerLink">{{ i18n "link.privacy" }}</a>
