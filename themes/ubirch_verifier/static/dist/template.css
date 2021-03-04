@@ -18,9 +18,16 @@
     --footer-text-color: #4e4e4e;
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #67d4ef;
-    --mobile-page-layout: "titleCard" "textArea" "verification";
-    --tablet-page-layout: "titleCard textArea" "verification verification";
-    --desktop-layout: "titleCard textArea" "verification verification";
+    --mobile-page-layout:
+            "titleCard"
+            "textArea"
+            "verification";
+    --tablet-page-layout:
+            "titleCard textArea"
+            "verification verification";
+    --desktop-layout:
+            "titleCard textArea"
+            "verification verification";
     --header-height: 64px;
     --header-logo-width: 100%;
     --header-logo-height: auto;
@@ -63,6 +70,7 @@ main{
     padding: 1rem;
     background-color: var(--header-backround-color);
     color: var(--header-text-color);
+    padding-left: 4rem;
 }
 
 #header #logo {
@@ -303,9 +311,10 @@ div#demo-disclaimer.demo {
     font-family: MuseoSansRounded-900, calibri, sans-serif;
     line-height: 150%;
     font-size: 3.5rem;
-    color: #67d4ef;
-    padding: 1rem 6rem 1rem;
-    grid-area: titleCard
+    color: #ffffff;
+    padding: 1rem 4rem 1rem;
+    grid-area: titleCard;
+    background-color: #67d4ef;
 }
 .page-title h1 span {
     padding: 0;
@@ -319,7 +328,7 @@ div#demo-disclaimer.demo {
 }
 
 .page-contact {
-    padding: 1rem 6rem 1rem;
+    padding: 1rem 4rem 1rem;
     grid-area: textArea;
 }
 
@@ -328,8 +337,12 @@ div#demo-disclaimer.demo {
 }
 
 .general-content {
-    padding: 1rem 6rem 1rem;
+    padding: 1rem 4rem 1rem;
     grid-area: verification;
+}
+
+#graphic {
+    display: none;
 }
 
 @media (min-width: 600px) and (orientation: portrait){
@@ -382,14 +395,17 @@ div#demo-disclaimer.demo {
         font-family: MuseoSansRounded-900, calibri, sans-serif;
         line-height: 150%;
         font-size: 3.5rem;
-        color: #67d4ef;
+        color: #ffffff;
         padding: 1rem 10rem 1rem;
-        grid-area: titleCard
+        grid-area: titleCard;
+        background-color: #ffffff;
     }
     .page-title h1 span {
         padding: 0;
         font-weight: bold;
         text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
     }
 
     .page-title h1 {
@@ -410,9 +426,22 @@ div#demo-disclaimer.demo {
         padding: 1rem 10rem 1rem;
         grid-area: verification;
     }
+
+    #graphic{
+        visibility: visible;
+    }
+    #graphic {
+        width: 90%;
+        display: block;
+    }
 }
 
 @media (min-width: 800px) {
+    #graphic {
+        width: 90%;
+        display: block;
+    }
+
     html {
         justify-self: center;
     }
@@ -517,14 +546,18 @@ div#demo-disclaimer.demo {
         font-family: MuseoSansRounded-900, calibri, sans-serif;
         line-height: 150%;
         font-size: 3.5rem;
-        color: #67d4ef;
+        color: #ffffff;
         padding: 1rem 10rem 1rem;
-        grid-area: titleCard
+        grid-area: titleCard;
+        background-color: #ffffff;
+
     }
     .page-title h1 span {
         padding: 0;
         font-weight: bold;
         text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
     }
 
     .page-title h1 {
@@ -557,6 +590,11 @@ div#demo-disclaimer.demo {
         font-size: 22rem;
         line-height: 100%;
         margin: 1rem;
+    }
+
+    #graphic {
+        width: 90%;
+        display: block;
     }
 }
 
