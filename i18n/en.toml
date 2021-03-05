@@ -81,11 +81,11 @@ other = "random secret"
 [formfield.bvdw.company]
 other = "Company"
 [formfield.bvdw.realm]
-other = "Realm"
+other = "Domain"
 [formfield.bvdw.from]
-other = "From"
+other = "Issue Date"
 [formfield.bvdw.until]
-other = "Until"
+other = "Expiry Date"
 [formfield.componentauthenticity.mfr]
 other = "Manufacturer"
 [formfield.componentauthenticity.pn]
