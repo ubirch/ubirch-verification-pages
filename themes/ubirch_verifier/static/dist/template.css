@@ -51,6 +51,7 @@ body {
     grid-template-areas:
                 "header"
                 "main"
+                "cooperations"
                 "footer";
 }
 
@@ -251,6 +252,23 @@ main{
     text-transform: uppercase;
 }
 
+#cooperations {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: var(--header-logo-height);
+}
+
+#cooperations .cooperations__logo-area {
+  float: right;
+  padding: 0 0.5rem;
+}
+
+#cooperations .cooperations__logo {
+  max-height: var(--header-logo-height);
+  max-width: 90%;
+}
+
 #footer {
     font-size: 2rem;
     padding: 5rem;
@@ -379,6 +397,7 @@ div#demo-disclaimer.demo {
         grid-template-areas:
                 "header"
                 "main"
+                "cooperations"
                 "footer";
     }
 

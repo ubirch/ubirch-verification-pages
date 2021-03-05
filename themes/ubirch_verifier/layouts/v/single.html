@@ -41,50 +41,50 @@
 
 {{ with $staticData }}
 
-{{ $scratch := newScratch }}
+  {{ $scratch := newScratch }}
 
-{{ $scratch.Set "hashalgorithm" "sha256" }}
+  {{ $scratch.Set "hashalgorithm" "sha256" }}
 
-{{ if (eq .layout "coronalaboratory") }}
+  {{ if (eq .layout "coronalaboratory") }}
 
-{{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
+    {{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
 
-{{ else if (eq $staticData.layout "trafficsignsinventory") }}
+  {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
-{{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
-{{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
+    {{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
+    {{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
 
-{{ else if (eq $staticData.layout "vaccinationcertificate") }}
+  {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
-{{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
-{{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
+    {{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
+    {{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
 
-{{ else if (eq $staticData.layout "componentauthenticity") }}
+  {{ else if (eq $staticData.layout "componentauthenticity") }}
 
-{{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
+    {{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
 
-{{ else if (eq $staticData.layout "bvdw-form") }}
+  {{ else if (eq $staticData.layout "bvdw-form") }}
 
-{{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
+    {{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
 
-{{ else if (eq $staticData.layout "bvdw-legacy-form") }}
+  {{ else if (eq $staticData.layout "bvdw-legacy-form") }}
 
-{{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
-{{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bis" "bereich") }}
-{{ $scratch.Set "hashalgorithm" "sha512" }}
-{{ $scratch.Set "doNotSort" true }}
+    {{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
+    {{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bis" "bereich") }}
+    {{ $scratch.Set "hashalgorithm" "sha512" }}
+    {{ $scratch.Set "doNotSort" true }}
 
-{{ end }}
+  {{ end }}
 
-{{ if (eq .use_without_access_token true) }}
+  {{ if (eq .use_without_access_token true) }}
 
-{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
+    {{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
 
-{{ else }}
+  {{ else }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language ) }}
+    {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language ) }}
 
-{{ end }}
+  {{ end }}
 
 {{ end }}
 
@@ -113,7 +113,11 @@
   </div>
 </div>
 
-{{ partial "about-ubirch-area.html" . }}
+  {{ partial "about-ubirch-area.html" . }}
+
+  {{ with $staticData.cooperation_logos }}
+  {{ partial "cooperations-icons-list" . }}
+  {{ end }}
 
 {{ end }}
 
