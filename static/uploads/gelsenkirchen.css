@@ -36,13 +36,3 @@
     --header-logo-width: 100%;
     --header-logo-height: auto;
 }
-
-
-#titleCard p{
-    padding: 2rem;
-    margin: 0;
-}
-
-#textArea p{
-    padding: 2rem
-}

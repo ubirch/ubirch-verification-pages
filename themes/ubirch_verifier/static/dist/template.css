@@ -129,10 +129,16 @@ main{
     background-color: var(--section1-backround-color);
     justify-items: center;
     align-items: center;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 3rem auto 3rem;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+                ".  infocontent     .";
 }
 
-#titleCard p {
-    padding: 1rem 4rem;
+#titleCard #info-content {
+  grid-area: infocontent;
     font-size: 3rem;
     color: var(--section1-text-color);
 }
@@ -531,11 +537,6 @@ div#demo-disclaimer.demo {
         grid-template-rows: auto auto auto;
         grid-template-areas: var(--desktop-layout)
 
-    }
-
-    #titleCard p {
-        padding-left: 10rem;
-        padding-right: 10rem;
     }
 
     #verification .verificationButton:hover {
