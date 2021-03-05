@@ -40,18 +40,17 @@ html {
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #page-content {
-    height: 100%;
+    height: fit-content;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: var(--header-height) auto fit-content(100%);
+    grid-template-rows: var(--header-height) fit-content fit-content(100%);
     grid-template-areas:
                 "header"
                 "main"
-                "cooperations"
                 "footer";
 }
 
@@ -235,9 +234,15 @@ main{
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    grid-area: textArea;
     background: var(--section2-backround-color);
     color: var(--section2-text-color);
+}
+
+#aboutUbirch{
+    grid-area: textArea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #textArea p {
@@ -253,20 +258,34 @@ main{
 }
 
 #cooperations {
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-  height: var(--header-logo-height);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    grid-area: cooperations;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: var(--header-logo-height);
+}
+
+#cooperations a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
 }
 
 #cooperations .cooperations__logo-area {
-  float: right;
-  padding: 0 0.5rem;
+    display: flex;
+    align-items: center
 }
 
 #cooperations .cooperations__logo {
-  max-height: var(--header-logo-height);
-  max-width: 90%;
+    height: var(--header-logo-height);
+    width: 15rem;
+    padding: 2rem;
 }
 
 #footer {
@@ -397,7 +416,6 @@ div#demo-disclaimer.demo {
         grid-template-areas:
                 "header"
                 "main"
-                "cooperations"
                 "footer";
     }
 
@@ -453,6 +471,12 @@ div#demo-disclaimer.demo {
         width: 90%;
         display: block;
     }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 18rem;
+        padding: 3rem;
+    }
 }
 
 @media (min-width: 800px) {
@@ -494,7 +518,7 @@ div#demo-disclaimer.demo {
 
     main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto;
         grid-template-areas: var(--desktop-layout)
 
     }
@@ -596,6 +620,12 @@ div#demo-disclaimer.demo {
     .general-content {
         padding: 1rem 10rem 1rem;
         grid-area: verification;
+    }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 23rem;
+        padding: 5rem;
     }
 }
 

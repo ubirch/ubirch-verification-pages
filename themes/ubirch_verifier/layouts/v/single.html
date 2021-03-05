@@ -113,11 +113,15 @@
   </div>
 </div>
 
-  {{ partial "about-ubirch-area.html" . }}
+  <div id="aboutUbirch">
+    {{ partial "about-ubirch-area.html" . }}
 
-  {{ with $staticData.cooperation_logos }}
-  {{ partial "cooperations-icons-list" . }}
-  {{ end }}
+    {{ with $staticData.cooperation_logos }}
+    {{ partial "cooperations-icons-list" . }}
+    {{ end }}
+  </div>
+
+
 
 {{ end }}
 
