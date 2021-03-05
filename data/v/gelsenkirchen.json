@@ -11,6 +11,16 @@
       "cooperation_logo": "/uploads/logo-2x.png",
       "cooperation_name": "govdigital eG",
       "link_to_cooperation": "https://www.govdigital.de"
+    },
+    {
+      "cooperation_logo": "/uploads/Ubirch_Logo_schwarz.svg",
+      "cooperation_name": "UBIRCH GmbH",
+      "link_to_cooperation": "https://ubirch.de"
+    },
+    {
+      "cooperation_logo": "/uploads/logo-2x.png",
+      "cooperation_name": "govdigital eG",
+      "link_to_cooperation": "https://www.govdigital.de"
     }
   ],
   "use_without_access_token": false,
