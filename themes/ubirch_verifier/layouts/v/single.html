@@ -82,7 +82,7 @@
 
 {{ else }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language ) }}
 
 {{ end }}
 

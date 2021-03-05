@@ -51,7 +51,7 @@
   function verifyForm() {
     try {
       const genJson = ubirchVerification.getJsonFromInputs(document);
-      ubirchVerification.verifyJSON(genJson{{ if (eq .doNotSort true) }}, false{{ end }});
+      ubirchVerification.verifyJSON(genJson);
     } catch (e) {
       console.log("Fehler! " + e);
       // TODO: error handling
