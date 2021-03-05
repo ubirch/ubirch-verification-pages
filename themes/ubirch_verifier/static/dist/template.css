@@ -11,21 +11,24 @@
     --textArea-backround-color: #e0e0e0;
     --testArea-text-color: #4e4e4e;
     --textArea-highlight-color: #ababab;
+    --header-backround-color: #ffffff;
+    --header-text-color: #000000;
+    --header-highlight-color: #6b6b6b;
     --footer-backround-color: #67d4ef;
     --footer-text-color: #4e4e4e;
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #67d4ef;
     --mobile-page-layout:
-            "verification"
             "titleCard"
-            "textArea";
+            "textArea"
+            "verification";
     --tablet-page-layout:
-            "titleCard titleCard"
-            "verification textArea";
+            "titleCard textArea"
+            "verification verification";
     --desktop-layout:
-            "titleCard titleCard"
-            "verification textArea";
-    --header-height:64px;
+            "titleCard textArea"
+            "verification verification";
+    --header-height: 64px;
     --header-logo-width: 100%;
     --header-logo-height: auto;
     font-size: 7px;
@@ -64,7 +67,10 @@ main{
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;
     grid-template-areas: "logo . language";
-    padding: 1rem
+    padding: 1rem;
+    background-color: var(--header-backround-color);
+    color: var(--header-text-color);
+    padding-left: 4rem;
 }
 
 #header #logo {
@@ -73,7 +79,6 @@ main{
     justify-self: center;
     width: var(--header-logo-width);
     height: var(--header-logo-height);
-
 }
 
 #header #languageSelectDiv {
@@ -98,7 +103,6 @@ main{
 #header #languageSelectDiv ul a,
 #header #languageSelectDiv ul span {
     font-size: 2rem;
-    color: black;
     text-decoration: none;
 }
 
@@ -212,6 +216,18 @@ main{
     color: var(--form-button-higlight-text-color)
 }
 
+.general-content, .page-contact {
+  padding: 4rem;
+  font-size: 2rem;
+}
+
+.page-contact p {
+  margin: 0.8rem 0;
+}
+
+#vat, #ceo, #email_privacy {
+  padding: 1.5rem 0;
+}
 
 #textArea {
     display: flex;
@@ -289,6 +305,46 @@ div#demo-disclaimer.demo {
     margin: 1rem;
 }
 
+.page-title {
+    box-sizing: border-box;
+    display: inline;
+    font-family: MuseoSansRounded-900, calibri, sans-serif;
+    line-height: 150%;
+    font-size: 3.5rem;
+    color: #ffffff;
+    padding: 1rem 4rem 1rem;
+    grid-area: titleCard;
+    background-color: #67d4ef;
+}
+.page-title h1 span {
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.page-title h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+.page-contact {
+    padding: 1rem 4rem 1rem;
+    grid-area: textArea;
+}
+
+.page-contact h2 {
+    margin-top: 3rem;
+}
+
+.general-content {
+    padding: 1rem 4rem 1rem;
+    grid-area: verification;
+}
+
+#graphic {
+    display: none;
+}
+
 @media (min-width: 600px) and (orientation: portrait){
     :root {
         font-size: 6px;
@@ -332,9 +388,60 @@ div#demo-disclaimer.demo {
         grid-template-areas: var(--tablet-page-layout)
 
     }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #ffffff;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard;
+        background-color: #ffffff;
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
+    }
+
+    #graphic{
+        visibility: visible;
+    }
+    #graphic {
+        width: 90%;
+        display: block;
+    }
 }
 
 @media (min-width: 800px) {
+    #graphic {
+        width: 90%;
+        display: block;
+    }
+
     html {
         justify-self: center;
     }
@@ -432,6 +539,45 @@ div#demo-disclaimer.demo {
         line-height: 100%;
         margin: 1rem;
     }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #ffffff;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard;
+        background-color: #ffffff;
+
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
+    }
 }
 
 @media (min-width: 1010px) {
@@ -444,6 +590,11 @@ div#demo-disclaimer.demo {
         font-size: 22rem;
         line-height: 100%;
         margin: 1rem;
+    }
+
+    #graphic {
+        width: 90%;
+        display: block;
     }
 }
 

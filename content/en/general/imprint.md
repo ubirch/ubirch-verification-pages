@@ -1,6 +1,6 @@
 +++
 title = "imprint"
-headline = "Impressum"
+headline = "Imprint"
 date = "2021-03-03T18:03:32+01:00"
 draft = false
 layout = "imprint"

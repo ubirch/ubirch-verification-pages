@@ -30,7 +30,7 @@
   function verifyForm() {
     try {
       const genJson = ubirchVerification.getJsonFromInputs(document);
-      ubirchVerification.verifyJSON(genJson);
+      ubirchVerification.verifyJSON(genJson{{ if (eq .doNotSort true) }}, false{{ end }});
     } catch (e) {
       console.log("Fehler! " + e);
       // TODO: error handling
