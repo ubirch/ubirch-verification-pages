@@ -3,12 +3,12 @@
   "title": "bvdw-qr-code",
   "company_name": "BVDW",
   "company_logo": "/uploads/bundesverband_digitale_wirtschaft_logo.svg",
-  "layout": "bvdw-form",
+  "layout": "bvdw-legacy-form",
   "favicon": "",
   "cooperation_logos": [
 
   ],
-  "use_without_access_token": false,
+  "use_without_access_token": true,
   "access_token": [
     {
       "stage": "dev",

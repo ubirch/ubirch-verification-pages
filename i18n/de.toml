@@ -78,6 +78,14 @@ other = "Typ"
 other = "Impfstoff"
 [formfield.vaccinationCert.s]
 other = "Zufallszahl"
+[formfield.bvdw.company]
+other = "Unternehmen"
+[formfield.bvdw.realm]
+other = "Qualitätszertifikat"
+[formfield.bvdw.from]
+other = "Zulassungsdatum"
+[formfield.bvdw.until]
+other = "Ablaufdatum"
 [formfield.componentauthenticity.mfr]
 other = "Hersteller"
 [formfield.componentauthenticity.pn]
