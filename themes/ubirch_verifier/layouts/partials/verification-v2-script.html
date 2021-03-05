@@ -7,7 +7,7 @@
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#widgetDiv',
-      NO_LINK_TO_CONSOLE: true,
+      HIGHLIGHT_PAGE_AFTER_VERIFICATION: true,
       language: "{{ .language }}",
       accessToken: parseToken(),
       {{ with .formIdMapping }} paramsFormIdsMapping: {{ . }}, {{ end }}

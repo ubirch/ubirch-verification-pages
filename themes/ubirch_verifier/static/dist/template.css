@@ -43,6 +43,13 @@ body {
     height: 100vh;
 }
 
+.flashgreen {
+  background-color: #53af32;
+}
+.flashred {
+  background-color: #e40146;
+}
+
 #page-content {
     height: 100%;
     display: grid;
@@ -155,6 +162,7 @@ main{
 
 
 #verification .formInput {
+    background-color: transparent;
     font-size: 3rem;
     width: calc(100% - 2px);
     overflow-clip: true;
