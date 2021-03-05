@@ -65,19 +65,24 @@
 
 {{ else if (eq $staticData.layout "bvdw-form") }}
 
-{{ $scratch.Set "inputids" (slice "company" "from" "realm" "until") }}
-{{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bereich" "bis") }}
+{{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
+
+{{ else if (eq $staticData.layout "bvdw-legacy-form") }}
+
+{{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
+{{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bis" "bereich") }}
 {{ $scratch.Set "hashalgorithm" "sha512" }}
+{{ $scratch.Set "doNotSort" true }}
 
 {{ end }}
 
 {{ if (eq .use_without_access_token true) }}
 
-{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language  ) }}
+{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
 
 {{ else }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language  ) }}
+{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
 
 {{ end }}
 
