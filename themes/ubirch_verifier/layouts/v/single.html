@@ -39,9 +39,14 @@
 </div>
 {{ end }}
 
-{{ with $staticData }}
 
-  {{ $scratch := newScratch }}
+{{ $scratch := newScratch }}
+
+{{ with .Params.customStrings }}
+{{ $scratch.Set "customStrings" (dict "sucess" .success "fail" .fail) }}
+{{ end }}
+
+{{ with $staticData }}
 
   {{ $scratch.Set "hashalgorithm" "sha256" }}
 
@@ -78,11 +83,11 @@
 
   {{ if (eq .use_without_access_token true) }}
 
-    {{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
+    {{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort")  "customStrings" ($scratch.Get "customStrings") ) }}
 
   {{ else }}
 
-    {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language ) }}
+    {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "customStrings" ($scratch.Get "customStrings") ) }}
 
   {{ end }}
 

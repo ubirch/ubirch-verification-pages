@@ -15,6 +15,15 @@
       formIds: {{ .inputids }}
     });
 
+    {{ with .customStrings }}
+    {{ with .success }}
+    ubirchVerification.setMessageString("SUCCESS", {{ . }});
+    {{ end }}
+    {{ with .fail }}
+    ubirchVerification.setMessageString("FAIL", {{ . }});
+    {{ end }}
+    {{ end }}
+
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {
       ubirchVerification.setDataIntoForm(paramStr, document, "{{ .separator }}");
