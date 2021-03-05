@@ -1,7 +1,7 @@
 {
   "title": "gelsenkirchen",
   "company_name": "Gelsenkirchen",
-  "company_logo": "/uploads/logo-gd-mit-gelsenkirchen.png",
+  "company_logo": "/uploads/logo-gelsenkirchen.png",
   "favicon": "/uploads/favicon.ico",
   "show_ubirch_info": false,
   "layout": "trafficsignsinventory",
@@ -10,7 +10,7 @@
     {
       "cooperation_logo": "/uploads/logo-2x.png",
       "cooperation_name": "govdigital eG",
-      "link_to_cooperation": ""
+      "link_to_cooperation": "https://www.govdigital.de"
     }
   ],
   "use_without_access_token": false,

@@ -42,10 +42,10 @@
 
 <div id="page-content">
 	{{ block "header" . }}
-  {{ partial "site-header.html" .}}
+  {{ partial "site-header.html" . }}
   {{ end }}
 
-	<main role="main">
+	<main role="main" id="main">
 		{{ block "main" . }}{{ end }}
 	</main>
 	{{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}

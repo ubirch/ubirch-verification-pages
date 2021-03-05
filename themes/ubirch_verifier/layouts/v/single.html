@@ -33,58 +33,63 @@
 
 {{ with .Params.verification_info_text }}
 <div id="titleCard">
-  <p>
+  <p id="info-content">
     {{ . | markdownify }}
   </p>
 </div>
 {{ end }}
 
-{{ with $staticData }}
 
 {{ $scratch := newScratch }}
 
-{{ $scratch.Set "hashalgorithm" "sha256" }}
-
-{{ if (eq .layout "coronalaboratory") }}
-
-{{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
-
-{{ else if (eq $staticData.layout "trafficsignsinventory") }}
-
-{{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
-{{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
-
-{{ else if (eq $staticData.layout "vaccinationcertificate") }}
-
-{{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
-{{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
-
-{{ else if (eq $staticData.layout "componentauthenticity") }}
-
-{{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
-
-{{ else if (eq $staticData.layout "bvdw-form") }}
-
-{{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
-
-{{ else if (eq $staticData.layout "bvdw-legacy-form") }}
-
-{{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
-{{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bis" "bereich") }}
-{{ $scratch.Set "hashalgorithm" "sha512" }}
-{{ $scratch.Set "doNotSort" true }}
-
+{{ with .Params.customStrings }}
+{{ $scratch.Set "customStrings" (dict "sucess" .success "fail" .fail) }}
 {{ end }}
 
-{{ if (eq .use_without_access_token true) }}
+{{ with $staticData }}
 
-{{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort") ) }}
+  {{ $scratch.Set "hashalgorithm" "sha256" }}
 
-{{ else }}
+  {{ if (eq .layout "coronalaboratory") }}
 
-{{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language ) }}
+    {{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
 
-{{ end }}
+  {{ else if (eq $staticData.layout "trafficsignsinventory") }}
+
+    {{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
+    {{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
+
+  {{ else if (eq $staticData.layout "vaccinationcertificate") }}
+
+    {{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
+    {{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
+
+  {{ else if (eq $staticData.layout "componentauthenticity") }}
+
+    {{ $scratch.Set "inputids" (slice "md" "mf" "mfr" "pn" "sn" "tid") }}
+
+  {{ else if (eq $staticData.layout "bvdw-form") }}
+
+    {{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
+
+  {{ else if (eq $staticData.layout "bvdw-legacy-form") }}
+
+    {{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
+    {{ $scratch.Set "formIdMapping" (slice "unternehmen" "von" "bis" "bereich") }}
+    {{ $scratch.Set "hashalgorithm" "sha512" }}
+    {{ $scratch.Set "doNotSort" true }}
+
+  {{ end }}
+
+  {{ if (eq .use_without_access_token true) }}
+
+    {{ partial "verification-script" (dict "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "doNotSort" ($scratch.Get "doNotSort")  "customStrings" ($scratch.Get "customStrings") ) }}
+
+  {{ else }}
+
+    {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "customStrings" ($scratch.Get "customStrings") ) }}
+
+  {{ end }}
 
 {{ end }}
 
@@ -113,7 +118,15 @@
   </div>
 </div>
 
-{{ partial "about-ubirch-area.html" . }}
+  <div id="aboutUbirch">
+    {{ partial "about-ubirch-area.html" . }}
+
+    {{ with $staticData.cooperation_logos }}
+    {{ partial "cooperations-icons-list" . }}
+    {{ end }}
+  </div>
+
+
 
 {{ end }}
 
