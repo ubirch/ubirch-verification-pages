@@ -60,6 +60,7 @@ fields:
     options:
     - coronalaboratory
     - vaccinationcertificate
+    - vaccination-certificate-v2
     - trafficsignsinventory
     - componentauthenticity
     - bvdw
@@ -140,6 +141,7 @@ fields:
 pages:
 - data/v/bvdw-qr-code.json
 - data/v/gd-vcc.json
+- data/v/vp-2.json
 - data/v/gd.json
 - data/v/gelsenkirchen.json
 - data/v/ubc.json

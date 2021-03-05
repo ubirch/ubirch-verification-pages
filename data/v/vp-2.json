@@ -1,0 +1,26 @@
+{
+  "title": "govdigital Vaccination Certificate v2",
+  "company_name": "govdigital",
+  "company_logo": "/uploads/logo-2x.png",
+  "favicon": "/uploads/3170gov.ico",
+  "show_ubirch_info": true,
+  "layout": "vaccination-certificate-v2",
+  "custom_styles": "/uploads/govdigital.css",
+  "use_without_access_token": false,
+  "access_token": [
+    {
+      "stage": "dev",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiZDYzZWNjMDMtZjVhNy00ZDQzLTkxZDAtYTMwZDAzNGQ4ZGEzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2MTk4MjA2MzAsImlhdCI6MTYxMjQzNTI4MCwianRpIjoiOGJkMzExZDItZGEyYi00ZWJhLWExMmMtODYxYjRiYWU2MjliIiwidGFyZ2V0X2lkZW50aXRpZXMiOiIqIiwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIiLCJwdXJwb3NlIjoiVWJpcmNoIERlZmF1bHQgVG9rZW4iLCJvcmlnaW5fZG9tYWlucyI6W119.tDovGseqjwaJZNX0ZtoGmZVvkcdVltR1nXYYAFpF4DHGAQ8MiRAfeJIYL0TNHsqBt_-60fw2j65neje_ThJ7Eg"
+    },
+    {
+      "stage": "demo",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRlbW8udWJpcmNoLmNvbSIsInN1YiI6IjZhMDQxMmU3LWRkMDMtNDA4Yi04ZGMxLThmZDFlNWMzMDM0OCIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LmRlbW8udWJpcmNoLmNvbSIsImlhdCI6MTYxNDcwMjg2NCwianRpIjoiYjU5MjBjMWUtNTkzNC00MTQyLWEwNmUtMjEzYWEzNjI4YjQ5IiwidGFyZ2V0X2lkZW50aXRpZXMiOlsiMzAxNjk0NTctMzE5YS00YmQxLWFkMGItMzA0MWVkNjlkMjBiIiwiNDRlNTg0ZTQtM2I3OC00NDczLTk3NzAtNmFiYWY0OTFhM2ZhIl0sInJvbGUiOiJ2ZXJpZmllciIsInNjb3BlIjoidmVyIiwicHVycG9zZSI6InZlcmlmeSB0b2tlbiIsIm9yaWdpbl9kb21haW5zIjpbXX0.6Achr4FX3UgCI_mcX7gnIDPrguzN0UkIW1PpLQdCEsYxsktJ6YyabmYAqhVxCJ8hvU852TwqzLDPtEZdCO7ctg"
+    },
+    {
+      "stage": "prod",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLnByb2QudWJpcmNoLmNvbSIsInN1YiI6ImE0MWZiYjgxLWVkOTktNDY5My1hMGE4LWMxMjViMjQ0YmZkMyIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LnByb2QudWJpcmNoLmNvbSIsImV4cCI6MTY3MjU4NjAxNywibmJmIjoxNjEyODgzNjE4LCJpYXQiOjE2MTI5NzAxMDAsImp0aSI6ImE5NDc2MTI2LTU4NWQtNDQyZC1iZTdlLTYwNDZiYzU4MzhmYyIsInB1cnBvc2UiOiJWYWNjaW5hdGlvbl9WZXJpZmljYXRpb24gVWJpcmNoLCBBbHTDtnR0aW5nLCBab2xsZXJuYWxia3JlaXMiLCJ0YXJnZXRfaWRlbnRpdGllcyI6WyI3MTIwMmQwYi0wZjUxLTQ0ZTEtYTIzOS0yZTYzMTQwZWQxN2IiLCI3YWY1NWE4OS1kOWEwLTQ5MjktYjVhYS0xYjE2NTdiMDZhNTYiLCI4MjlkNDZlYi0wODkwLTRjODQtYjk2MC1mYmI4ZGI0ZDdlMTQiXSwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIifQ.Z6vzfcjTJ05YIO0-7BzXyJuUboqHznjEUfq8M5LZMlQuyVgsfWpJ40LzUhb14e3wVg2vvGbn8OXWOG9HW1hGMQ"
+    }
+  ],
+  "make_form_editable": false,
+  "show_verification_button": false
+}

@@ -67,6 +67,10 @@
 
 {{ $scratch.Set "inputids" (slice "co" "vf" "vu" "do") }}
 
+{{ else if (eq $staticData.layout "vaccination-certificate-v2") }}
+
+{{ $scratch.Set "inputids" (slice "fn" "gn" "pn" "bd" "pr" "br" "vs" "vd" "ac" "is" "id" "ve" "se" "s") }}
+
 {{ else if (eq $staticData.layout "bvdw-legacy-form") }}
 
 {{ $scratch.Set "inputids" (slice "company" "from" "until" "realm") }}
