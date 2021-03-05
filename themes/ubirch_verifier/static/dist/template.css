@@ -1,4 +1,6 @@
 :root {
+    --load-highlight-success: rgba(83, 175, 50, 0.5);
+    --load-highlight-fail: rgba(228, 1, 27, 0.5);
     --section1-backround-color: #67d4ef;
     --section1-text-color: #696969;
     --form-backround-color: #ffffff;
@@ -44,10 +46,10 @@ body {
 }
 
 .flashgreen {
-  background-color: #53af32;
+  background-color: var(--load-highlight-success);
 }
 .flashred {
-  background-color: #e40146;
+  background-color: var(--load-highlight-fail);
 }
 
 #page-content {
