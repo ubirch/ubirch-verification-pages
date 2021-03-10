@@ -19,27 +19,21 @@
   --footer-highlight-color: #6b6b6b;
   --form-accent-color: #67d4ef;
   --mobile-page-layout:
-          "verification"
-          "titleCard"
-          "textArea";
+    "verification"
+    "titleCard"
+    "textArea"
+    "cooperations";
 
   --tablet-page-layout:
-          "titleCard titleCard"
-          "verification textArea";
+    "titleCard titleCard"
+    "verification textArea"
+    "cooperations cooperations";
 
   --desktop-layout:
-          "titleCard titleCard"
-          "verification textArea";
-    --header-logo-width: 100%;
-    --header-logo-height: auto;
+    "titleCard titleCard"
+    "verification textArea"
+    "cooperations cooperations";
+  --header-logo-width: 100%;
+  --header-logo-height: auto;
 }
 
-
-#titleCard p{
-    padding: 2rem;
-    margin: 0;
-}
-
-#textArea p{
-    padding: 2rem
-}

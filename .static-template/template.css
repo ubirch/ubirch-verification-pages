@@ -1,4 +1,6 @@
 :root {
+    --load-highlight-success: rgba(83, 175, 50, 0.5);
+    --load-highlight-fail: rgba(228, 1, 27, 0.5);
     --title-backround-color: #ffffff;
     --section1-backround-color: #67d4ef;
     --section1-text-color: #696969;
@@ -10,6 +12,9 @@
     --form-button-higlight-text-color: #ffffff;
     --section2-backround-color: #e0e0e0;
     --section2-text-color: #696969;
+    --header-backround-color: #ffffff;
+    --header-text-color: #000000;
+    --header-highlight-color: #6b6b6b;
     --footer-backround-color: #67d4ef;
     --footer-text-color: #4e4e4e;
     --form-accent-color: #67d4ef;

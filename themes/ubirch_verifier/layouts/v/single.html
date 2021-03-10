@@ -33,9 +33,9 @@
 
 {{ with .Params.verification_info_text }}
 <div id="titleCard">
-  <p id="info-content">
+  <div id="info-content">
     {{ . | markdownify }}
-  </p>
+  </div>
 </div>
 {{ end }}
 

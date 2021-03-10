@@ -25,16 +25,23 @@
    --mobile-page-layout:
           "verification"
           "titleCard"
-          "textArea";
+          "textArea"
+          "cooperations";
 
   --tablet-page-layout:
           "titleCard titleCard"
-          "verification textArea";
+          "verification textArea"
+          "cooperations cooperations";
 
   --desktop-layout:
 
           "titleCard titleCard"
-          "verification textArea";
+          "verification textArea"
+          "cooperations cooperations";
+
+// after page load background is highlighted in this colours
+  --load-highlight-success: rgba(83, 175, 50, 0.5);
+  --load-highlight-fail: rgba(228, 1, 27, 0.5);
 
   // Header customization
   --header-height: 64px;
