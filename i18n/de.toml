@@ -78,6 +78,8 @@ other = "Typ"
 other = "Impfstoff"
 [formfield.vaccinationCert.s]
 other = "Zufallszahl"
+[formfield.vaccinationCert.formatDate]
+other = "(JJJJMMTT)"
 [formfield.bvdw.company]
 other = "Unternehmen"
 [formfield.bvdw.realm]

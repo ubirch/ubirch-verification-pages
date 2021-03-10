@@ -78,6 +78,8 @@ other = "type"
 other = "medical product name"
 [formfield.vaccinationCert.s]
 other = "random secret"
+[formfield.vaccinationCert.formatDate]
+other = "(YYYYMMDD)"
 [formfield.bvdw.company]
 other = "Company"
 [formfield.bvdw.realm]
