@@ -7,13 +7,22 @@
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#widgetDiv',
-      NO_LINK_TO_CONSOLE: true,
+      HIGHLIGHT_PAGE_AFTER_VERIFICATION: true,
       language: "{{ .language }}",
       accessToken: parseToken(),
       {{ with .formIdMapping }} paramsFormIdsMapping: {{ . }}, {{ end }}
       {{ with .optionalFormFieldIds }} optionalFormFieldIds: {{ . }}, {{ end }}
       formIds: {{ .inputids }}
     });
+
+    {{ with .customStrings }}
+    {{ with .success }}
+    ubirchVerification.setMessageString("SUCCESS", {{ . }});
+    {{ end }}
+    {{ with .fail }}
+    ubirchVerification.setMessageString("FAIL", {{ . }});
+    {{ end }}
+    {{ end }}
 
     var paramStr = ubirchVerification.getFormParamsFromUrl(window);
     if (paramStr) {

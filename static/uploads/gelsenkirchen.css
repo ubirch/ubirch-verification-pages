@@ -21,25 +21,18 @@
   --mobile-page-layout:
           "verification"
           "titleCard"
-          "textArea";
+          "textArea"
+          "cooperations";
 
   --tablet-page-layout:
           "titleCard titleCard"
-          "verification textArea";
+          "verification textArea"
+          "cooperations cooperations";
 
   --desktop-layout:
           "titleCard titleCard"
-          "verification textArea";
+          "verification textArea"
+          "cooperations cooperations";
     --header-logo-width: 100%;
     --header-logo-height: auto;
-}
-
-
-#titleCard p{
-    padding: 2rem;
-    margin: 0;
-}
-
-#textArea p{
-    padding: 2rem
 }

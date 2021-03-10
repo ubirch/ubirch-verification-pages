@@ -1,4 +1,6 @@
 :root {
+    --load-highlight-success: rgba(83, 175, 50, 0.5);
+    --load-highlight-fail: rgba(228, 1, 27, 0.5);
     --section1-backround-color: #67d4ef;
     --section1-text-color: #696969;
     --form-backround-color: #ffffff;
@@ -40,14 +42,21 @@ html {
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.flashgreen {
+  background-color: var(--load-highlight-success);
+}
+.flashred {
+  background-color: var(--load-highlight-fail);
 }
 
 #page-content {
-    height: 100%;
+    height: fit-content;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: var(--header-height) auto fit-content(100%);
+    grid-template-rows: var(--header-height) fit-content fit-content(100%);
     grid-template-areas:
                 "header"
                 "main"
@@ -120,10 +129,16 @@ main{
     background-color: var(--section1-backround-color);
     justify-items: center;
     align-items: center;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 3rem auto 3rem;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+                ".  infocontent     .";
 }
 
-#titleCard p {
-    padding: 1rem 4rem;
+#titleCard #info-content {
+  grid-area: infocontent;
     font-size: 3rem;
     color: var(--section1-text-color);
 }
@@ -154,6 +169,7 @@ main{
 
 
 #verification .formInput {
+    background-color: transparent;
     font-size: 3rem;
     width: calc(100% - 2px);
     overflow-clip: true;
@@ -234,9 +250,15 @@ main{
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    grid-area: textArea;
     background: var(--section2-backround-color);
     color: var(--section2-text-color);
+}
+
+#aboutUbirch{
+    grid-area: textArea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #textArea p {
@@ -249,6 +271,37 @@ main{
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
+}
+
+#cooperations {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    grid-area: cooperations;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: var(--header-logo-height);
+}
+
+#cooperations a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+#cooperations .cooperations__logo-area {
+    display: flex;
+    align-items: center
+}
+
+#cooperations .cooperations__logo {
+    height: var(--header-logo-height);
+    width: 15rem;
+    padding: 2rem;
 }
 
 #footer {
@@ -434,6 +487,12 @@ div#demo-disclaimer.demo {
         width: 90%;
         display: block;
     }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 18rem;
+        padding: 3rem;
+    }
 }
 
 @media (min-width: 800px) {
@@ -475,14 +534,9 @@ div#demo-disclaimer.demo {
 
     main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto;
         grid-template-areas: var(--desktop-layout)
 
-    }
-
-    #titleCard p {
-        padding-left: 10rem;
-        padding-right: 10rem;
     }
 
     #verification .verificationButton:hover {
@@ -577,6 +631,12 @@ div#demo-disclaimer.demo {
     .general-content {
         padding: 1rem 10rem 1rem;
         grid-area: verification;
+    }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 23rem;
+        padding: 5rem;
     }
 }
 
