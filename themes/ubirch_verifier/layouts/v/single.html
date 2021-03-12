@@ -53,8 +53,7 @@
   {{ if (eq .layout "coronalaboratory") }}
 
     {{ $scratch.Set "inputids" (slice "f" "b" "g" "p" "i" "d" "t" "r" "s") }}
-    {{ $scratch.Set "optionalFormFieldIds" (slice "i") }}
-    {{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
+    {{ $scratch.Set "optionalFormFieldIds" (slice "i" "p") }}
 
   {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
