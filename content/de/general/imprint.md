@@ -5,12 +5,13 @@ date = "2021-03-03T18:03:32+01:00"
 draft = false
 layout = "imprint"
 [contact]
+comercial_register = "Amtsgericht Köln HRB 82994"
 company_name = "UBIRCH GmbH"
 vat = "DE298960294"
 ceo = "Stephan Noller, Matthias Leo Jugel"
 email_privacy = "datenschutz@ubirch.com"
 [contact.address]
-street = "Im MediaPark 5"
+street = "Im Mediapark 5"
 zip = "50670"
 city = "Köln"
 country = "Germany"

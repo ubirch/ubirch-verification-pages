@@ -10,6 +10,8 @@ other = "Represented by: Executive director"
 other = "Sources for the images and graphics used"
 [imprint.email_privacy]
 other = "Unser Datenschutzbüro kann per E-Mail kontaktiert werden"
+[imprint.comercial_register]
+other = "Handelsregister"
 [formfield.button_verify]
 other = "verifizieren"
 [formfield.f]

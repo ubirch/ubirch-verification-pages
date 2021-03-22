@@ -10,6 +10,8 @@ other = "Represented by: Executive director"
 other = "Sources for the images and graphics used"
 [imprint.email_privacy]
 other = "Our data privacy office can be reached via email"
+[imprint.comercial_register]
+other = "Comercial Register"
 [formfield.button_verify]
 other = "verify"
 [formfield.f]

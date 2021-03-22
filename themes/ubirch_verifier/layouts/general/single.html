@@ -21,6 +21,12 @@
   </div>
   {{ end }}
 
+  {{ with .comercial_register }}
+  <div id="comercial_register">
+    {{ i18n "imprint.comercial_register" }}: {{ . }}
+  </div>
+  {{ end }}
+
   {{ with .vat }}
   <div id="vat">
     {{ i18n "imprint.vat" }} {{ . }}
