@@ -50,12 +50,26 @@
 
   {{ $scratch.Set "hashalgorithm" "sha256" }}
 
-  {{ if (eq .layout "coronalaboratory") }}
+  {{ if (eq .layout "generated-certificate-form" ) }}
 
-    {{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}
-    {{ $scratch.Set "optionalFormFieldIds" (slice "i" "p") }}
-    {{ $scratch.Set "hiddenFormFieldIds" (slice "s") }}
-    {{ $scratch.Set "labelPrefix" "testresult" }}
+    {{ $scratch.Set "inputids" .inputids }}
+    {{ $scratch.Set "labelPrefix" .labelPrefix }}
+
+    {{ with .formIdMapping }}
+      {{ $scratch.Set "formIdMapping" . }}
+    {{ end }}
+    {{ with .optionalFormFieldIds }}
+    {{ $scratch.Set "optionalFormFieldIds" . }}
+    {{ end }}
+    {{ with .hiddenFormFieldIds }}
+    {{ $scratch.Set "hiddenFormFieldIds" . }}
+    {{ end }}
+    {{ with .hashalgorithm }}
+      {{ $scratch.Set "hashalgorithm" . }}
+    {{ end }}
+    {{ with .doNotSort }}
+      {{ $scratch.Set "doNotSort" . }}
+    {{ end }}
 
   {{ else if (eq $staticData.layout "trafficsignsinventory") }}
 
@@ -76,24 +90,6 @@
     {{ $scratch.Set "optionalFormFieldIds" (slice "p") }}
     {{ $scratch.Set "hiddenFormFieldIds" (slice "s") }}
     {{ $scratch.Set "labelPrefix" "vaccinationCert" }}
-
-  {{ else if (eq $staticData.layout "componentauthenticity") }}
-
-    {{ $scratch.Set "inputids" (slice "mfr" "pn" "sn" "md" "mf" "tid") }}
-    {{ $scratch.Set "labelPrefix" "componentauthenticity" }}
-
-  {{ else if (eq $staticData.layout "bvdw-form") }}
-
-    {{ $scratch.Set "inputids" (slice "co" "do" "vf" "vu") }}
-    {{ $scratch.Set "labelPrefix" "bvdw" }}
-
-  {{ else if (eq $staticData.layout "bvdw-legacy-form") }}
-
-    {{ $scratch.Set "inputids" (slice "company" "realm" "from" "until") }}
-    {{ $scratch.Set "formIdMapping" (slice "unternehmen" "bereich" "von" "bis") }}
-    {{ $scratch.Set "hashalgorithm" "sha512" }}
-    {{ $scratch.Set "doNotSort" true }}
-    {{ $scratch.Set "labelPrefix" "bvdwLegacy" }}
 
   {{ end }}
 
@@ -123,8 +119,15 @@
 
     <form id="gen_form" name="gen_form" onsubmit="verifyForm(); return false;">
 
+      {{ if (eq $staticData.layout "vaccinationcertificate") }}
+
+      {{ partial "vaccinationcertificate" . }}
+
+      {{ else }}
+
       {{ partial "generated-certificate-form" (dict "inputids" ($scratch.Get "inputids") "hiddenFormFieldIds" ($scratch.Get "hiddenFormFieldIds") "labelPrefix" ($scratch.Get "labelPrefix") ) }}
 
+      {{ end }}
     </form>
       <div id="resultDiv">
 

@@ -3,7 +3,7 @@
   "title": "bvdw (new certificates)",
   "company_name": "BVDW",
   "company_logo": "/uploads/bundesverband_digitale_wirtschaft_logo.svg",
-  "layout": "bvdw-form",
+  "layout": "generated-certificate-form",
   "favicon": "",
   "cooperation_logos": [
 
@@ -18,5 +18,8 @@
   "demo_discaimer": false,
   "custom_styles": "",
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "inputids": ["co", "do", "vf", "vu"],
+  "labelPrefix": "bvdw"
+
 }

@@ -1,5 +1,5 @@
 {
-  "layout": "componentauthenticity",
+  "layout": "generated-certificate-form",
   "title": "ubc",
   "company_name": "UBC COMPOSITES GMBH",
   "company_logo": "/uploads/ubc-logo-150.png",
@@ -26,5 +26,7 @@
   "custom_styles": "/uploads/ubc.css",
   "make_form_editable": false,
   "show_verification_button": false,
-  "demo_discaimer": true
+  "demo_discaimer": true,
+  "inputids": ["mfr", "pn", "sn", "md", "mf", "tid"],
+  "labelPrefix": "componentauthenticity"
 }
