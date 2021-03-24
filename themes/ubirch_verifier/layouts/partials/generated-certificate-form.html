@@ -1,0 +1,12 @@
+{{ $hiddenFormFieldIds := .hiddenFormFieldIds }}
+{{ $prefix := .labelPrefix }}
+
+{{ range .inputids }}
+  {{ if in $hiddenFormFieldIds . }}
+<input type="text" id="{{ . }}" class="formInput" readonly hidden>
+  {{ else }}
+<label for="{{ . }}" class="formLabel">{{ i18n (printf "formfield.%s.%s" $prefix .) }}</label>
+<input type="text" id="{{ . }}" class="formInput" readonly>
+  {{ end }}
+
+{{ end }}

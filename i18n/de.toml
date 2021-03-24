@@ -14,23 +14,23 @@ other = "Unser Datenschutzbüro kann per E-Mail kontaktiert werden"
 other = "Handelsregister"
 [formfield.button_verify]
 other = "verifizieren"
-[formfield.f]
+[formfield.testresult.f]
 other = "Familienname"
-[formfield.g]
+[formfield.testresult.g]
 other = "Vorname(n)"
-[formfield.b]
+[formfield.testresult.b]
 other = "Geburtsdatum"
-[formfield.p]
+[formfield.testresult.p]
 other = "Personalausweisnummer"
-[formfield.i]
+[formfield.testresult.i]
 other = "interne Labor ID"
-[formfield.d]
-other = "Testdatum mit Uhrzeit"
-[formfield.t]
+[formfield.testresult.d]
+other = "Testdatum mit Uhrzeit (JJJJMMTTHHMM)"
+[formfield.testresult.t]
 other = "Testtyp"
-[formfield.r]
+[formfield.testresult.r]
 other = "Testergebnis"
-[formfield.s]
+[formfield.testresult.s]
 other = "Zufallszahl (Secret)"
 [formfield.trafsigninv.ActionReferenceNumber]
 other = "Maßnahmennummer / Aktenzeichen"
@@ -82,13 +82,57 @@ other = "Impfstoff"
 other = "Zufallszahl"
 [formfield.vaccinationCert.formatDate]
 other = "(JJJJMMTT)"
-[formfield.bvdw.company]
+[formfield.vaccinationEUCert.fn]
+other = "Name"
+[formfield.vaccinationEUCert.gn]
+other = "Vorname(n)"
+[formfield.vaccinationEUCert.pn]
+other = "Pass-Nr."
+[formfield.vaccinationEUCert.bd]
+other = "Geburtsdatum"
+[formfield.vaccinationEUCert.da]
+other = "Erreger / Krankheit"
+[formfield.vaccinationEUCert.vp]
+other = "Impfstoff-Typ"
+[formfield.vaccinationEUCert.pr]
+other = "Impfstoff"
+[formfield.vaccinationEUCert.br]
+other = "Hersteller"
+[formfield.vaccinationEUCert.vs]
+other = "Impfung Nr."
+[formfield.vaccinationEUCert.vd]
+other = "Impfdatum"
+[formfield.vaccinationEUCert.ac]
+other = "Impfzentrum"
+[formfield.vaccinationEUCert.di]
+other = "Arzt"
+[formfield.vaccinationEUCert.co]
+other = "Staat"
+[formfield.vaccinationEUCert.is]
+other = "Zertifizierer"
+[formfield.vaccinationEUCert.id]
+other = "generierte ID"
+[formfield.vaccinationEUCert.vf]
+other = "gültig ab"
+[formfield.vaccinationEUCert.vu]
+other = "gültig bis"
+[formfield.vaccinationEUCert.ve]
+other = "Version"
+[formfield.bvdw.co]
 other = "Unternehmen"
-[formfield.bvdw.realm]
-other = "Qualitätszertifikat"
-[formfield.bvdw.from]
+[formfield.bvdw.do]
+other = "Bereich"
+[formfield.bvdw.vf]
 other = "Zulassungsdatum"
-[formfield.bvdw.until]
+[formfield.bvdw.vu]
+other = "Ablaufdatum"
+[formfield.bvdwLegacy.company]
+other = "Unternehmen"
+[formfield.bvdwLegacy.realm]
+other = "Qualitätszertifikat"
+[formfield.bvdwLegacy.from]
+other = "Zulassungsdatum"
+[formfield.bvdwLegacy.until]
 other = "Ablaufdatum"
 [formfield.componentauthenticity.mfr]
 other = "Hersteller"
