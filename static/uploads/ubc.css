@@ -19,6 +19,22 @@
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #004898;
 
+    --mobile-page-layout:
+            "verification"
+            "titleCard"
+            "textArea"
+            "cooperations";
+
+    --tablet-page-layout:
+            "titleCard titleCard"
+            "verification textArea"
+            "cooperations cooperations";
+
+    --desktop-layout:
+            "titleCard titleCard"
+            "verification textArea"
+            "cooperations cooperations";
+
     font-size: 7px;
 }
 
