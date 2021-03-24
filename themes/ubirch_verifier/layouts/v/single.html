@@ -71,19 +71,6 @@
       {{ $scratch.Set "doNotSort" . }}
     {{ end }}
 
-  {{ else if (eq $staticData.layout "trafficsignsinventory") }}
-
-    {{ $scratch.Set "inputids" (slice "ActionReferenceNumber" "ActionID" "SpecialUseDesc" "PeriodBeginDate" "PeriodBeginTime" "PeriodEndDate" "PeriodEndTime" "PostCode" "City" "District" "Street" "FromHouseNumber" "ToHouseNumber" "FromCrossroad" "ToCrossroad") }}
-    {{ $scratch.Set "formIdMapping" (slice "arn" "id" "ud" "bd" "bt" "ed" "et" "pc" "c" "d" "s" "fn" "tn" "fc" "tc") }}
-    {{ $scratch.Set "labelPrefix" "trafsigninv" }}
-
-  {{ else if (eq $staticData.layout "vaccinationeucertificate") }}
-
-    {{ $scratch.Set "inputids" (slice "fn" "gn" "pn" "bd" "da" "vp" "pr" "br" "vs" "vd" "ac" "di" "co" "is" "id" "vf" "vu" "ve" "se") }}
-    {{ $scratch.Set "optionalFormFieldIds" (slice "pn" "bd" "da" "vp" "ac" "di" "co" "vf" "vu" ) }}
-    {{ $scratch.Set "hiddenFormFieldIds" (slice "ve" "se") }}
-    {{ $scratch.Set "labelPrefix" "vaccinationEUCert" }}
-
   {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
     {{ $scratch.Set "inputids" (slice "f" "g" "b" "p" "i" "d" "t" "r" "s") }}

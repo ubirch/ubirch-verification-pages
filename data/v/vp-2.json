@@ -4,7 +4,7 @@
   "company_logo": "/uploads/logo-2x.png",
   "favicon": "/uploads/3170gov.ico",
   "show_ubirch_info": true,
-  "layout": "vaccinationeucertificate",
+  "layout": "generated-certificate-form",
   "custom_styles": "/uploads/govdigital.css",
   "use_without_access_token": false,
   "access_token": [
@@ -14,5 +14,10 @@
     }
   ],
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "inputids": ["fn", "gn", "pn", "bd", "da", "vp", "pr", "br", "vs", "vd", "ac", "di", "co", "is", "id", "vf", "vu", "ve", "se"],
+  "hiddenFormFieldIds": ["ve", "se"],
+  "optionalFormFieldIds": ["pn", "bd", "da", "vp", "ac", "di", "co", "vf", "vu"],
+  "labelPrefix": "vaccinationEUCert"
+
 }

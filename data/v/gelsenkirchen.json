@@ -4,7 +4,7 @@
   "company_logo": "/uploads/logo-gelsenkirchen.png",
   "favicon": "/uploads/favicon.ico",
   "show_ubirch_info": false,
-  "layout": "trafficsignsinventory",
+  "layout": "generated-certificate-form",
   "custom_styles": "/uploads/gelsenkirchen.css",
   "cooperation_logos": [
     {
@@ -26,5 +26,8 @@
 
   ],
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "inputids": ["ActionReferenceNumber", "ActionID", "SpecialUseDesc", "PeriodBeginDate", "PeriodBeginTime", "PeriodEndDate", "PeriodEndTime", "PostCode", "City", "District", "Street", "FromHouseNumber", "ToHouseNumber", "FromCrossroad", "ToCrossroad"],
+  "formIdMapping": ["arn", "id", "ud", "bd", "bt", "ed", "et", "pc", "c", "d", "s", "fn", "tn", "fc", "tc"],
+  "labelPrefix": "trafsigninv"
 }
