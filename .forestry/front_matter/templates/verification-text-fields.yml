@@ -43,7 +43,6 @@ fields:
   label: optional - link to the privacy page of tenant in the right language; default
     is the govdigital privacy page (only available in german language)
 pages:
-- content/de/v/bvdw-qr-code.md
 - content/de/v/gd-vcc.md
 - content/de/v/gd.md
 - content/de/v/gelsenkirchen.md
