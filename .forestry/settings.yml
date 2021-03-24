@@ -5,6 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: i18n
+  label: Translation Files
+  create: none
+  match: "*.toml"
+- type: directory
   path: data/v
   label: 'General-Data: Images, Colors, Styles, etc.'
   create: documents
