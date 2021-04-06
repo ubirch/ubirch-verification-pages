@@ -144,6 +144,7 @@ main{
 }
 
 #verification {
+    background-color: var(--form-backround-color);
     padding-top: 2rem;
     padding-bottom: 2rem;
     grid-area: verification;
@@ -250,11 +251,11 @@ main{
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    background: var(--section2-backround-color);
     color: var(--section2-text-color);
 }
 
 #aboutUbirch{
+    background: var(--section2-backround-color);
     grid-area: textArea;
     display: flex;
     flex-direction: column;
@@ -534,7 +535,7 @@ div#demo-disclaimer.demo {
 
     main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto 0;
         grid-template-areas: var(--desktop-layout)
 
     }
