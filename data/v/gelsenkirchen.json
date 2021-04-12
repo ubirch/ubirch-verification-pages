@@ -1,23 +1,27 @@
 {
   "title": "gelsenkirchen",
   "company_name": "Gelsenkirchen",
-  "company_logo": "/uploads/logo-gd-mit-gelsenkirchen.png",
+  "company_logo": "/uploads/logo-gelsenkirchen.png",
   "favicon": "/uploads/favicon.ico",
   "show_ubirch_info": false,
-  "layout": "trafficsignsinventory",
-  "custom_styles": "",
+  "layout": "generated-certificate-form",
+  "custom_styles": "/uploads/gelsenkirchen.css",
   "cooperation_logos": [
     {
       "cooperation_logo": "/uploads/logo-2x.png",
       "cooperation_name": "govdigital eG",
-      "link_to_cooperation": ""
+      "link_to_cooperation": "https://www.govdigital.de"
     }
   ],
   "use_without_access_token": false,
   "access_token": [
     {
       "stage": "dev",
-      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiZDYzZWNjMDMtZjVhNy00ZDQzLTkxZDAtYTMwZDAzNGQ4ZGEzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2MTk4MjA2MzAsImlhdCI6MTYxMjQzNTI4MCwianRpIjoiOGJkMzExZDItZGEyYi00ZWJhLWExMmMtODYxYjRiYWU2MjliIiwidGFyZ2V0X2lkZW50aXRpZXMiOiIqIiwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIiLCJwdXJwb3NlIjoiVWJpcmNoIERlZmF1bHQgVG9rZW4iLCJvcmlnaW5fZG9tYWlucyI6W119.tDovGseqjwaJZNX0ZtoGmZVvkcdVltR1nXYYAFpF4DHGAQ8MiRAfeJIYL0TNHsqBt_-60fw2j65neje_ThJ7Eg"
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiM2Q3ZTljMzItOTQ5OC00NmE4LWJkMWUtYjI4NTg1NzFkNWM4IiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2NDA5NDIyMjUsImlhdCI6MTYxNzg2OTg3MSwianRpIjoiZjFjMWEyNjEtYWNkMi00MjFkLWIzNTAtMWZjNmExZGI4MTYyIiwic2NwIjpbInVwcDp2ZXJpZnkiXSwicHVyIjoiVmVyaWZpY2F0aW9uIFdpbGRjYXJkIFRva2VuIGZvciBHZWxzZW5raXJjaGVuIiwidGdwIjpbXSwidGlkIjpbIioiXSwib3JkIjpbImh0dHBzOi8vdmVyaWZpY2F0aW9uLmRldi51YmlyY2guY29tL3YvZ2Vsc2Vua2lyY2hlbiJdfQ.18I7zlYf3D0qpYGepchCPsxOLb5Marnrvo3llvoqYToHoc46_-ZNnLo19nQprGV29RLgM4TScNEcQZiSrfQF2g"
+    },
+    {
+      "stage": "demo",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRlbW8udWJpcmNoLmNvbSIsInN1YiI6IjU0NmQ3ZWYyLTZhNTctNDI2OS05ODA1LTMxMTBlMzRjZGIyZSIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LmRlbW8udWJpcmNoLmNvbSIsImV4cCI6MTY0MDk3NDUxMiwiaWF0IjoxNjE3OTAyMTcxLCJqdGkiOiJhYWYwNTg0OS05M2I0LTQxNjYtYjEyYS0xZTgwMzQyOWQ4NGQiLCJzY3AiOlsidXBwOnZlcmlmeSJdLCJwdXIiOiJXaWxkY2FyZCBWZXJpZmljYXRpb24gVG9rZW4gZm9yIEdlbHNlbmtpcmNoZW4iLCJ0Z3AiOltdLCJ0aWQiOlsiKiJdLCJvcmQiOlsiaHR0cHM6Ly92ZXJpZmljYXRpb24uZGVtby51YmlyY2guY29tL3YvZ2Vsc2Vua2lyY2hlbiJdfQ.lNXKEC1vfZ6wtspZiLc2Vf_JdzT4uYdBOT7Eu_2PlqydTadpcXpVnuFKttTbnpP5NZh0tMM3hmHMhqyM90bGaA"
     },
     {
       "stage": "prod",
@@ -26,5 +30,8 @@
 
   ],
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "inputids": ["ActionReferenceNumber", "ActionID", "SpecialUseDesc", "PeriodBeginDate", "PeriodBeginTime", "PeriodEndDate", "PeriodEndTime", "PostCode", "City", "District", "Street", "FromHouseNumber", "ToHouseNumber", "FromCrossroad", "ToCrossroad"],
+  "formIdMapping": ["arn", "id", "ud", "bd", "bt", "ed", "et", "pc", "c", "d", "s", "fn", "tn", "fc", "tc"],
+  "labelPrefix": "trafsigninv"
 }

@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{ with .Params.headline }}
+<div class="page-title">
+  <h1>
+    <span class="page-title">{{ . }}</span>
+  </h1>
+  <img src="/uploads/govdigital_graphic.png" alt="" id="graphic">
+</div>
+{{ end }}
+
+{{ with .Params.contact }}
+<div class="page-contact">
+  <h2>{{ .company_name }}</h2>
+  {{ with .address }}
+  <div class="address">
+    <p>{{ .street }}</p>
+    <p>{{ .zip }} {{ .city }}</p>
+    <p>{{ .country }}</p>
+    <p>{{ i18n "address.phone.short" }}: {{ .phone }}</p>
+    <p>{{ i18n "address.email" }}: {{ .email }}</p>
+  </div>
+  {{ end }}
+
+  {{ with .comercial_register }}
+  <div id="comercial_register">
+    {{ i18n "imprint.comercial_register" }}: {{ . }}
+  </div>
+  {{ end }}
+
+  {{ with .vat }}
+  <div id="vat">
+    {{ i18n "imprint.vat" }} {{ . }}
+  </div>
+  {{ end }}
+
+  {{ with .ceo }}
+  <div id="ceo">
+    {{ i18n "imprint.ceo" }} {{ . }}
+  </div>
+  {{ end }}
+
+  <div id="graphics_sources">
+    {{ i18n "imprint.graphics_sources" }}:<br>
+    UBIRCH, shutterstock.com, istockphoto.com
+  </div>
+
+  {{ with .email_privacy }}
+  <div id="email_privacy">
+    {{ i18n "imprint.email_privacy" }}:<br>
+    {{ . }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+<div class="general-content">
+  {{ .Content | markdownify }}
+</div>
+
+{{ end }}

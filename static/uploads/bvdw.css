@@ -1,8 +1,9 @@
 :root {
     --title-backround-color: #ffffff;
-    --section1-backround-color: #004898;
-    --section1-text-color: #cdcdcd;
-    --form-backround-color: #ffffff;
+    --section1-backround-color: #00bbee;
+    --section1-text-color: #ffffff;
+    --section2-backround-color: rgb(239, 239, 239);
+    --form-backround-color: rgb(239, 239, 239);
     --form-label-text-color: #4e4e4e;
     --form-input-underline-color: #000000;
     --form-button-color: #ffffff;
@@ -11,11 +12,11 @@
     --textArea-backround-color: #e0e0e0;
     --testArea-text-color: #4e4e4e;
     --textArea-highlight-color: #ababab;
-    --header-backround-color: #ffffff;
+    --header-backround-color: rgb(239, 239, 239);
     --header-text-color: #000000;
     --header-highlight-color: #6b6b6b;
-    --footer-backround-color: #004898;
-    --footer-text-color: #cdcdcd;
+    --footer-backround-color: #00bbee;
+    --footer-text-color: #ffffff;
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #004898;
 
@@ -38,6 +39,14 @@
     font-size: 7px;
 }
 
+p a {
+    color: #6b6b6b;
+}
+
+#aboutUbirch{
+    height: 100%;
+}
+
 #header #logo {
     max-width: 100px;
 }
@@ -52,6 +61,6 @@
 
 @media only screen and (min-width: 800px) {
     #header #logo {
-        max-width: 150px;
+        max-width: 200px;
     }
 }

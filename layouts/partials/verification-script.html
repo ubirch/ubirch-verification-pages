@@ -6,7 +6,7 @@
     ubirchVerification = new UbirchFormVerification({
       algorithm: "{{ .hashalgorithm }}",
       elementSelector: '#widgetDiv',
-      NO_LINK_TO_CONSOLE: true,
+      HIGHLIGHT_PAGE_AFTER_VERIFICATION: true,
       CHECK_FORM_FILLED: false,
       language: "{{ .language }}",
     {{ with .formIdMapping }}
@@ -30,7 +30,7 @@
   function verifyForm() {
     try {
       const genJson = ubirchVerification.getJsonFromInputs(document);
-      ubirchVerification.verifyJSON(genJson);
+      ubirchVerification.verifyJSON(genJson{{ if (eq .doNotSort true) }}, false{{ end }});
     } catch (e) {
       console.log("Fehler! " + e);
       // TODO: error handling

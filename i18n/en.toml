@@ -1,22 +1,36 @@
+[address.phone.short]
+other = "phone"
+[address.email]
+other = "email"
+[imprint.vat]
+other = "VAT"
+[imprint.ceo]
+other = "Represented by: Executive director"
+[imprint.graphics_sources]
+other = "Sources for the images and graphics used"
+[imprint.email_privacy]
+other = "Our data privacy office can be reached via email"
+[imprint.comercial_register]
+other = "Comercial Register"
 [formfield.button_verify]
 other = "verify"
-[formfield.f]
+[formfield.testresult.f]
 other = "family name"
-[formfield.g]
+[formfield.testresult.g]
 other = "given name(s)"
-[formfield.b]
+[formfield.testresult.b]
 other = "birth date"
-[formfield.p]
+[formfield.testresult.p]
 other = "passport id"
-[formfield.i]
+[formfield.testresult.i]
 other = "internal laboratory id"
-[formfield.d]
-other = "test date and time"
-[formfield.t]
+[formfield.testresult.d]
+other = "test date and time (YYYYMMDDHHMM)"
+[formfield.testresult.t]
 other = "test type"
-[formfield.r]
+[formfield.testresult.r]
 other = "test result (positive, negative, unknown)"
-[formfield.s]
+[formfield.testresult.s]
 other = "random number (secret)"
 [formfield.trafsigninv.ActionReferenceNumber]
 other = "reference number of the certification"
@@ -48,6 +62,78 @@ other = "ending house number"
 other = "from crossroad"
 [formfield.trafsigninv.ToCrossroad]
 other = "to crossroad"
+[formfield.vaccinationCert.f]
+other = "family name"
+[formfield.vaccinationCert.g]
+other = "given name(s)"
+[formfield.vaccinationCert.b]
+other = "date of birth"
+[formfield.vaccinationCert.p]
+other = "ID"
+[formfield.vaccinationCert.i]
+other = "vaccination centre"
+[formfield.vaccinationCert.d]
+other = "date of vaccination"
+[formfield.vaccinationCert.t]
+other = "type"
+[formfield.vaccinationCert.r]
+other = "medical product name"
+[formfield.vaccinationCert.s]
+other = "random secret"
+[formfield.vaccinationCert.formatDate]
+other = "(YYYYMMDD)"
+[formfield.vaccinationEUCert.fn]
+other = "family name"
+[formfield.vaccinationEUCert.gn]
+other = "given name(s)"
+[formfield.vaccinationEUCert.pn]
+other = "ID"
+[formfield.vaccinationEUCert.bd]
+other = "date of birth"
+[formfield.vaccinationEUCert.da]
+other = "disease / agent"
+[formfield.vaccinationEUCert.vp]
+other = "vaccine"
+[formfield.vaccinationEUCert.pr]
+other = "medical product"
+[formfield.vaccinationEUCert.br]
+other = "producer / reseller"
+[formfield.vaccinationEUCert.vs]
+other = "vaccination series #"
+[formfield.vaccinationEUCert.vd]
+other = "date of vaccination"
+[formfield.vaccinationEUCert.ac]
+other = "administering centre"
+[formfield.vaccinationEUCert.di]
+other = "health professional"
+[formfield.vaccinationEUCert.co]
+other = "country"
+[formfield.vaccinationEUCert.is]
+other = "issuer"
+[formfield.vaccinationEUCert.id]
+other = "generated ID"
+[formfield.vaccinationEUCert.vf]
+other = "valid from"
+[formfield.vaccinationEUCert.vu]
+other = "valid until"
+[formfield.vaccinationEUCert.ve]
+other = "Version"
+[formfield.bvdw.co]
+other = "Company"
+[formfield.bvdw.do]
+other = "Domain"
+[formfield.bvdw.vf]
+other = "Issue Date"
+[formfield.bvdw.vu]
+other = "Expiry Date"
+[formfield.bvdwLegacy.company]
+other = "Company"
+[formfield.bvdwLegacy.realm]
+other = "Domain"
+[formfield.bvdwLegacy.from]
+other = "Issue Date"
+[formfield.bvdwLegacy.until]
+other = "Expiry Date"
 [formfield.componentauthenticity.mfr]
 other = "Manufacturer"
 [formfield.componentauthenticity.pn]

@@ -1,12 +1,12 @@
 {
-  "layout": "componentauthenticity",
+  "layout": "generated-certificate-form",
   "title": "ubc",
   "company_name": "UBC COMPOSITES GMBH",
   "company_logo": "/uploads/ubc-logo-150.png",
   "favicon": "/uploads/favicon_ubc.ico",
   "cooperation_logos": [
     {
-      "cooperation_logo": "/uploads/Ubirch_Logo_weiss.svg",
+      "cooperation_logo": "/uploads/Ubirch_Logo_schwarz.svg",
       "cooperation_name": "Ubirch GmbH",
       "link_to_cooperation": ""
     }
@@ -16,7 +16,11 @@
   "access_token": [
     {
       "stage": "dev",
-      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiZDYzZWNjMDMtZjVhNy00ZDQzLTkxZDAtYTMwZDAzNGQ4ZGEzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2MTk4MjA2MzAsImlhdCI6MTYxMjQzNTI4MCwianRpIjoiOGJkMzExZDItZGEyYi00ZWJhLWExMmMtODYxYjRiYWU2MjliIiwidGFyZ2V0X2lkZW50aXRpZXMiOiIqIiwicm9sZSI6InZlcmlmaWVyIiwic2NvcGUiOiJ2ZXIiLCJwdXJwb3NlIjoiVWJpcmNoIERlZmF1bHQgVG9rZW4iLCJvcmlnaW5fZG9tYWlucyI6W119.tDovGseqjwaJZNX0ZtoGmZVvkcdVltR1nXYYAFpF4DHGAQ8MiRAfeJIYL0TNHsqBt_-60fw2j65neje_ThJ7Eg"
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiM2Q3ZTljMzItOTQ5OC00NmE4LWJkMWUtYjI4NTg1NzFkNWM4IiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2NDA5NDE3MjgsImlhdCI6MTYxNzg2OTgwMSwianRpIjoiNjliMTAzZjYtNmVlMS00NDVkLTg0NjAtYzZhMTViYTYxMDg0Iiwic2NwIjpbInVwcDp2ZXJpZnkiXSwicHVyIjoiRk9SIERFTU8gT05MWSAtIFdpbGRjYXJkIFZlcmlmaWNhdGlvbiBUb2tlbiBmb3IgVUJDIiwidGdwIjpbXSwidGlkIjpbIioiXSwib3JkIjpbImh0dHBzOi8vdmVyaWZpY2F0aW9uLmRldi51YmlyY2guY29tL3YvdWJjIl19.3BKwZGgayNuXTXMiqcCbgfn_TfnMtXL_JaL6DCZfim0cDYE7alIvBlT1CU1m5VGkX6sOHldNjZtj9PGWTKSpDQ"
+    },
+    {
+      "stage": "demo",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRlbW8udWJpcmNoLmNvbSIsInN1YiI6IjU0NmQ3ZWYyLTZhNTctNDI2OS05ODA1LTMxMTBlMzRjZGIyZSIsImF1ZCI6Imh0dHBzOi8vdmVyaWZ5LmRlbW8udWJpcmNoLmNvbSIsImV4cCI6MTY0MDk3NDM5NiwiaWF0IjoxNjE3OTAyMTA4LCJqdGkiOiJjMzEzZWY2Yy1lMDAwLTRiNjItYjdmYi02ODI5MTZlN2VhNzgiLCJzY3AiOlsidXBwOnZlcmlmeSJdLCJwdXIiOiJWZXJpZmljYXRpb24gV2lsZGNhcmQgVG9rZW4gZm9yIFVCQyIsInRncCI6W10sInRpZCI6WyIqIl0sIm9yZCI6WyJodHRwczovL3ZlcmlmaWNhdGlvbi5kZW1vLnViaXJjaC5jb20vdi91YmMiXX0.5P49Un1HJ5FtFpSTaC5xWPg6mm2RRU6HbcqiysvEYbtVn6gT7VqmUU92D-ySIO5g9PbU6ZGZE_IjjpvP75o5xQ"
     },
     {
       "stage": "prod",
@@ -26,5 +30,7 @@
   "custom_styles": "/uploads/ubc.css",
   "make_form_editable": false,
   "show_verification_button": false,
-  "demo_discaimer": true
+  "demo_discaimer": true,
+  "inputids": ["mfr", "pn", "sn", "md", "mf", "tid"],
+  "labelPrefix": "componentauthenticity"
 }

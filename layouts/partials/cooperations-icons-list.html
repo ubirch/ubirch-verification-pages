@@ -1,0 +1,13 @@
+<div id="cooperations">
+  {{ range . }}
+  {{ with .link_to_cooperation }}
+  <span class="cooperations__logo-area">
+  <a href="{{ . }}" target="_blank">
+  {{ end }}
+    <img src="{{.cooperation_logo}}"  {{ with .cooperation_name }}alt="{{.}}"{{ end }}  class="cooperations__logo">
+  {{ with .link_to_cooperation }}
+  </a>
+  {{ end }}
+  </span>
+  {{ end }}
+</div>

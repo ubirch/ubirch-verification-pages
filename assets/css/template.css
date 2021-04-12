@@ -1,21 +1,38 @@
 :root {
-    --title-backround-color: #ffffff;
+    --load-highlight-success: rgba(83, 175, 50, 0.5);
+    --load-highlight-fail: rgba(228, 1, 27, 0.5);
     --section1-backround-color: #67d4ef;
     --section1-text-color: #696969;
     --form-backround-color: #ffffff;
     --form-label-text-color: #4e4e4e;
     --form-input-underline-color: #000000;
+    --form-input-text-color: #000000;
     --form-button-color: #ffffff;
     --form-buton-text-color: #000000;
     --form-button-higlight-text-color: #ffffff;
     --textArea-backround-color: #e0e0e0;
     --testArea-text-color: #4e4e4e;
     --textArea-highlight-color: #ababab;
+    --header-backround-color: #ffffff;
+    --header-text-color: #000000;
+    --header-highlight-color: #6b6b6b;
     --footer-backround-color: #67d4ef;
     --footer-text-color: #4e4e4e;
     --footer-highlight-color: #6b6b6b;
     --form-accent-color: #67d4ef;
-
+    --mobile-page-layout:
+            "titleCard"
+            "textArea"
+            "verification";
+    --tablet-page-layout:
+            "titleCard textArea"
+            "verification verification";
+    --desktop-layout:
+            "titleCard textArea"
+            "verification verification";
+    --header-height: 64px;
+    --header-logo-width: 100%;
+    --header-logo-height: auto;
     font-size: 7px;
 }
 
@@ -25,14 +42,21 @@ html {
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.flashgreen {
+  background-color: var(--load-highlight-success);
+}
+.flashred {
+  background-color: var(--load-highlight-fail);
 }
 
 #page-content {
-    height: 100%;
+    height: fit-content;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 64px auto fit-content(100%);
+    grid-template-rows: var(--header-height) fit-content fit-content(100%);
     grid-template-areas:
                 "header"
                 "main"
@@ -43,10 +67,7 @@ main{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
-    grid-template-areas:
-            "verification"
-            "titleCard"
-            "textArea";
+    grid-template-areas: var(--mobile-page-layout);
 
 }
 
@@ -55,16 +76,18 @@ main{
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;
     grid-template-areas: "logo . language";
-    padding: 1rem
+    padding: 1rem;
+    background-color: var(--header-backround-color);
+    color: var(--header-text-color);
+    padding-left: 4rem;
 }
 
 #header #logo {
     grid-area: logo;
     align-self: center;
     justify-self: center;
-    width: 100%;
-    height: auto;
-
+    width: var(--header-logo-width);
+    height: var(--header-logo-height);
 }
 
 #header #languageSelectDiv {
@@ -89,7 +112,6 @@ main{
 #header #languageSelectDiv ul a,
 #header #languageSelectDiv ul span {
     font-size: 2rem;
-    color: black;
     text-decoration: none;
 }
 
@@ -107,15 +129,22 @@ main{
     background-color: var(--section1-backround-color);
     justify-items: center;
     align-items: center;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 3rem auto 3rem;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+                ".  infocontent     .";
 }
 
-#titleCard p {
-    padding: 1rem 4rem;
+#titleCard #info-content {
+  grid-area: infocontent;
     font-size: 3rem;
     color: var(--section1-text-color);
 }
 
 #verification {
+    background-color: var(--form-backround-color);
     padding-top: 2rem;
     padding-bottom: 2rem;
     grid-area: verification;
@@ -141,11 +170,13 @@ main{
 
 
 #verification .formInput {
+    background-color: transparent;
     font-size: 3rem;
     width: calc(100% - 2px);
     overflow-clip: true;
     outline: none;
     border: none;
+    color: var(--form-input-text-color);
     border-bottom: 1px solid var(--form-input-underline-color);
     transition: border-bottom ease-in-out 75ms;
     margin-bottom: 1rem;
@@ -202,15 +233,33 @@ main{
     color: var(--form-button-higlight-text-color)
 }
 
+.general-content, .page-contact {
+  padding: 4rem;
+  font-size: 2rem;
+}
+
+.page-contact p {
+  margin: 0.8rem 0;
+}
+
+#vat, #ceo, #email_privacy {
+  padding: 1.5rem 0;
+}
 
 #textArea {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    grid-area: textArea;
-    background: var(--section2-backround-color);
     color: var(--section2-text-color);
+}
+
+#aboutUbirch{
+    background: var(--section2-backround-color);
+    grid-area: textArea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #textArea p {
@@ -223,6 +272,37 @@ main{
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
+}
+
+#cooperations {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    grid-area: cooperations;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: var(--header-logo-height);
+}
+
+#cooperations a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+#cooperations .cooperations__logo-area {
+    display: flex;
+    align-items: center
+}
+
+#cooperations .cooperations__logo {
+    height: var(--header-logo-height);
+    width: 15rem;
+    padding: 2rem;
 }
 
 #footer {
@@ -279,6 +359,46 @@ div#demo-disclaimer.demo {
     margin: 1rem;
 }
 
+.page-title {
+    box-sizing: border-box;
+    display: inline;
+    font-family: MuseoSansRounded-900, calibri, sans-serif;
+    line-height: 150%;
+    font-size: 3.5rem;
+    color: #ffffff;
+    padding: 1rem 4rem 1rem;
+    grid-area: titleCard;
+    background-color: #67d4ef;
+}
+.page-title h1 span {
+    padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.page-title h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+.page-contact {
+    padding: 1rem 4rem 1rem;
+    grid-area: textArea;
+}
+
+.page-contact h2 {
+    margin-top: 3rem;
+}
+
+.general-content {
+    padding: 1rem 4rem 1rem;
+    grid-area: verification;
+}
+
+#graphic {
+    display: none;
+}
+
 @media (min-width: 600px) and (orientation: portrait){
     :root {
         font-size: 6px;
@@ -319,14 +439,69 @@ div#demo-disclaimer.demo {
     main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows:  auto auto;
-        grid-template-areas:
-                "titleCard titleCard"
-                "verification textArea"
+        grid-template-areas: var(--tablet-page-layout)
 
+    }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #ffffff;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard;
+        background-color: #ffffff;
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
+    }
+
+    #graphic{
+        visibility: visible;
+    }
+    #graphic {
+        width: 90%;
+        display: block;
+    }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 18rem;
+        padding: 3rem;
     }
 }
 
 @media (min-width: 800px) {
+    #graphic {
+        width: 90%;
+        display: block;
+    }
+
     html {
         justify-self: center;
     }
@@ -360,16 +535,9 @@ div#demo-disclaimer.demo {
 
     main {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-                "titleCard titleCard"
-                "verification textArea"
+        grid-template-rows: auto auto 0;
+        grid-template-areas: var(--desktop-layout)
 
-    }
-
-    #titleCard p {
-        padding-left: 10rem;
-        padding-right: 10rem;
     }
 
     #verification .verificationButton:hover {
@@ -426,6 +594,51 @@ div#demo-disclaimer.demo {
         line-height: 100%;
         margin: 1rem;
     }
+
+    .page-title {
+        box-sizing: border-box;
+        display: inline;
+        font-family: MuseoSansRounded-900, calibri, sans-serif;
+        line-height: 150%;
+        font-size: 3.5rem;
+        color: #ffffff;
+        padding: 1rem 10rem 1rem;
+        grid-area: titleCard;
+        background-color: #ffffff;
+
+    }
+    .page-title h1 span {
+        padding: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #67d4ef;
+        padding: 1rem;
+    }
+
+    .page-title h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .page-contact {
+        padding: 1rem 10rem 1rem;
+        grid-area: textArea;
+    }
+
+    .page-contact h2 {
+        margin-top: 3rem;
+    }
+
+    .general-content {
+        padding: 1rem 10rem 1rem;
+        grid-area: verification;
+    }
+
+    #cooperations .cooperations__logo {
+        height: var(--header-logo-height);
+        width: 23rem;
+        padding: 5rem;
+    }
 }
 
 @media (min-width: 1010px) {
@@ -438,6 +651,11 @@ div#demo-disclaimer.demo {
         font-size: 22rem;
         line-height: 100%;
         margin: 1rem;
+    }
+
+    #graphic {
+        width: 90%;
+        display: block;
     }
 }
 

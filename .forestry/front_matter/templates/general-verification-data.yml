@@ -47,9 +47,9 @@ fields:
       required: false
     label: link to cooperating company or organisation (optional)
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: Cooperation_logos (Footer)
   description: List of cooperation companies and organisations with logo, name and
     (optional) external link
@@ -77,7 +77,8 @@ fields:
   config:
     required: true
   default: false
-  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!! without access token)
+  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!!
+    without access token)
 - name: access_token
   type: field_group_list
   fields:
@@ -93,9 +94,9 @@ fields:
       - test
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: stage
     description: on which stage is this data anchored?
   - name: token
@@ -105,9 +106,9 @@ fields:
     label: token
     description: UUID containing the tokenID
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: "(optional) Access Token to use the ubirch verification (version 2) -"
   description: "(optional) Access Token to use the ubirch verification (version 2)
     - get it from the one that anchored the data you want to verify"
@@ -135,7 +136,69 @@ fields:
     required: true
   default: false
   label: show verification button
+- name: inputids
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: inputids
+  description: list of ids which are used as input ids and later in the created JSON;
+    if no id mapping has been defined the content of the input fields come as query
+    or fragment parameters
+- name: formIdMapping
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  description: contains the parameter keys from URL query or fragment parameters and
+    defines the mapping from query or fragment parameters to the input fields; the
+    length and order of the keys in the formIdMapping and inputids must be the same
+  label: formIdMapping
+- name: optionalFormFieldIds
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: optionalFormFieldIds
+  description: subset of inputids telling the widget which parameters are optional
+- name: hiddenFormFieldIds
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: hiddenFormFieldIds
+  description: subset of inputids telling the form which input fields should be hidden/invisible
+- name: labelPrefix
+  type: text
+  config:
+    required: false
+  label: labelPrefix
+  description: 'Prefix of the labels in the i18n language files; e.g. if labelPrefix
+    = "myCustomForm" for the labels of property xy the following label will be used:  "formfield.myCustomForm.xy"'
+- name: hashalgorithm
+  type: select
+  default: sha256
+  config:
+    required: false
+    options:
+    - sha256
+    - sha512
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: hashalgorithm
+- name: doNotSort
+  type: boolean
+  label: doNotSort
+  default: false
 pages:
+- data/v/bvdw-qr-code.json
 - data/v/gd-vcc.json
 - data/v/gd.json
 - data/v/gelsenkirchen.json

@@ -1,0 +1,39 @@
+:root {
+  --section1-backround-color: #67d4ef;
+  --section1-text-color: #696969;
+  --form-backround-color: #ffffff;
+  --form-label-text-color: #4e4e4e;
+  --form-input-underline-color: #000000;
+  --form-input-text-color: #000000;
+  --form-button-color: #ffffff;
+  --form-buton-text-color: #000000;
+  --form-button-higlight-text-color: #ffffff;
+  --textArea-backround-color: #e0e0e0;
+  --testArea-text-color: #4e4e4e;
+  --textArea-highlight-color: #ababab;
+  --header-backround-color: #ffffff;
+  --header-text-color: #000000;
+  --header-highlight-color: #6b6b6b;
+  --footer-backround-color: #67d4ef;
+  --footer-text-color: #4e4e4e;
+  --footer-highlight-color: #6b6b6b;
+  --form-accent-color: #67d4ef;
+  --mobile-page-layout:
+    "verification"
+    "titleCard"
+    "textArea"
+    "cooperations";
+
+  --tablet-page-layout:
+    "titleCard titleCard"
+    "verification textArea"
+    "cooperations cooperations";
+
+  --desktop-layout:
+    "titleCard titleCard"
+    "verification textArea"
+    "cooperations cooperations";
+  --header-logo-width: 100%;
+  --header-logo-height: auto;
+}
+

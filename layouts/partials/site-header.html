@@ -1,14 +1,12 @@
-<div id="header">
-  <div>
-    <h1>
-      {{ .Title | default $.Site.Title }}
-    </h1>
-    {{ with .Params.description }}
-    <h2>
-      {{ . }}
-    </h2>
-    {{ end }}
-  </div>
+<div id="header" class="site-header">
+  {{ $company := "ubirch" }}
+  {{ $staticData := (index .Site.Data $company) }}
+  {{ with $staticData }}
+  {{ with .company_logo }}
+  <img src="{{ . }}" alt="{{ $company }}" id="logo">
+  {{ end }}
+  {{ end }}
 
   {{ partial "i18nlist.html" . }}
 </div>
+

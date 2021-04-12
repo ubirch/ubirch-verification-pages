@@ -42,6 +42,25 @@ fields:
     required: false
   label: optional - link to the privacy page of tenant in the right language; default
     is the govdigital privacy page (only available in german language)
+- name: customStrings
+  type: field_group
+  config: {}
+  fields:
+  - name: success
+    type: text
+    config:
+      required: false
+    label: success
+    description: This message will be shown if verification was successful
+  - name: fail
+    type: text
+    config:
+      required: false
+    description: This message will be shown if verification was failed
+    label: fail
+  label: customStrings
+  description: Here you can define which message will be displayed if the verification
+    widget responds with success or fail
 pages:
 - content/de/v/gd-vcc.md
 - content/de/v/gd.md
