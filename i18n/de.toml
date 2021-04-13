@@ -150,3 +150,7 @@ other = "Tag ID"
 other = "Impressum"
 [link.privacy]
 other = "Datenschutz"
+[error.currentlyUnavailable.header]
+other = "Umbauarbeiten..."
+[error.currentlyUnavailable.info]
+other = "Die Verifikation ihrer Daten steht Ihnen in Kürze wieder zur Verfügung. Bitte haben Sie ein wenig Geduld!"

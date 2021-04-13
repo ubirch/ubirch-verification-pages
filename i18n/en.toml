@@ -150,3 +150,7 @@ other = "Tag ID"
 other = "Imprint"
 [link.privacy]
 other = "Privacy"
+[error.currentlyUnavailable.header]
+other = "Under Construction..."
+[error.currentlyUnavailable.info]
+other = "The verification will be available again soon. Please be patient!"
