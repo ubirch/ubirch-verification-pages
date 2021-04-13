@@ -33,9 +33,6 @@
 	{{ partial "site-favicon.html" . }}
 	{{ end }}
 
-  {{ block "verificationjs" . }}
-  <script src="{{ $.Site.Params.verificationScriptURL }}"></script>
-  {{ end }}
 </head>
 
 <body>
@@ -46,8 +43,15 @@
   {{ end }}
 
 	<main role="main" id="main">
-		{{ block "main" . }}{{ end }}
-	</main>
+    <div class="general-content" style="width: 100%; justify-content: center;">
+      <div class="image" style="width: 50%">
+        <img src="/uploads/traffic-barrier.svg" alt="" id="graphic">
+      </div>
+      <h1>{{ i18n "error.currentlyUnavailable.header" }}</h1>
+      <p>{{ i18n "error.currentlyUnavailable.info" }}</p>
+    </div>
+
+  </main>
 	{{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
 	{{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
 </div>
