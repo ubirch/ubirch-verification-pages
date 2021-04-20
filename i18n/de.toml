@@ -146,6 +146,38 @@ other = "Hergestellt am (JJJJMMTT)"
 other = "Hergestellt für"
 [formfield.componentauthenticity.tid]
 other = "Tag ID"
+[formfield.vaccinationV3Cert.name]
+other = "Vollständiger Name (Nachname Vorname)"
+[formfield.vaccinationV3Cert.birthDate]
+other = "Geburtsdatum"
+[formfield.vaccinationV3Cert.identifier]
+other = "Ausweis-/Passnummer"
+[formfield.vaccinationV3Cert.sex]
+other = "Geschlecht"
+[formfield.vaccinationV3Cert.issuer]
+other = "Zertifizierer"
+[formfield.vaccinationV3Cert.product]
+other = "Impfstoff"
+[formfield.vaccinationV3Cert.manufacturer]
+other = "Hersteller"
+[formfield.vaccinationV3Cert.targetDisease]
+other = "Krankheit"
+[formfield.vaccinationV3Cert.vaccineCode]
+other = "Impfstoff-Typ"
+[formfield.vaccinationV3Cert.occurence]
+other = "Impfdatum"
+[formfield.vaccinationV3Cert.lotNumber]
+other = "Chargennr."
+[formfield.vaccinationV3Cert.series]
+other = "Impfung Nr"
+[formfield.vaccinationV3Cert.location]
+other = "Impfort"
+[formfield.vaccinationV3Cert.country]
+other = "Land"
+[formfield.vaccinationV3Cert.performer]
+other = "Arzt"
+[formfield.vaccinationV3Cert.nextDate]
+other = "Nächste Impfung"
 [link.imprint]
 other = "Impressum"
 [link.privacy]

@@ -1,0 +1,49 @@
+{
+  "title": "govdigital Vaccination Certificate",
+  "company_name": "govdigital",
+  "company_logo": "/uploads/logo-2x.png",
+  "favicon": "/uploads/3170gov.ico",
+  "show_ubirch_info": true,
+  "layout": "generated-certificate-form",
+  "custom_styles": "/uploads/govdigital.css",
+  "use_without_access_token": false,
+  "access_token": [
+    {
+      "stage": "dev",
+      "token": ""
+    },
+    {
+      "stage": "demo",
+      "token": ""
+    },
+    {
+      "stage": "prod",
+      "token": ""
+    }
+  ],
+  "make_form_editable": false,
+  "show_verification_button": false,
+  "inputids": [
+    "name",
+    "birthDate",
+    "identifier",
+    "sex",
+    "issuer",
+    "product",
+    "manufacturer",
+    "targetDisease",
+    "vaccineCode",
+    "occurence",
+    "lotNumber",
+    "series",
+    "location",
+    "country",
+    "performer",
+    "nextDate",
+    "id",
+    "version"],
+  "optionalFormFieldIds": ["birthDate", "identifier", "sex", "lotNumber", "performer", "nextDate"],
+  "hiddenFormFieldIds": ["id", "version"],
+  "labelPrefix": "vaccinationV3Cert"
+
+}
