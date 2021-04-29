@@ -1,4 +1,8 @@
 <script>
+  let DATA_SCHEMA;
+  {{ with .DATA_SCHEMA }}
+  DATA_SCHEMA = {{ . }};
+  {{ end }}
   let ubirchVerification;
   document.addEventListener("DOMContentLoaded", function() {
     console.log("Version 2.0");
@@ -60,10 +64,47 @@
   function verifyForm() {
     try {
       const genJson = ubirchVerification.getJsonFromInputs(document);
-      ubirchVerification.verifyJSON(genJson);
+      const handledJson = this.handleSpecials(genJson, DATA_SCHEMA);
+      ubirchVerification.verifyJSON(handledJson);
     } catch (e) {
       console.log("Fehler! " + e);
       // TODO: error handling
     }
   }
+  function handleSpecials(flatJson, DATA_SCHEMA) {
+    switch (DATA_SCHEMA) {
+      case "certification-vaccination-v3":
+        const json = JSON.parse(flatJson);
+        let vacc = {
+          da: json.da,
+          vp: json.vp,
+          pr: json.pr,
+          br: json.br,
+          vs: json.vs,
+          vd: json.vd,
+        };
+        if (json.bn) { vacc.bn = json.bn; }
+        if (json.ac) { vacc.ac = json.ac; }
+        if (json.di) { vacc.di = json.di; }
+        if (json.co) { vacc.co = json.co; }
+        if (json.nx) { vacc.nx = json.nx; }
+        let vaccV3Json = {
+          fn: json.fn,
+          id: json.id,
+          is: json.is,
+          ve: json.ve,
+          vaccination: [vacc]
+        }
+        if (json.gn) { vaccV3Json.gn = json.gn; }
+        if (json.bd) { vaccV3Json.bd = json.bd; }
+        if (json.pn) { vaccV3Json.pn = json.pn; }
+        if (json.vf) { vaccV3Json.vf = json.vf; }
+        if (json.vu) { vaccV3Json.vu = json.vu; }
+        return JSON.stringify(vaccV3Json);
+      default:
+        return flatJson;
+    }
+  }
+
 </script>
+

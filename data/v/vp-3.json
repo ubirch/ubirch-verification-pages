@@ -45,9 +45,10 @@
     "vf",
     "vu"
   ],
-  "optionalFormFieldIds": ["gn", "bn", "pn", "di", "nx", "vf", "vu", "co", "ac"],
+  "optionalFormFieldIds": ["gn", "bd", "pn", "di", "bn", "nx", "vf", "vu", "co", "ac"],
   "hiddenFormFieldIds": ["id", "ve"],
-  "labelPrefix": "vaccinationV3Cert"
+  "labelPrefix": "vaccinationV3Cert",
+  "DATA_SCHEMA": "certification-vaccination-v3"
 
 }
 
