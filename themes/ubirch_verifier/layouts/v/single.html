@@ -70,6 +70,9 @@
     {{ with .doNotSort }}
       {{ $scratch.Set "doNotSort" . }}
     {{ end }}
+    {{ with .DATA_SCHEMA }}
+      {{ $scratch.Set "DATA_SCHEMA" . }}
+    {{ end }}
 
   {{ else if (eq $staticData.layout "vaccinationcertificate") }}
 
@@ -86,7 +89,7 @@
 
   {{ else }}
 
-    {{ partial "verification-v2-script" (dict "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "customStrings" ($scratch.Get "customStrings") ) }}
+    {{ partial "verification-v2-script" (dict "DATA_SCHEMA" ($scratch.Get "DATA_SCHEMA") "accessTokens" .access_token "inputids" ($scratch.Get "inputids") "formIdMapping" ($scratch.Get "formIdMapping") "optionalFormFieldIds" ($scratch.Get "optionalFormFieldIds") "hashalgorithm" ($scratch.Get "hashalgorithm") "separator" ";" "language" $.Site.Language "customStrings" ($scratch.Get "customStrings") ) }}
 
   {{ end }}
 
