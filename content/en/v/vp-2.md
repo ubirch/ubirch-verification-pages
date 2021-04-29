@@ -3,6 +3,6 @@ company_slogan = ""
 imprint_link = ""
 privacy_link = ""
 title = "Vaccination Certificate"
-verification_info_text = "Sie haben einen QR-Code auf einem Impfnachweis gescannt und befinden sich nun auf einer zertifizierten Verifikations-Website der govdigital eG. Mit dem Digitalen Impfnachweis haben Sie nun die Möglichkeit, die Echtheit des Impfstatus zu verifizieren.\n\nIn vielen Bereichen kann es in Zukunft notwendig sein, einen Nachweis über eine Impfung vorzulegen. Dies kann beispielsweise bei der nächsten Reise, einem Konzertbesuch oder beim Betreten eines sensiblen Bereichs der Fall sein.\n\nDieser Impfstatus ist durch den Digitalen Impfnachweis von UBIRCH fälschungssicher. Der Digitale Impfnachweis ist DSGVO-konform und entspricht durch die strenge Anonymisierung den höchsten Datenschutzanforderungen."
+verification_info_text = "You have scanned a QR code on a vaccination certificate and are now on a certified verification website of govdigital eG. With the digital vaccination certificate, you now have the opportunity to verify the authenticity of the vaccination status.\\n\\nIn many areas it may be necessary in the future to provide proof of vaccination. This can be the case, for your next trip, for future events or when entering a sensitive area.\\n\\nThis vaccination status is forgery-proof thanks to the digital vaccination certificate from UBIRCH. The digital vaccination certificate is GDPR-compliant and, thanks to the strict anonymization, meets the highest data protection requirements."
 
 +++
