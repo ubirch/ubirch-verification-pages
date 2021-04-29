@@ -146,6 +146,42 @@ other = "Manufactured at (YYYYMMDD)"
 other = "Manufactured for"
 [formfield.componentauthenticity.tid]
 other = "Tag ID"
+[formfield.vaccinationV3Cert.fn]
+other = "Surname"
+[formfield.vaccinationV3Cert.gn]
+other = "Given Name"
+[formfield.vaccinationV3Cert.bd]
+other = "Person date of birth"
+[formfield.vaccinationV3Cert.pn]
+other = "Person identifier"
+[formfield.vaccinationV3Cert.is]
+other = "Issuer"
+[formfield.vaccinationV3Cert.pr]
+other = "Medical product"
+[formfield.vaccinationV3Cert.br]
+other = "Producer / Reseller"
+[formfield.vaccinationV3Cert.da]
+other = "Disease / Agent"
+[formfield.vaccinationV3Cert.vp]
+other = "Vaccine"
+[formfield.vaccinationV3Cert.vd]
+other = "Date of vaccination"
+[formfield.vaccinationV3Cert.bn]
+other = "Batch / Lot #"
+[formfield.vaccinationV3Cert.vs]
+other = "Vaccination series #"
+[formfield.vaccinationV3Cert.ac]
+other = "Administering centre"
+[formfield.vaccinationV3Cert.co]
+other = "Country"
+[formfield.vaccinationV3Cert.di]
+other = "Health professional"
+[formfield.vaccinationV3Cert.nx]
+other = "Next vaccination date"
+[formfield.vaccinationV3Cert.vf]
+other = "valid from"
+[formfield.vaccinationV3Cert.vu]
+other = "valid until"
 [link.imprint]
 other = "Imprint"
 [link.privacy]

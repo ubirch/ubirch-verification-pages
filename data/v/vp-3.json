@@ -1,0 +1,53 @@
+{
+  "title": "govdigital Vaccination Certificate",
+  "company_name": "govdigital",
+  "company_logo": "/uploads/logo-2x.png",
+  "favicon": "/uploads/3170gov.ico",
+  "show_ubirch_info": true,
+  "layout": "generated-certificate-form",
+  "custom_styles": "/uploads/govdigital.css",
+  "use_without_access_token": false,
+  "access_token": [
+    {
+      "stage": "dev",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiYzBiNTc3ZmItMWNlZi00YzZmLThjNTAtOGQzYTFlNmVhNzUzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2NDA5NjgxODgsImlhdCI6MTYxOTcxMDM5OSwianRpIjoiZjY0ZjMzNjktMWQ4Yy00NjcxLWFlOWYtM2Y2ZTlkZTlhNDdiIiwic2NwIjpbInVwcDp2ZXJpZnkiXSwicHVyIjoiVmVyaWZpY2F0aW9uIFRva2VuIGZvciBEQVRBX1NDSEVNQV9jZXJ0aWZpY2F0aW9uLXZhY2NpbmF0aW9uLXYzL3RydXN0ZWQtcG9jIiwidGdwIjpbImYzMzU5OTlkLWU4MDEtNDJhZi04ZTM1LTA2YTg4M2FiZTQxNyJdLCJ0aWQiOltdLCJvcmQiOlsiaHR0cHM6Ly92ZXJpZmljYXRpb24uZGV2LnViaXJjaC5jb20iXX0.gYnqy2PooFIKmfs5r0v5yklh-VYncSHY57DVKqShsAEe5yAIv7g_-4RS3zgtrpqfH7G1KcdUTd004AY_WyS6Kg"
+    },
+    {
+      "stage": "demo",
+      "token": ""
+    },
+    {
+      "stage": "prod",
+      "token": ""
+    }
+  ],
+  "make_form_editable": false,
+  "show_verification_button": false,
+  "inputids": [
+    "fn",
+    "gn",
+    "bd",
+    "pn",
+    "is",
+    "pr",
+    "br",
+    "da",
+    "vp",
+    "vd",
+    "bn",
+    "vs",
+    "ac",
+    "co",
+    "di",
+    "nx",
+    "id",
+    "ve",
+    "vf",
+    "vu"
+  ],
+  "optionalFormFieldIds": ["gn", "bn", "pn", "di", "nx", "vf", "vu", "co", "ac"],
+  "hiddenFormFieldIds": ["id", "ve"],
+  "labelPrefix": "vaccinationV3Cert"
+
+}
+
