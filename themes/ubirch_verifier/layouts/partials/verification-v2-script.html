@@ -1,3 +1,14 @@
+
+  {{ $js := resources.Get "js/main.ts" | js.Build (dict "minify" true "params" (
+    dict 
+      "algorithm" .hashalgorithm
+      "language" .language.Lang
+      "accessTokens" .accessTokens
+      "formIds" .formIds
+      "paramsFormIdsMapping" .formIdMapping
+      )) }}
+  <script src="{{$js.RelPermalink}}"></script>
+<!--
 <script>
   let DATA_SCHEMA;
   {{ with .DATA_SCHEMA }}
@@ -107,4 +118,4 @@
   }
 
 </script>
-
+-->

@@ -1,0 +1,23 @@
+{
+  "name": "ubirch-verification-pages",
+  "version": "1.0.0",
+  "description": "Ubirch verification pages",
+  "main": "index.js",
+  "dependencies": {
+    "@ubirch/ubirch-verification-js": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubirch/ubirch-verification-pages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ubirch/ubirch-verification-pages/issues"
+  },
+  "homepage": "https://github.com/ubirch/ubirch-verification-pages#readme"
+}

@@ -18,11 +18,6 @@
 {{ $company := substr $.File.LogicalName 0 -3 }}
 {{ $staticData := (index .Site.Data.v $company) }}
 
-{{ if eq $staticData.use_without_access_token true }}
-<script src="{{ $.Site.Params.verificationScriptUrl }}"></script>
-{{ else }}
-<script src="{{ $.Site.Params.verificationV2ScriptUrl }}"></script>
-{{ end }}
 {{ end }}
 
 {{ define "main" }}
