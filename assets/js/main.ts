@@ -27,9 +27,9 @@ function parseToken() {
     );
   }
   const accessToken = accessTokensVal.find(
-      ({ stage }) => stage === deploymentStage
-      )?.token;
-      console.log(accessToken);
+    ({ stage }) => stage === deploymentStage
+  )?.token;
+  console.log(accessToken);
 
   if (!accessToken || accessToken.length === 0) {
     throw new Error(
@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const ubirchVerification = new UbirchVerification({
     algorithm: params.algorithm,
     stage: EStages.dev,
-    accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiZDYzZWNjMDMtZjVhNy00ZDQzLTkxZDAtYTMwZDAzNGQ4ZGEzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJleHAiOjE2MjUwODY0ODQsImlhdCI6MTYxODg2NTcyMywianRpIjoiZjk1NjQyODktOGU3MC00Mjk0LWEyNDItODQ2MWZiMjdhOWE4Iiwic2NwIjpbInVwcDp2ZXJpZnkiXSwicHVyIjoiVGVzdCBUb2tlbiIsInRncCI6W10sInRpZCI6WyIqIl0sIm9yZCI6W119.CVUEKZmnQf22k5WToCMpHLuFz-1QgG5-6-YnZKFIKy8LllTG3BZQ4eKOTI0R7Nn0ac1ZrSumsk9qZsuWYP2wJw'
-    // parseToken(),
+    accessToken: parseToken(),
   });
 
   new UbirchVerificationWidget({
