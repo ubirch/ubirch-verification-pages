@@ -2,34 +2,37 @@ import {
   UbirchVerification,
   UbirchVerificationWidget,
   UbirchFormUtils,
-  models,
   // @ts-ignore
 } from './node_modules/@ubirch/ubirch-verification-js/dist';
 // @ts-ignore
 import params from '@params';
 
-const { EHashAlgorithms, EStages } = models;
+const { algorithm, accessTokens, formIds, paramsFormIdsMapping, DATA_SCHEMA } =
+  params;
 
 console.log(params);
 
-function parseToken() {
+function getDeploymentStage() {
   const deploymentStage = document.getElementById('deploymentStage')
     ? (document.getElementById('deploymentStage') as HTMLInputElement)?.value
     : undefined;
   if (!deploymentStage) {
     throw new Error('Please set stage parameter in project config!!');
   }
+  return deploymentStage;
+}
 
-  const accessTokensVal = params.accessTokens;
-  if (!accessTokensVal) {
+function parseToken() {
+  const deploymentStage = getDeploymentStage();
+
+  if (!accessTokens) {
     throw new Error(
       'Please provide accessTokens to use version 2 of verification widget with token support!!'
     );
   }
-  const accessToken = accessTokensVal.find(
+  const accessToken = accessTokens.find(
     ({ stage }) => stage === deploymentStage
   )?.token;
-  console.log(accessToken);
 
   if (!accessToken || accessToken.length === 0) {
     throw new Error(
@@ -41,27 +44,97 @@ function parseToken() {
 
 let subscribe = null;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const formUtils = new UbirchFormUtils();
-  const params = formUtils.getFormParamsFromUrl(window, ';');
-  formUtils.setDataIntoForm(params, window.document);
+function verifyForm() {
+  try {
+    const formUtils = new UbirchFormUtils({
+      formIds,
+      paramsFormIdsMapping,
+    });
+    const formParams = formUtils.getFormParamsFromUrl(window, ';');
+    formUtils.setDataIntoForm(formParams, window.document);
 
-  const ubirchVerification = new UbirchVerification({
-    algorithm: params.algorithm,
-    stage: EStages.dev,
-    accessToken: parseToken(),
-  });
+    const genJson = JSON.stringify(formParams);
+    const handledJson = handleSpecials(genJson, DATA_SCHEMA);
 
-  new UbirchVerificationWidget({
-    hostSelector: '#widgetDiv',
-    messenger: ubirchVerification.messenger,
-  });
+    const ubirchVerification = new UbirchVerification({
+      algorithm,
+      stage: getDeploymentStage(),
+      accessToken: parseToken(),
+    });
 
-  if (!subscribe)
-    subscribe = ubirchVerification.messenger.subscribe((q: any) =>
-      console.log(q)
-    );
+    new UbirchVerificationWidget({
+      hostSelector: '#widgetDiv',
+      messenger: ubirchVerification.messenger,
+    });
 
-  const hash = ubirchVerification.createHash(JSON.stringify(params));
-  ubirchVerification.verifyHash(hash);
-});
+    if (!subscribe)
+      subscribe = ubirchVerification.messenger.subscribe((msg: any) =>
+        console.log(msg)
+      );
+
+    const hash = ubirchVerification.createHash(handledJson);
+    ubirchVerification.verifyHash(hash);
+  } catch (e) {
+    console.log('Fehler! ' + e);
+    // TODO: error handling
+  }
+}
+
+function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
+  switch (DATA_SCHEMA) {
+    case 'certification-vaccination-v3':
+      const json = JSON.parse(flatJson);
+      let vacc = {
+        da: json.da,
+        vp: json.vp,
+        pr: json.pr,
+        br: json.br,
+        vs: json.vs,
+      } as any;
+      if (json.bn) {
+        vacc.bn = json.bn;
+      }
+      if (json.vd) {
+        vacc.vd = json.vd;
+      }
+      if (json.ac) {
+        vacc.ac = json.ac;
+      }
+      if (json.di) {
+        vacc.di = json.di;
+      }
+      if (json.co) {
+        vacc.co = json.co;
+      }
+      if (json.nx) {
+        vacc.nx = json.nx;
+      }
+      let vaccV3Json = {
+        fn: json.fn,
+        id: json.id,
+        is: json.is,
+        ve: json.ve,
+        vaccination: [vacc],
+      } as any;
+      if (json.gn) {
+        vaccV3Json.gn = json.gn;
+      }
+      if (json.bd) {
+        vaccV3Json.bd = json.bd;
+      }
+      if (json.pn) {
+        vaccV3Json.pn = json.pn;
+      }
+      if (json.vf) {
+        vaccV3Json.vf = json.vf;
+      }
+      if (json.vu) {
+        vaccV3Json.vu = json.vu;
+      }
+      return JSON.stringify(vaccV3Json);
+    default:
+      return flatJson;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', verifyForm);
