@@ -10,8 +10,6 @@ import params from '@params';
 const { algorithm, accessTokens, formIds, paramsFormIdsMapping, DATA_SCHEMA } =
   params;
 
-console.log(params);
-
 function getDeploymentStage() {
   const deploymentStage = document.getElementById('deploymentStage')
     ? (document.getElementById('deploymentStage') as HTMLInputElement)?.value
