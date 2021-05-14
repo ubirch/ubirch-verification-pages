@@ -8,7 +8,6 @@
   "cooperation_logos": [
 
   ],
-  "use_without_access_token": false,
   "access_token": [
     {
       "stage": "dev",

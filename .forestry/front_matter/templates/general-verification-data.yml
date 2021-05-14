@@ -72,13 +72,6 @@ fields:
     required: true
   default: true
   label: Show ubirch info or not
-- name: use_without_access_token
-  type: boolean
-  config:
-    required: true
-  default: false
-  label: If true the deprecated version 1.0 of the verification widget is used (unsecure!!
-    without access token)
 - name: access_token
   type: field_group_list
   fields:

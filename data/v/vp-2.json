@@ -6,7 +6,6 @@
   "show_ubirch_info": true,
   "layout": "generated-certificate-form",
   "custom_styles": "/uploads/govdigital.css",
-  "use_without_access_token": false,
   "access_token": [
     {
       "stage": "dev",

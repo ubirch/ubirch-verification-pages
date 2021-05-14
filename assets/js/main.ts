@@ -4,11 +4,23 @@ import {
   UbirchFormUtils,
   // @ts-ignore
 } from './node_modules/@ubirch/ubirch-verification-js/dist';
-// @ts-ignore
-import params from '@params';
+
+interface params {
+  algorithm: string;
+  DATA_SCHEMA: string;
+  formIds: string[] | null;
+  paramsFormIdsMapping: string[] | null;
+  language: string;
+  accessTokens: { stage: string; token: string }[];
+}
+
+interface WindowWithParams extends Window {
+  ubirchVerificationParams?: params;
+}
+const { ubirchVerificationParams } = window as WindowWithParams;
 
 const { algorithm, accessTokens, formIds, paramsFormIdsMapping, DATA_SCHEMA } =
-  params;
+  ubirchVerificationParams || {};
 
 function getDeploymentStage() {
   const deploymentStage = document.getElementById('deploymentStage')
@@ -50,9 +62,9 @@ function verifyForm() {
     });
     const formParams = formUtils.getFormParamsFromUrl(window, ';');
     formUtils.setDataIntoForm(formParams, window.document);
-
     const genJson = JSON.stringify(formParams);
     const handledJson = handleSpecials(genJson, DATA_SCHEMA);
+    console.log(genJson);
 
     const ubirchVerification = new UbirchVerification({
       algorithm,
@@ -78,6 +90,33 @@ function verifyForm() {
   }
 }
 
+interface VaccinationSchema {
+  da: string;
+  vp: string;
+  pr: string;
+  br: string;
+  vs: string;
+  bn?: string;
+  vd?: string;
+  ac?: string;
+  di?: string;
+  co?: string;
+  nx?: string;
+}
+
+interface VaccinationSchemaV3 {
+  fn: string;
+  id: string;
+  is: string;
+  ve: string;
+  vaccination: [VaccinationSchema];
+  gn?: string;
+  bd?: string;
+  pn?: string;
+  vf?: string;
+  vu?: string;
+}
+
 function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
   switch (DATA_SCHEMA) {
     case 'certification-vaccination-v3':
@@ -88,7 +127,7 @@ function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
         pr: json.pr,
         br: json.br,
         vs: json.vs,
-      } as any;
+      } as VaccinationSchema;
       if (json.bn) {
         vacc.bn = json.bn;
       }
@@ -113,7 +152,7 @@ function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
         is: json.is,
         ve: json.ve,
         vaccination: [vacc],
-      } as any;
+      } as VaccinationSchemaV3;
       if (json.gn) {
         vaccV3Json.gn = json.gn;
       }

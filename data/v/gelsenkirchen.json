@@ -13,7 +13,6 @@
       "link_to_cooperation": "https://www.govdigital.de"
     }
   ],
-  "use_without_access_token": false,
   "access_token": [
     {
       "stage": "dev",
