@@ -1,8 +1,7 @@
 {
   "name": "ubirch-verification-pages",
   "version": "1.0.0",
-  "description": "Ubirch verification pages",
-  "main": "index.js",
+  "description": "Ubirch Verification pages",
   "dependencies": {
     "@ubirch/ubirch-verification-js": "^1.0.3"
   },

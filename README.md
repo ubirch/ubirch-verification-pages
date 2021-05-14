@@ -16,13 +16,6 @@ For the different stages please
     - https://verification.ubirch.com/
     - https://verification.dev.ubirch.com/
 
-  * @@VERIFICATION_SCRIPT_URL@@
-    URL of the verification.js script, loaded to verify certificates;
-    it's important to import the script from the same stage where the certificates which should be verified are anchored, examples:
-    - https://console.prod.ubirch.com/libs/verification/verification.js
-    - https://console.dev.ubirch.com/libs/verification/verification.js
-    - https://console.demo.ubirch.com/libs/verification/verification.js
-
   * @@SHOW_DEMO_DISCLAIMER@@
     On some pages (e.g. /v/gd-vcc) a demo disclaimer can be displayed across the form.
     To activate it set this Parameter to "demo" otherwise to "none"
