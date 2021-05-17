@@ -19,8 +19,14 @@ interface WindowWithParams extends Window {
 }
 const { ubirchVerificationParams } = window as WindowWithParams;
 
-const { algorithm, accessTokens, formIds, paramsFormIdsMapping, DATA_SCHEMA } =
-  ubirchVerificationParams || {};
+const {
+  algorithm,
+  accessTokens,
+  formIds,
+  paramsFormIdsMapping,
+  DATA_SCHEMA,
+  language,
+} = ubirchVerificationParams || {};
 
 function getDeploymentStage() {
   const deploymentStage = document.getElementById('deploymentStage')
@@ -64,7 +70,6 @@ function verifyForm() {
     formUtils.setDataIntoForm(formParams, window.document);
     const genJson = JSON.stringify(formParams);
     const handledJson = handleSpecials(genJson, DATA_SCHEMA);
-    console.log(genJson);
 
     const ubirchVerification = new UbirchVerification({
       algorithm,
@@ -75,6 +80,7 @@ function verifyForm() {
     new UbirchVerificationWidget({
       hostSelector: '#widgetDiv',
       messenger: ubirchVerification.messenger,
+      language,
     });
 
     if (!subscribe)
