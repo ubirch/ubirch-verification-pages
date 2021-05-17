@@ -68,8 +68,7 @@ function verifyForm() {
     });
     const formParams = formUtils.getFormParamsFromUrl(window, ';');
     formUtils.setDataIntoForm(formParams, window.document);
-    const genJson = JSON.stringify(formParams);
-    const handledJson = handleSpecials(genJson, DATA_SCHEMA);
+    const handledJson = handleSpecials(formParams, DATA_SCHEMA);
 
     const ubirchVerification = new UbirchVerification({
       algorithm,
@@ -88,7 +87,7 @@ function verifyForm() {
         console.log(msg)
       );
 
-    const hash = ubirchVerification.createHash(handledJson);
+    const hash = ubirchVerification.createHash(JSON.stringify(handledJson));
     ubirchVerification.verifyHash(hash);
   } catch (e) {
     console.log('Fehler! ' + e);
@@ -123,10 +122,9 @@ interface VaccinationSchemaV3 {
   vu?: string;
 }
 
-function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
+function handleSpecials(json: any, DATA_SCHEMA: string) {
   switch (DATA_SCHEMA) {
     case 'certification-vaccination-v3':
-      const json = JSON.parse(flatJson);
       let vacc = {
         da: json.da,
         vp: json.vp,
@@ -174,9 +172,9 @@ function handleSpecials(flatJson: string, DATA_SCHEMA: string) {
       if (json.vu) {
         vaccV3Json.vu = json.vu;
       }
-      return JSON.stringify(vaccV3Json);
+      return vaccV3Json;
     default:
-      return flatJson;
+      return json;
   }
 }
 
