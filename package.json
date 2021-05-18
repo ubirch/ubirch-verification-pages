@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ubirch Verification pages",
   "dependencies": {
-    "@ubirch/ubirch-verification-js": "^1.0.3"
+    "@ubirch/ubirch-verification-js": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
