@@ -32,10 +32,6 @@
 	{{ block "favicon" . }}
 	{{ partial "site-favicon.html" . }}
 	{{ end }}
-
-  {{ block "verificationjs" . }}
-  <script src="{{ $.Site.Params.verificationScriptURL }}"></script>
-  {{ end }}
 </head>
 
 <body>
