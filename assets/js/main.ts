@@ -69,6 +69,7 @@ function verifyForm() {
       DATA_SCHEMA,
       language,
     } = getVerificationParams();
+    const stage = getDeploymentStage();
 
     const formUtils = new UbirchFormUtils({
       formIds,
@@ -80,12 +81,13 @@ function verifyForm() {
 
     const ubirchVerification = new UbirchVerification({
       algorithm,
-      stage: getDeploymentStage(),
+      stage,
       accessToken: parseToken(accessTokens),
     });
 
     new UbirchVerificationWidget({
       hostSelector: '#widgetDiv',
+      stage,
       messenger: ubirchVerification.messenger,
       language,
     });
