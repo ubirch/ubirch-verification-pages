@@ -5,28 +5,25 @@ import {
   // @ts-ignore
 } from './node_modules/@ubirch/ubirch-verification-js/dist';
 
+type AccessToken = { stage: string; token: string }
 interface params {
   algorithm: string;
   DATA_SCHEMA: string;
   formIds: string[] | null;
   paramsFormIdsMapping: string[] | null;
   language: string;
-  accessTokens: { stage: string; token: string }[];
+  accessTokens: AccessToken[];
 }
 
-interface WindowWithParams extends Window {
-  ubirchVerificationParams?: params;
+function getVerificationParams() {
+  const verificationParams = document.getElementById('verificationParams')
+    ? (document.getElementById('verificationParams') as HTMLInputElement)?.value
+    : undefined;
+  if (!verificationParams) {
+    throw new Error('Please set stage parameter in project config!!');
+  }
+  return JSON.parse(verificationParams) as params;
 }
-const { ubirchVerificationParams } = window as WindowWithParams;
-
-const {
-  algorithm,
-  accessTokens,
-  formIds,
-  paramsFormIdsMapping,
-  DATA_SCHEMA,
-  language,
-} = ubirchVerificationParams || {};
 
 function getDeploymentStage() {
   const deploymentStage = document.getElementById('deploymentStage')
@@ -38,7 +35,7 @@ function getDeploymentStage() {
   return deploymentStage;
 }
 
-function parseToken() {
+function parseToken(accessTokens: AccessToken[]) {
   const deploymentStage = getDeploymentStage();
 
   if (!accessTokens) {
@@ -62,6 +59,15 @@ let subscribe = null;
 
 function verifyForm() {
   try {
+    const {
+      algorithm,
+      accessTokens,
+      formIds,
+      paramsFormIdsMapping,
+      DATA_SCHEMA,
+      language,
+    } = getVerificationParams();
+
     const formUtils = new UbirchFormUtils({
       formIds,
       paramsFormIdsMapping,
@@ -73,7 +79,7 @@ function verifyForm() {
     const ubirchVerification = new UbirchVerification({
       algorithm,
       stage: getDeploymentStage(),
-      accessToken: parseToken(),
+      accessToken: parseToken(accessTokens),
     });
 
     new UbirchVerificationWidget({
