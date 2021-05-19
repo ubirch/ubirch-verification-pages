@@ -1,4 +1,4 @@
-FROM envimate/hugo:0.79.0 AS builder
+FROM alombarte/hugo AS builder
 
 ADD . /app/
 WORKDIR /app/
