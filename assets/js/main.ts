@@ -5,8 +5,8 @@ import {
   // @ts-ignore
 } from './node_modules/@ubirch/ubirch-verification-js/dist';
 
-type AccessToken = { stage: string; token: string }
-interface params {
+type AccessToken = { stage: string; token: string };
+interface VerificationParams {
   algorithm: string;
   DATA_SCHEMA: string;
   formIds: string[] | null;
@@ -16,21 +16,23 @@ interface params {
 }
 
 function getVerificationParams() {
-  const verificationParams = document.getElementById('verificationParams')
-    ? (document.getElementById('verificationParams') as HTMLInputElement)?.value
-    : undefined;
+  const verificationParams = (
+    document.getElementById('verificationParams') as HTMLInputElement
+  )?.value;
+
   if (!verificationParams) {
-    throw new Error('Please set stage parameter in project config!!');
+    throw new Error('Verification parameters not found!');
   }
-  return JSON.parse(verificationParams) as params;
+  return JSON.parse(verificationParams) as VerificationParams;
 }
 
 function getDeploymentStage() {
-  const deploymentStage = document.getElementById('deploymentStage')
-    ? (document.getElementById('deploymentStage') as HTMLInputElement)?.value
-    : undefined;
+  const deploymentStage = (
+    document.getElementById('deploymentStage') as HTMLInputElement
+  )?.value;
+
   if (!deploymentStage) {
-    throw new Error('Please set stage parameter in project config!!');
+    throw new Error('Please set stage parameter in project config!');
   }
   return deploymentStage;
 }
