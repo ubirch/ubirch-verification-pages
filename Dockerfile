@@ -17,7 +17,7 @@ USER root
 RUN chown 1001 /app
 COPY --from=builder --chown=1001 /app/public/ /app_template
 COPY --from=builder /app/docker/default.conf /opt/bitnami/nginx/conf/server_blocks/default.conf
-COPY --chmod=555 docker/replace-markers.sh /replace-markers.sh
+COPY docker/replace-markers.sh /replace-markers.sh
 RUN chmod 555 /replace-markers.sh
 RUN mkdir /www && chown 1001 /www
 
