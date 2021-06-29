@@ -10,10 +10,7 @@ find /app_template -type f -exec \
         -e "s%https://__VERIFICATION_HUGO_BASE_URL__%${VERIFICATION_HUGO_BASE_URL}%" \
         -e "s%__SHOW_DEMO_DISCLAIMER__%${SHOW_DEMO_DISCLAIMER}%" \
         -e "s%__DEPLOYMENT_STAGE__%${DEPLOYMENT_STAGE}%" \
-\
-        -e "s%__ACCESS_TOKEN_DEV_GD__%${ACCESS_TOKEN_DEV_GD}%" \
-        -e "s%__ACCESS_TOKEN_DEMO_GD__%${ACCESS_TOKEN_DEMO_GD}%" \
-        -e "s%__ACCESS_TOKEN_PROD_GD__%${ACCESS_TOKEN_PROD_GD}%" \
+        -e "s%__ACCESS_TOKEN_GD__%${ACCESS_TOKEN_GD}%" \
         {} \;
 
 cp -a /app_template/* /www

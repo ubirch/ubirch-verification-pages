@@ -10,16 +10,8 @@
   "show_verification_button": false,
   "access_token": [
     {
-      "stage": "dev",
-      "token": "__ACCESS_TOKEN_DEV_GD__"
-    },
-    {
-      "stage": "demo",
-      "token": "__ACCESS_TOKEN_DEMO_GD__"
-    },
-    {
-      "stage": "prod",
-      "token": "__ACCESS_TOKEN_PROD_GD__"
+      "stage": "__DEPLOYMENT_STAGE__",
+      "token": "__ACCESS_TOKEN_GD__"
     }
   ],
   "inputids": ["f", "g", "b", "p", "i", "d", "t", "r", "s"],
