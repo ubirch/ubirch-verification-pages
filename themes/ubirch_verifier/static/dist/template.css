@@ -399,6 +399,16 @@ div#demo-disclaimer.demo {
     display: none;
 }
 
+#testhash-page .section {
+  margin: 10px;
+}
+#testhash-page button {
+  margin: 10px 0; padding: 7px; background-color: black; color: white;
+}
+#testhash-page .hidden {
+  visibility: hidden;
+}
+
 @media (min-width: 600px) and (orientation: portrait){
     :root {
         font-size: 6px;
