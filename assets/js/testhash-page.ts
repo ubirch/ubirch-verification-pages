@@ -20,6 +20,7 @@ const devStage = {
   prod: 'prod'
 }
 let selectedStage = devStage.dev;
+const testJSON = '{"b":"19111111","d":["20210104","20210127"],"f":"\\\\nNewline\\\\\\\\n\\\\\\\\\\\\n","g":"<p>Hällo</p>","i":"Altötting","p":"#%;,.<>-+*\\"\'?$&:*","r":"BioNTech / Pfizer Corminaty®","s":"2kmsq5fzqiu","t":"vaccination"}';
 
 setFormVisibility(initialized);
 
@@ -69,6 +70,10 @@ document.getElementById('verify-json').addEventListener('click', function () {
   }
 });
 // insert JSON test data button click listener
+document.getElementById('insert-test-json').addEventListener('click', function() {
+  setTestJSON();
+});
+// insert trim and sort JSON button click listener
 document.getElementById('trim-sort-json').addEventListener('click', function() {
   const jsonStr = (document.getElementById('json-input') as HTMLInputElement).value;
   const trimmedSortedJson = ubirchVerification.formatJSON(jsonStr, true);
@@ -139,4 +144,7 @@ function setFormVisibility(visible) {
   } else {
     document.getElementById("form-area").className = "hidden";
   }
+}
+function setTestJSON() {
+  (document.getElementById('json-input') as HTMLInputElement).value = testJSON;
 }

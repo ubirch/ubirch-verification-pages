@@ -405,6 +405,11 @@ div#demo-disclaimer.demo {
 #testhash-page button {
   margin: 10px 0; padding: 7px; background-color: black; color: white;
 }
+
+#testhash-page button.mini {
+  padding: 3px; border-radius: 8px;
+}
+
 #testhash-page .hidden {
   visibility: hidden;
 }
