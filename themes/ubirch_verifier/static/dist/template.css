@@ -189,10 +189,30 @@ main{
 #verification #resultDiv {
     z-index: 2;
     grid-area: widget;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #widgetDiv {
   font-size: 2rem;
+  flex-grow: 1;
+}
+
+#verification #dccConvert { 
+    padding: 4rem 0;
+}
+#verification #dccConvertButton { 
+    padding: 2rem 4rem;
+    background-color: lightgreen;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+#verification #dccConvertButton:active,
+#verification #dccConvertButton:hover {
+    background-color: rgb(122, 204, 122);
 }
 
 #verification .verificationButton {

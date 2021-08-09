@@ -1,4 +1,4 @@
 
   {{ $js := resources.Get "js/main.ts" | js.Build (dict "minify" true) }}
-  <input id="verificationParams" hidden value="{&#34;algorithm&#34;:&#34;{{ .hashalgorithm }}&#34;,&#34;language&#34;:&#34;{{ .language.Lang }}&#34;,&#34;accessTokens&#34;: {{ .accessTokens | jsonify }},&#34;formIds&#34;: {{ .inputids | jsonify }},&#34;paramsFormIdsMapping&#34;: {{ .formIdMapping | jsonify }},&#34;DATA_SCHEMA&#34;:&#34;{{ .DATA_SCHEMA }}&#34;}"/>
+  <input id="verificationParams" hidden value="{&#34;transformUrl&#34;:&#34;{{ .transformUrl }}&#34;,&#34;algorithm&#34;:&#34;{{ .hashalgorithm }}&#34;,&#34;language&#34;:&#34;{{ .language.Lang }}&#34;,&#34;accessTokens&#34;: {{ .accessTokens | jsonify }},&#34;formIds&#34;: {{ .inputids | jsonify }},&#34;paramsFormIdsMapping&#34;: {{ .formIdMapping | jsonify }},&#34;DATA_SCHEMA&#34;:&#34;{{ .DATA_SCHEMA }}&#34;}"/>
   <script src="{{$js.RelPermalink}}"></script>

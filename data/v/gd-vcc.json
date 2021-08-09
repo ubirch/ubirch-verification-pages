@@ -13,5 +13,6 @@
     }
   ],
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "transformUrl": "http://localhost:3000/v1"
 }

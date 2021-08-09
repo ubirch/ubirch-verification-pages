@@ -13,6 +13,7 @@ interface VerificationParams {
   paramsFormIdsMapping: string[] | null;
   language: string;
   accessTokens: AccessToken[];
+  transformUrl: string;
 }
 
 function getVerificationParams() {
@@ -93,15 +94,60 @@ function verifyForm() {
     });
 
     if (!subscribe)
-      subscribe = ubirchVerification.messenger.subscribe((msg: any) =>
-        console.log(msg)
-      );
+      subscribe = ubirchVerification.messenger.subscribe((msg: any) => {
+        if (msg?.type === 'verification-state' && msg?.code === 'VERIFICATION_SUCCESSFUL') {
+          showDCCConvertButton(handledJson);
+        }
+      });
 
     const hash = ubirchVerification.createHash(JSON.stringify(handledJson));
     ubirchVerification.verifyHash(hash);
   } catch (e) {
     console.log('Fehler! ' + e);
     // TODO: error handling
+  }
+}
+
+function showDCCConvertButton(formParams: any) {
+
+  let dccCertificateUrl: string;
+  const { transformUrl } = getVerificationParams();
+  if (!transformUrl) return;
+
+  const dccButton = document.getElementById('dccConvertButton');
+  dccButton?.removeAttribute('hidden');
+  dccButton.addEventListener('click', () => fetchDCCCertificate());
+
+  async function fetchDCCCertificate() {
+    try {
+      dccButton.setAttribute('disabled', 'true');
+      if (dccCertificateUrl) { downloadCertificate(); }
+      else {
+        const response = await fetch(transformUrl, {
+          method: 'POST',
+          body: JSON.stringify(formParams),
+        });
+        if (response.status === 200) {
+          const blob = await response.blob();
+          dccCertificateUrl = URL.createObjectURL(blob);
+          downloadCertificate();
+        } else { throw new Error(); }
+      }
+    } catch (ex) {
+      alert('Sorry there was an error while downloading your DCC Certificate. Please try again later');
+    }
+    dccButton.removeAttribute('disabled');
+  }
+
+  function downloadCertificate() {
+    if (dccCertificateUrl) {
+      const a = document.createElement('a');
+      a.download = 'certificate.pdf';
+      a.href = dccCertificateUrl;
+      a.target = '_blank';
+      a.click();
+      dccButton.removeAttribute('disabled');
+    }
   }
 }
 

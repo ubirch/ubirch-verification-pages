@@ -39,7 +39,6 @@
   "optionalFormFieldIds": ["gn", "bd", "pn", "di", "bn", "nx", "vf", "vu", "co", "ac"],
   "hiddenFormFieldIds": ["id", "ve"],
   "labelPrefix": "vaccinationV3Cert",
-  "DATA_SCHEMA": "certification-vaccination-v3"
-
+  "DATA_SCHEMA": "certification-vaccination-v3",
+  "transformUrl": "http://localhost:3000/v3"
 }
-
