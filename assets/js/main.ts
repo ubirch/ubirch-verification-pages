@@ -91,6 +91,7 @@ function verifyForm() {
       stage,
       messenger: ubirchVerification.messenger,
       language,
+      linkToConsole: true
     });
 
     if (!subscribe)
