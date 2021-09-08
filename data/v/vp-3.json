@@ -40,5 +40,6 @@
   "hiddenFormFieldIds": ["id", "ve"],
   "labelPrefix": "vaccinationV3Cert",
   "DATA_SCHEMA": "certification-vaccination-v3",
-  "transformUrl": "http://localhost:3000/v3"
+  "transformUrl": "https://api.certify.ubirch.com/api/certify/v2/transform",
+  "transformTypeHeader": "application/v3+json"
 }

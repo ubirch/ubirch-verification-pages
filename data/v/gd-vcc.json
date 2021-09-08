@@ -14,5 +14,6 @@
   ],
   "make_form_editable": false,
   "show_verification_button": false,
-  "transformUrl": "http://localhost:3000/v1"
+  "transformUrl": "https://api.certify.ubirch.com/api/certify/v2/transform",
+  "transformTypeHeader": "application/v1+json"
 }
