@@ -41,5 +41,5 @@
   "labelPrefix": "vaccinationV3Cert",
   "DATA_SCHEMA": "certification-vaccination-v3",
   "transformUrl": "https://api.certify.ubirch.com/api/certify/v2/transform",
-  "transformTypeHeader": "application/v3+json"
+  "transformTypeHeader": "__SCHEMA_TYPE_HEADER__"
 }

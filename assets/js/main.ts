@@ -14,6 +14,7 @@ interface VerificationParams {
   language: string;
   accessTokens: AccessToken[];
   transformUrl: string;
+  transformTypeHeader: string;
 }
 
 function getVerificationParams() {
@@ -84,12 +85,14 @@ function verifyForm() {
       algorithm,
       stage,
       accessToken: parseToken(accessTokens),
+      // externalConfigUrl: 'https://raw.githubusercontent.com/ubirch/ubirch-static-files/main/ubirch-verification-js/blockchain-assets/blockchain-settings.json'
     });
 
     new UbirchVerificationWidget({
       hostSelector: '#widgetDiv',
       stage,
       messenger: ubirchVerification.messenger,
+      // settings: ubirchVerification.settings,
       language,
       linkToConsole: true
     });
@@ -99,6 +102,7 @@ function verifyForm() {
         if (msg?.type === 'verification-state' && msg?.code === 'VERIFICATION_SUCCESSFUL') {
           showDCCConvertButton(handledJson);
         }
+        console.log(msg);
       });
 
     const hash = ubirchVerification.createHash(JSON.stringify(handledJson));
@@ -112,8 +116,8 @@ function verifyForm() {
 function showDCCConvertButton(formParams: any) {
 
   let dccCertificateUrl: string;
-  const { transformUrl } = getVerificationParams();
-  if (!transformUrl) return;
+  const { transformUrl, transformTypeHeader } = getVerificationParams();
+  if (!transformUrl || !transformTypeHeader) return;
 
   const dccButton = document.getElementById('dccConvertButton');
   dccButton?.removeAttribute('hidden');
@@ -124,9 +128,15 @@ function showDCCConvertButton(formParams: any) {
       dccButton.setAttribute('disabled', 'true');
       if (dccCertificateUrl) { downloadCertificate(); }
       else {
+
+        const headers = new Headers({
+          'Content-Type': transformTypeHeader
+        });
+
         const response = await fetch(transformUrl, {
           method: 'POST',
           body: JSON.stringify(formParams),
+          headers
         });
         if (response.status === 200) {
           const blob = await response.blob();
@@ -134,7 +144,7 @@ function showDCCConvertButton(formParams: any) {
           downloadCertificate();
         } else { throw new Error(); }
       }
-    } catch (ex) {
+    } catch (err) {
       alert('Sorry there was an error while downloading your DCC Certificate. Please try again later');
     }
     dccButton.removeAttribute('disabled');
