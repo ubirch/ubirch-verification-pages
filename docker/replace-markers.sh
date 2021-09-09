@@ -18,6 +18,7 @@ find /app_template -type f -exec \
         -e "s%__ACCESS_TOKEN_UBC__%${ACCESS_TOKEN_UBC}%" \
         -e "s%__ACCESS_TOKEN_VP2__%${ACCESS_TOKEN_VP2}%" \
         -e "s%__ACCESS_TOKEN_VP3__%${ACCESS_TOKEN_VP3}%" \
+        -e "s%__TRANSFORM_UPP2DCC_BASE_URL__%${TRANSFORM_UPP2DCC_BASE_URL}%" \
         {} \;
 
 cp -a /app_template/* /www
