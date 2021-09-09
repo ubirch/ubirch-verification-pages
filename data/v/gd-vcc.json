@@ -13,5 +13,7 @@
     }
   ],
   "make_form_editable": false,
-  "show_verification_button": false
+  "show_verification_button": false,
+  "transformUrl": "https://api.certify.ubirch.com/api/certify/v2/transform",
+  "transformTypeHeader": "__SCHEMA_TYPE_HEADER__"
 }

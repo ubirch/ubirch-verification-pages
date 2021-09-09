@@ -190,3 +190,6 @@ other = "Datenschutz"
 other = "Umbauarbeiten..."
 [error.currentlyUnavailable.info]
 other = "Die Verifikation ihrer Daten steht Ihnen in Kürze wieder zur Verfügung. Bitte haben Sie ein wenig Geduld!"
+[dccTransform.button]
+other = "Download Digitales COVID-Zertifikat"
+

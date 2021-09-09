@@ -190,3 +190,6 @@ other = "Privacy"
 other = "Under Construction..."
 [error.currentlyUnavailable.info]
 other = "The verification will be available again soon. Please be patient!"
+[dccTransform.button]
+other = "Download Digital COVID Certificate"
+
