@@ -41,5 +41,5 @@
   "labelPrefix": "vaccinationV3Cert",
   "DATA_SCHEMA": "certification-vaccination-v3",
   "transformUrl": "__TRANSFORM_UPP2DCC_BASE_URL__",
-  "transformTypeHeader": "application/v1+json"
+  "transformTypeHeader": "application/v3+json"
 }
