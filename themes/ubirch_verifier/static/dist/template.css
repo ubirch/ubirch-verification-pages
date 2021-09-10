@@ -204,7 +204,7 @@ main{
     padding: 4rem 0;
 }
 #verification #dccConvertButton { 
-    padding: 2rem 4rem 2rem 6rem;
+    padding: 2rem 4rem 2rem 8rem;
     background-color: #000;
     color: #fff;
     font-size: 2.5rem;
@@ -212,7 +212,7 @@ main{
     transition: background-color 200ms ease-in-out;
     background-image: url(/uploads/download-outline.svg);
     background-size: 32px 32px;
-    background-position: 1rem 50%;
+    background-position: 2rem 50%;
     background-repeat: no-repeat;
     
 }
