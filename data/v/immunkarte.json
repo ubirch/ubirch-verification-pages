@@ -1,0 +1,43 @@
+{
+  "title": "govdigital Vaccination Certificate",
+  "company_name": "govdigital",
+  "company_logo": "/uploads/logo-2x.png",
+  "favicon": "/uploads/3170gov.ico",
+  "show_ubirch_info": true,
+  "layout": "generated-certificate-form",
+  "custom_styles": "/uploads/immunkarte.css",
+  "access_token": [
+    {
+      "stage": "__DEPLOYMENT_STAGE__",
+      "token": "__ACCESS_TOKEN_IMMUNKARTE__"
+    }
+  ],
+  "make_form_editable": false,
+  "show_verification_button": false,
+  "inputids": [
+    "fn",
+    "gn",
+    "bd",
+    "pn",
+    "is",
+    "pr",
+    "br",
+    "da",
+    "vp",
+    "bn",
+    "vd",
+    "vs",
+    "ac",
+    "co",
+    "di",
+    "nx",
+    "id",
+    "ve",
+    "vf",
+    "vu"
+  ],
+  "optionalFormFieldIds": ["gn", "bd", "pn", "di", "bn", "nx", "vf", "vu", "co", "ac"],
+  "hiddenFormFieldIds": ["id", "ve"],
+  "labelPrefix": "vaccinationV3Cert",
+  "DATA_SCHEMA": "certification-vaccination-v3"
+}
