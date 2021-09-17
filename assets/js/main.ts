@@ -1,5 +1,4 @@
 import {
-  UbirchVerification,
   UbirchVerificationWidget,
   UbirchFormUtils,
   // @ts-ignore
@@ -81,32 +80,27 @@ function verifyForm() {
     formUtils.setDataIntoForm(formParams, window.document);
     const handledJson = handleSpecials(formParams, DATA_SCHEMA);
 
-    const ubirchVerification = new UbirchVerification({
+    const ubirchVerificationWidget = new UbirchVerificationWidget({
+      hostSelector: '#widgetDiv',
       algorithm,
       stage,
       accessToken: parseToken(accessTokens),
       // externalConfigUrl: 'https://raw.githubusercontent.com/ubirch/ubirch-static-files/main/ubirch-verification-js/blockchain-assets/blockchain-settings.json'
-    });
-
-    new UbirchVerificationWidget({
-      hostSelector: '#widgetDiv',
-      stage,
-      messenger: ubirchVerification.messenger,
-      // settings: ubirchVerification.settings,
+      // settings: ubirchVerificationWidget.settings,
       language,
       linkToConsole: true
     });
 
     if (!subscribe)
-      subscribe = ubirchVerification.messenger.subscribe((msg: any) => {
+      subscribe = ubirchVerificationWidget.messenger.subscribe((msg: any) => {
         if (msg?.type === 'verification-state' && msg?.code === 'VERIFICATION_SUCCESSFUL') {
           showDCCConvertButton(handledJson);
         }
         console.log(msg);
       });
 
-    const hash = ubirchVerification.createHash(JSON.stringify(handledJson));
-    ubirchVerification.verifyHash(hash);
+    const hash = ubirchVerificationWidget.createHash(JSON.stringify(handledJson));
+    ubirchVerificationWidget.verifyHash(hash);
   } catch (e) {
     console.log('Fehler! ' + e);
     // TODO: error handling
