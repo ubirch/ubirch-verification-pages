@@ -1,7 +1,8 @@
 {
-  "ubirch_description_header":  "About Ubirch",
-  "ubirch_description_long": "UBIRCH is the specialist for cybersecurity and Blockchain in Germany. Our team consists of experienced cryptography and Blockchain specialists. UBIRCH guarantees the unforgeability of data through innovative technologies such as blockchain and strong cryptography.",
+  "ubirch_description_header":  "About",
+  "ubirch_description_long": "UBIRCH is a digital data proof solution that brings security into data driven processes and establishes trust between multiple stakeholders. It’s one cloud-based Proof Machine that enables everyone involved to verify the authenticity and integrity of data received. \nFounded and managed by experienced specialists in cryptography, blockchain and data-driven business models, UBIRCH is combining robust cryptography and modern blockchain technology into an innovative, easy to use SaaS product.\nTogether with a consortium of renowned companies, the Cologne-based company has developed and is operating the official infrastructure of the EU Digital COVID Certificate for Germany.\n",
   "ubirch_link_intro":  "Further information is available at ",
   "ubirch_link_label":  "www.ubirch.com",
-  "ubirch_link":  "https://www.ubirch.com"
+  "ubirch_link":  "https://www.ubirch.com",
+  "ubirch_logo": "/uploads/Ubirch_logo_schwarz_flipped.svg"
 }

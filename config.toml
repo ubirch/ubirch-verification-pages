@@ -30,3 +30,9 @@ disclaimer = "demo"
   [[module.mounts]]
     source = "node_modules"
     target = "static/js/node_modules"
+  [[module.mounts]]
+    source = 'static/uploads'
+    target = 'static/uploads'
+  [[module.mounts]]
+    source = 'static/font'
+    target = 'static/font'

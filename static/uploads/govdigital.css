@@ -1,6 +1,8 @@
 :root {
-  --section1-backround-color: #67d4ef;
-  --section1-text-color: #696969;
+  --load-highlight-success: rgba(83, 175, 50, 0.5);
+  --load-highlight-fail: rgba(228, 1, 27, 0.5);
+  --section1-backround-color: #ffffff;
+  --section1-text-color: #000000;
   --form-backround-color: #ffffff;
   --form-label-text-color: #4e4e4e;
   --form-input-underline-color: #000000;
@@ -9,31 +11,61 @@
   --form-buton-text-color: #000000;
   --form-button-higlight-text-color: #ffffff;
   --textArea-backround-color: #e0e0e0;
-  --testArea-text-color: #4e4e4e;
+  --testArea-text-color: #000000;
   --textArea-highlight-color: #ababab;
-  --header-backround-color: #ffffff;
+  --header-backround-color: rgba(103, 212, 239, 0.2);
   --header-text-color: #000000;
   --header-highlight-color: #6b6b6b;
-  --footer-backround-color: #67d4ef;
+  --footer-backround-color: rgba(103, 212, 239, 0.2);
   --footer-text-color: #4e4e4e;
   --footer-highlight-color: #6b6b6b;
-  --form-accent-color: #67d4ef;
+  --form-accent-color: rgba(103, 212, 239, 0.2);
   --mobile-page-layout:
-    "verification"
-    "titleCard"
-    "textArea"
-    "cooperations";
-
+          "verification"
+          "titleCard"
+          "textArea";
   --tablet-page-layout:
-    "titleCard titleCard"
-    "verification textArea"
-    "cooperations cooperations";
-
+          "verification"
+          "titleCard"
+          "textArea";
   --desktop-layout:
-    "titleCard titleCard"
-    "verification textArea"
-    "cooperations cooperations";
+          "verification titleCard"
+          "verification textArea";
+  --header-height: 15rem;
   --header-logo-width: 100%;
   --header-logo-height: auto;
+}
+
+#verification{
+  background: url("/uploads/gov-digital-netz.png");
+  background-repeat: no-repeat;
+  background-position: -80rem -10rem;
+  background-size: 100rem;
+}
+
+#textArea{
+  background: url("/uploads/gov-digital-flow.png");
+  background-repeat: no-repeat;
+  background-position: 35rem 0rem;
+  background-size: 100rem;
+
+}
+
+
+@media (min-width: 600px) {
+  #verification{
+    background: url("/uploads/gov-digital-netz.png");
+    background-repeat: no-repeat;
+    background-position: -50rem;
+    background-size: 100rem;
+  }
+
+  #textArea{
+    background: url("/uploads/gov-digital-flow.png");
+    background-repeat: no-repeat;
+    background-position: 50rem 0rem;
+    background-size: 100rem;
+
+  }
 }
 

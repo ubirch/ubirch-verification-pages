@@ -1,7 +1,8 @@
 {
-  "ubirch_description_header":  "Über Ubirch",
-  "ubirch_description_long": "Diese Anwendung nutzt das UBIRCH-Protokoll. UBIRCH ist der Spezialist für Cybersecurity und Blockchain in Deutschland. UBIRCH garantiert die Unverfälschbarkeit digital gespeicherter Daten durch starke Kryptographie und Blockchain-Technologie.",
+  "ubirch_description_header":  "Über",
+  "ubirch_description_long": "Das Technologie-Unternehmen UBIRCH ist Anbieter von digitalen Nachweisen von Daten. Die cloud-basierte Lösung bringt Sicherheit in datengesteuerte Prozesse und schafft Vertrauen zwischen mehreren Parteien, indem sie es allen Beteiligten ermöglicht, die Authentizität und Integrität der empfangenen Daten zu überprüfen. Gegründet und geführt von erfahrenen Spezialisten für Kryptografie, Blockchain und datengetriebenen Geschäftsmodelle, kombiniert UBIRCH robuste Kryptografie und moderne Blockchain-Technologie in einer innovativen, leicht integrierbaren SaaS-Lösung. Gemeinsam mit einem Konsortium entwickelte das Kölner Unternehmen das digitale COVID-Zertifikat der EU für Deutschland.",
   "ubirch_link_intro":  "Weitere Informationen unter ",
   "ubirch_link_label":  "www.ubirch.com",
-  "ubirch_link":  "https://www.ubirch.com"
+  "ubirch_link":  "https://www.ubirch.com",
+  "ubirch_logo": "/uploads/Ubirch_logo_schwarz_flipped.svg"
 }
