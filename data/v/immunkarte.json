@@ -8,8 +8,8 @@
   "custom_styles": "/uploads/immunkarte.css",
   "access_token": [
     {
-      "stage": "dev",
-      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Rva2VuLmRldi51YmlyY2guY29tIiwic3ViIjoiYzBiNTc3ZmItMWNlZi00YzZmLThjNTAtOGQzYTFlNmVhNzUzIiwiYXVkIjoiaHR0cHM6Ly92ZXJpZnkuZGV2LnViaXJjaC5jb20iLCJpYXQiOjE2MzE3ODQ0NDEsImp0aSI6IjJhZmVjOTk2LWVmMWEtNDRkNS04M2I1LTNiMmZiNGFmMWQxNCIsInNjcCI6WyJ1cHA6dmVyaWZ5Il0sInB1ciI6IlZlcmlmaWNhdGlvbiBUb2tlbiBJbW11bmthcnRlIiwidGdwIjpbXSwidGlkIjpbIjEzNGYzZmM4LTU3Y2EtNDAwMC05MWIzLWU2MDE1YWE5NjdkNiJdLCJvcmQiOltdfQ.b_Jxx29oh5S8i3r2ToiWpU-_rYm1uU2OTBwF7QjHC59wmtj5i2gf6NU7vgWh1gg7mIVE1RXjVPwONx74ftC9pA"
+      "stage": "__DEPLOYMENT_STAGE__",
+      "token": "__ACCESS_TOKEN_IMMUNKARTE__"
     }
   ],
   "make_form_editable": false,
