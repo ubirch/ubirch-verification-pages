@@ -46,11 +46,7 @@ body {
 }
 
 #header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr;
-    grid-template-areas: "logo . language";
-    padding: 1rem
+
 }
 
 #header #logo {

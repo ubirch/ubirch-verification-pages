@@ -3,7 +3,11 @@
 
 {{ with $ubirchinfo }}
 <div id="textArea">
-  <h1>{{ .ubirch_description_header }}</h1>
+  <div class="aboutHeader">
+    <h1>{{ .ubirch_description_header }}</h1>
+    <img src="{{ .ubirch_logo }}" alt="ubirch-logo">
+  </div>
+
   <p>
     {{ .ubirch_description_long }}
   </p>

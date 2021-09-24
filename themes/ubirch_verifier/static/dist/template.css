@@ -1,8 +1,8 @@
 :root {
     --load-highlight-success: rgba(83, 175, 50, 0.5);
     --load-highlight-fail: rgba(228, 1, 27, 0.5);
-    --section1-backround-color: #67d4ef;
-    --section1-text-color: #696969;
+    --section1-backround-color: #ffffff;
+    --section1-text-color: #000000;
     --form-backround-color: #ffffff;
     --form-label-text-color: #4e4e4e;
     --form-input-underline-color: #000000;
@@ -11,29 +11,32 @@
     --form-buton-text-color: #000000;
     --form-button-higlight-text-color: #ffffff;
     --textArea-backround-color: #e0e0e0;
-    --testArea-text-color: #4e4e4e;
+    --testArea-text-color: #000000;
     --textArea-highlight-color: #ababab;
-    --header-backround-color: #ffffff;
+    --header-backround-color: rgba(103, 212, 239, 0.2);
     --header-text-color: #000000;
     --header-highlight-color: #6b6b6b;
-    --footer-backround-color: #67d4ef;
+    --footer-backround-color: rgba(103, 212, 239, 0.2);
     --footer-text-color: #4e4e4e;
     --footer-highlight-color: #6b6b6b;
-    --form-accent-color: #67d4ef;
+    --form-accent-color: rgba(103, 212, 239, 0.2);
     --mobile-page-layout:
+            "verification"
             "titleCard"
-            "textArea"
-            "verification";
+            "textArea";
     --tablet-page-layout:
-            "titleCard textArea"
-            "verification verification";
+            "verification"
+            "titleCard"
+            "textArea";
     --desktop-layout:
-            "titleCard textArea"
-            "verification verification";
-    --header-height: 64px;
+            "verification titleCard"
+            "verification textArea";
+    --header-height: 15rem;
     --header-logo-width: 100%;
     --header-logo-height: auto;
+
     font-size: 7px;
+    font-family: "Raleway";
 }
 
 html {
@@ -46,43 +49,43 @@ body {
 }
 
 .flashgreen {
-  background-color: var(--load-highlight-success);
+    background-color: var(--load-highlight-success);
 }
+
 .flashred {
-  background-color: var(--load-highlight-fail);
+    background-color: var(--load-highlight-fail);
 }
 
 #page-content {
     height: fit-content;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: var(--header-height) fit-content fit-content(100%);
+    grid-template-rows: 1fr fit-content(100%) 1fr;
     grid-template-areas:
                 "header"
                 "main"
                 "footer";
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%) 0;
     grid-template-areas: var(--mobile-page-layout);
 
 }
 
 #header {
     grid-area: header;
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr;
-    grid-template-areas: "logo . language";
-    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
     background-color: var(--header-backround-color);
     color: var(--header-text-color);
-    padding-left: 4rem;
 }
 
 #header #logo {
+    max-width: 35rem;
+    padding: 1rem 0;
     grid-area: logo;
     align-self: center;
     justify-self: center;
@@ -98,14 +101,14 @@ main{
     grid-area: language;
 }
 
-#header #languageSelectDiv ul{
+#header #languageSelectDiv ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-#header #languageSelectDiv ul li{
+#header #languageSelectDiv ul li {
     float: left;
 }
 
@@ -115,9 +118,9 @@ main{
     text-decoration: none;
 }
 
-#header #languageSelectDiv ul a::before{
+#header #languageSelectDiv ul a::before {
     content: '|';
-    padding:1rem
+    padding: 1rem
 }
 
 #header #languageSelectDiv ul span {
@@ -127,45 +130,49 @@ main{
 #titleCard {
     grid-area: titleCard;
     background-color: var(--section1-backround-color);
+    display: flex;
     justify-items: center;
-    align-items: center;
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: 3rem auto 3rem;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-                ".  infocontent     .";
+    align-items: start;
 }
 
 #titleCard #info-content {
-  grid-area: infocontent;
+    grid-area: infocontent;
     font-size: 3rem;
     color: var(--section1-text-color);
 }
 
 #verification {
     background-color: var(--form-backround-color);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     grid-area: verification;
-    display: grid;
-    grid-gap: 0.5rem;
-    grid-template-columns: 3rem auto 3rem;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-                ".  form     .";
+    display: flex;
 }
 
 #verification #form {
     grid-area: form;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 #verification .formLabel {
     font-size: 2rem;
     color: var(--form-label-text-color);
+}
+
+.aboutHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.aboutHeader h1 {
+    padding: 0;
+    font-weight: 600;
+}
+
+.aboutHeader img {
+    padding-left: 1rem;
+    height: 9.5rem;
 }
 
 
@@ -196,14 +203,15 @@ main{
 }
 
 #widgetDiv {
-  font-size: 2rem;
-  flex-grow: 1;
+    font-size: 2rem;
+    flex-grow: 1;
 }
 
-#verification #dccConvert { 
+#verification #dccConvert {
     padding: 4rem 0;
 }
-#verification #dccConvertButton { 
+
+#verification #dccConvertButton {
     padding: 2rem 4rem 2rem 8rem;
     background-color: #000;
     color: #fff;
@@ -214,7 +222,7 @@ main{
     background-size: 32px 32px;
     background-position: 2rem 50%;
     background-repeat: no-repeat;
-    
+
 }
 
 #verification .verificationButton {
@@ -249,34 +257,35 @@ main{
     cursor: pointer;
 }
 
-#verification .buttonHighlightColor:active{
+#verification .buttonHighlightColor:active {
     background-color: var(--form-accent-color);
     border: 1px solid var(--form-accent-color);
     color: var(--form-button-higlight-text-color)
 }
 
 .general-content, .page-contact {
-  padding: 4rem;
-  font-size: 2rem;
+    padding: 4rem;
+    font-size: 2rem;
 }
 
 .page-contact p {
-  margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 
 #vat, #ceo, #email_privacy {
-  padding: 1.5rem 0;
+    padding: 1.5rem 0;
 }
 
 #textArea {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    align-items: center;
+    align-items: start;
     color: var(--section2-text-color);
 }
 
-#aboutUbirch{
+#aboutUbirch {
     background: var(--section2-backround-color);
     grid-area: textArea;
     display: flex;
@@ -285,12 +294,10 @@ main{
 }
 
 #textArea p {
-    padding: 4rem;
     font-size: 2.5rem;
 }
 
 #textArea h1 {
-    padding-top: 4rem;
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
@@ -329,35 +336,33 @@ main{
 
 #footer {
     font-size: 2rem;
-    padding: 5rem;
+    padding: 3rem;
     grid-area: footer;
     background-color: var(--footer-backround-color);
     color: var(--footer-text-color);
     text-align: center;
 }
 
-.textAreaLink{
+.textAreaLink {
     text-decoration: none;
     color: var(--testArea-text-color);
-    font-weight: bold;
-
 }
 
-.textAreaLink:active{
+.textAreaLink:active {
     color: var(--textArea-highlight-color);
 }
 
-.footerLink{
+.footerLink {
     text-decoration: none;
     color: var(--footer-text-color);
     font-weight: bold;
 }
 
-.footerLink:active{
+.footerLink:active {
     color: var(--footer-highlight-color);
 }
 
-#demo-disclaimer{
+#demo-disclaimer {
     z-index: 1;
     display: flex;
     justify-items: center;
@@ -368,10 +373,10 @@ main{
 }
 
 div#demo-disclaimer.demo {
-  visibility: visible;
+    visibility: visible;
 }
 
-#demo-disclaimer p{
+#demo-disclaimer p {
     text-align: center;
     max-width: 100%;
     max-height: 100%;
@@ -392,6 +397,7 @@ div#demo-disclaimer.demo {
     grid-area: titleCard;
     background-color: #67d4ef;
 }
+
 .page-title h1 span {
     padding: 0;
     font-weight: bold;
@@ -422,26 +428,49 @@ div#demo-disclaimer.demo {
 }
 
 #testhash-page .section {
-  margin: 10px;
+    margin: 10px;
 }
+
 #testhash-page button {
-  margin: 10px 0; padding: 7px; background-color: black; color: white;
+    margin: 10px 0;
+    padding: 7px;
+    background-color: black;
+    color: white;
 }
 
 #testhash-page button.mini {
-  padding: 3px; border-radius: 8px;
+    padding: 3px;
+    border-radius: 8px;
 }
 
 #testhash-page .hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
-@media (min-width: 600px) and (orientation: portrait){
+#header {
+    padding: 1rem 5rem 1rem 5rem;
+}
+
+#verification {
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+#textArea {
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+#titleCard {
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+
+
     :root {
         font-size: 6px;
     }
 
-    #demo-disclaimer{
+    #demo-disclaimer {
         display: flex;
         justify-items: center;
         align-items: center;
@@ -451,7 +480,7 @@ div#demo-disclaimer.demo {
         visibility: hidden;
     }
 
-    #demo-disclaimer p{
+    #demo-disclaimer p {
         text-align: center;
         max-width: 100%;
         max-height: 100%;
@@ -466,7 +495,7 @@ div#demo-disclaimer.demo {
         height: 100%;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 72px auto fit-content(100%) ;
+        grid-template-rows: 72px auto fit-content(100%);
         grid-template-areas:
                 "header"
                 "main"
@@ -474,8 +503,8 @@ div#demo-disclaimer.demo {
     }
 
     main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows:  auto auto;
+        grid-template-columns: auto;
+        grid-template-rows:  auto auto auto auto;
         grid-template-areas: var(--tablet-page-layout)
 
     }
@@ -491,6 +520,7 @@ div#demo-disclaimer.demo {
         grid-area: titleCard;
         background-color: #ffffff;
     }
+
     .page-title h1 span {
         padding: 0;
         font-weight: bold;
@@ -518,9 +548,10 @@ div#demo-disclaimer.demo {
         grid-area: verification;
     }
 
-    #graphic{
+    #graphic {
         visibility: visible;
     }
+
     #graphic {
         width: 90%;
         display: block;
@@ -534,6 +565,25 @@ div#demo-disclaimer.demo {
 }
 
 @media (min-width: 800px) {
+    #page-content {
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 20fr 1fr;
+        grid-template-areas:
+                "header"
+                "main"
+                "footer";
+    }
+
+    :root{
+        font-size: 5px;
+    }
+
+    #header{
+        height: var(--header-height);
+    }
+
     #graphic {
         width: 90%;
         display: block;
@@ -543,7 +593,7 @@ div#demo-disclaimer.demo {
         justify-self: center;
     }
 
-    #demo-disclaimer{
+    #demo-disclaimer {
         position: absolute;
         width: 50%;
         height: 50%;
@@ -566,13 +616,13 @@ div#demo-disclaimer.demo {
     }
 
     #textArea p {
-        padding: 8rem;
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     main {
+        height: 100%;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 0;
+        grid-template-rows: fit-content(100%) fit-content(100%) 0px;
         grid-template-areas: var(--desktop-layout)
 
     }
@@ -586,7 +636,7 @@ div#demo-disclaimer.demo {
         cursor: pointer;
     }
 
-    #verification .buttonHighlightColor:hover{
+    #verification .buttonHighlightColor:hover {
         background-color: var(--form-accent-color);
         border: 1px solid var(--form-accent-color);
         color: var(--form-button-higlight-text-color)
@@ -597,31 +647,31 @@ div#demo-disclaimer.demo {
         -moz-transition: unset;
         -o-transition: unset;
         transition: unset;
-        background-image:unset;
-        cursor:unset;
+        background-image: unset;
+        cursor: unset;
     }
 
-    #verification .buttonHighlightColor:active{
+    #verification .buttonHighlightColor:active {
         background-color: unset;
         border: unset;
         color: unset
     }
 
-    .textAreaLink:hover{
+    .textAreaLink:hover {
         color: var(--textArea-highlight-color);
     }
 
-    .footerLink:hover{
+    .footerLink:hover {
         color: var(--footer-highlight-color);
     }
 
-    #demo-disclaimer{
-        -webkit-column-width: 150px; //You can't use 100%
-        column-width: 150px;
+    #demo-disclaimer {
+        -webkit-column-width: 150px;
+    / / You can 't use 100% column-width: 150 px;
         height: 60%;
     }
 
-    #demo-disclaimer p{
+    #demo-disclaimer p {
         text-align: center;
         max-width: 100%;
         max-height: 100%;
@@ -644,6 +694,7 @@ div#demo-disclaimer.demo {
         background-color: #ffffff;
 
     }
+
     .page-title h1 span {
         padding: 0;
         font-weight: bold;
@@ -676,10 +727,67 @@ div#demo-disclaimer.demo {
         width: 23rem;
         padding: 5rem;
     }
+
+    #header {
+        padding: 1rem 5rem 1rem 5rem;
+    }
+
+    #verification {
+        padding: 5rem 5rem 5rem 5rem;
+    }
+
+    #textArea {
+        padding: 0rem 5rem 5rem 5rem;
+    }
+
+    #titleCard {
+        padding: 5rem 5rem 0rem 5rem;
+    }
 }
 
-@media (min-width: 1010px) {
-    #demo-disclaimer p{
+@media (min-width: 1000px) {
+
+    #header {
+        padding: 1rem 10rem 1rem 10rem;
+    }
+
+    #verification {
+        padding: 5rem 5rem 5rem 10rem;
+    }
+
+    #textArea {
+        padding: 0rem 10rem 5rem 5rem;
+    }
+
+    #titleCard {
+        padding: 5rem 10rem 0rem 5rem;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    #header {
+        padding: 1rem 30rem 1rem 30rem;
+    }
+
+    #verification {
+        padding: 5rem 5rem 5rem 30rem;
+    }
+
+    #textArea {
+        padding: 0rem 30rem 5rem 5rem;
+    }
+
+    #titleCard {
+        padding: 5rem 30rem 0rem 5rem;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+    #demo-disclaimer p {
         text-align: center;
         max-width: 100%;
         max-height: 100%;
@@ -694,5 +802,150 @@ div#demo-disclaimer.demo {
         width: 90%;
         display: block;
     }
+
+    #header {
+        padding: 1rem 40rem 1rem 40rem;
+    }
+
+    #verification {
+        padding: 5rem 5rem 5rem 40rem;
+    }
+
+    #textArea {
+        padding: 0rem 40rem 5rem 5rem;
+    }
+
+    #titleCard {
+        padding: 5rem 40rem 0rem 5rem;
+    }
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Thinitalic.ttf");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Thinitalic.ttf");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-ExtraLight.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-ExtraLightItalic.ttf");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-RegularItalic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-MediumItalic.ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-ExtraBoldItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/font/Raleway-BlackItalic.ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+
 
