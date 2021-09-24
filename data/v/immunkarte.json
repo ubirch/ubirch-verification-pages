@@ -2,7 +2,7 @@
   "title": "govdigital Vaccination Certificate",
   "company_name": "Ubirch",
   "company_logo": "/uploads/Ubirch_Logo_weiss.svg",
-  "favicon": "/uploads/3170gov.ico",
+  "favicon": "/uploads/ubirch_wort_bildmarke_black.svg",
   "show_ubirch_info": true,
   "layout": "generated-certificate-form",
   "custom_styles": "/uploads/immunkarte.css",
