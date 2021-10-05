@@ -7,5 +7,9 @@
   {{ end }}
   {{ end }}
 
+  {{ with .Params.logo_subheader }}
+    <p class="headerSubtitle">{{ . | markdownify }}</p>
+  {{ end }}
+
   {{ partial "i18nlist.html" . }}
 </div>
