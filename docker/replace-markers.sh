@@ -5,6 +5,9 @@
 # we need to prepend the protocol, otherwise hugo will try to optimize.
 # we cannot use @@ for markers, as they will get escaped in some cases.
 
+# This script should fail if anything goes wrong
+set -e
+
 cp -a /app_template/* /www
 
 find /www -type f -exec \
