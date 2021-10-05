@@ -127,6 +127,13 @@ main {
     font-weight: bold;
 }
 
+.headerSubtitle{
+    font-size: 2rem;
+    position: absolute;
+    top: 8rem;
+    left: 15rem;
+}
+
 #titleCard {
     grid-area: titleCard;
     background-color: var(--section1-backround-color);
@@ -470,6 +477,13 @@ div#demo-disclaimer.demo {
         font-size: 6px;
     }
 
+    .headerSubtitle{
+        font-size: 2rem;
+        position: absolute;
+        top: 6rem;
+        left: 15rem;
+    }
+
     #demo-disclaimer {
         display: flex;
         justify-items: center;
@@ -582,6 +596,13 @@ div#demo-disclaimer.demo {
 
     #header{
         height: var(--header-height);
+    }
+
+    .headerSubtitle{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 9rem;
+        left: 25rem;
     }
 
     #graphic {
@@ -763,9 +784,23 @@ div#demo-disclaimer.demo {
         padding: 5rem 10rem 0rem 5rem;
     }
 
+    .headerSubtitle{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 9rem;
+        left: 30rem;
+    }
+
 }
 
 @media (min-width: 1200px){
+
+    .headerSubtitle{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 9rem;
+        left: 50rem;
+    }
 
     #header {
         padding: 1rem 30rem 1rem 30rem;
@@ -805,6 +840,13 @@ div#demo-disclaimer.demo {
 
     #header {
         padding: 1rem 40rem 1rem 40rem;
+    }
+
+    .headerSubtitle{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 9rem;
+        left: 60rem;
     }
 
     #verification {
