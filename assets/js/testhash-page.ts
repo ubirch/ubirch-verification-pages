@@ -78,15 +78,32 @@ document.getElementById('trim-sort-json').addEventListener('click', function() {
   (document.getElementById('trimmed-json-input') as HTMLInputElement).value = trimmedSortedJson;
 });
 
+function generateHashFromJSONWithParams() {
+  const sort_json = (document.getElementById('sort-json') as HTMLInputElement).checked;
+
+  const genHash = sort_json ?
+    ubirchVerificationWidget.createHash((document.getElementById('json-input') as HTMLInputElement).value) :
+    ubirchVerificationWidget.createHash(
+      (document.getElementById('json-input') as HTMLInputElement).value,
+      selectedHashAlgo,
+      sort_json);
+  return genHash;
+}
+
 // get hash from JSON button click listener
 document.getElementById('hash-from-json').addEventListener('click', function() {
-  const genHash = ubirchVerificationWidget.createHash((document.getElementById('trimmed-json-input') as HTMLInputElement).value);
+  const genHash = generateHashFromJSONWithParams();
   (document.getElementById('hash-input') as HTMLInputElement).value = genHash;
 });
 
 // test hash button click listener
 document.getElementById('hash-test').addEventListener('click', function() {
   ubirchVerificationWidget.verifyHash((document.getElementById('hash-input') as HTMLInputElement).value);
+});
+
+// sort json checkbox click listener
+document.getElementById('sort-json').addEventListener('click', function() {
+  changeSortOption((document.getElementById('sort-json') as HTMLInputElement).checked);
 });
 
 document.getElementsByName('stage').forEach(function(e: HTMLInputElement) {
@@ -132,6 +149,17 @@ function changeStage(elem: string) {
   selectedStage = devStage[elem];
   setupVerificationWidget();
 }
+function changeSortOption(sort: boolean) {
+  const elems = document.getElementsByClassName("for-sort");
+  for (let i = 0; i < elems.length; i++) {
+    if (sort) {
+      elems[ i ].classList.remove("hidden");
+    } else {
+      elems[ i ].classList.add("hidden");
+    }
+  }
+}
+
 function setFormVisibility(visible) {
   initialized = visible;
   if (initialized) {
