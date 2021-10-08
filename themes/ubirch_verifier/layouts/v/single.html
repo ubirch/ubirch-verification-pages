@@ -29,8 +29,10 @@
 <div id="titleCard">
   {{ with .Params.verification_info_text }}
   <div id="info-content">
-    {{ . | markdownify }}
-    <a href=""></a>
+    {{ $content := . | markdownify }}
+    {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+    {{ $content = replaceRE `<a href="(mailto:.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+    {{ $content | safeHTML }}
   </div>
 </div>
 {{ end }}
@@ -109,7 +111,7 @@
     </form>
       <div id="resultDiv">
 
-        <div id="widgetDiv"></div> 
+        <div id="widgetDiv"></div>
         <div id="dccConvert">
           <button id="dccConvertButton" hidden>
             {{ i18n "dccTransform.button" }}
