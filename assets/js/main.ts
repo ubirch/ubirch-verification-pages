@@ -2,7 +2,7 @@ import {
   UbirchVerificationWidget,
   UbirchFormUtils,
   // @ts-ignore
-} from './node_modules/@ubirch/ubirch-verification-js/dist';
+} from '@ubirch/ubirch-verification-js';
 
 type AccessToken = { stage: string; token: string };
 interface VerificationParams {
@@ -60,6 +60,10 @@ function parseToken(accessTokens: AccessToken[]) {
 
 let subscribe = null;
 
+function before2022() {
+  return new Date() < new Date("2022-01-01");
+}
+
 function verifyForm() {
   try {
     const {
@@ -93,7 +97,7 @@ function verifyForm() {
 
     if (!subscribe)
       subscribe = ubirchVerificationWidget.messenger.subscribe((msg: any) => {
-        if (msg?.type === 'verification-state' && msg?.code === 'VERIFICATION_SUCCESSFUL') {
+        if (msg?.type === 'verification-state' && msg?.code === 'VERIFICATION_SUCCESSFUL' && before2022()) {
           showDCCConvertButton(handledJson);
         }
         console.log(msg);
