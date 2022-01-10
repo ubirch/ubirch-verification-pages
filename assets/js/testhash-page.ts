@@ -98,7 +98,8 @@ document.getElementById('hash-from-json').addEventListener('click', function() {
 
 // test hash button click listener
 document.getElementById('hash-test').addEventListener('click', function() {
-  ubirchVerificationWidget.verifyHash((document.getElementById('hash-input') as HTMLInputElement).value);
+  const verbose = (document.getElementById('verbose') as HTMLInputElement).checked;
+  ubirchVerificationWidget.verifyHash((document.getElementById('hash-input') as HTMLInputElement).value, verbose);
 });
 
 // sort json checkbox click listener
