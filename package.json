@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ubirch Verification pages",
   "dependencies": {
-    "@ubirch/ubirch-verification-js": "^1.5.0"
+    "@ubirch/ubirch-verification-js": "^1.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
