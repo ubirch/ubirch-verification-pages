@@ -5,7 +5,7 @@ WORKDIR /app/
 RUN npm install
 RUN hugo --config=config.prod.toml
 
-FROM bitnami/nginx:latest
+FROM bitnami/nginx:1.21.6
 ENV \
     VERIFICATION_HUGO_BASE_URL=https://verify.govdigital.de/ \
     SHOW_DEMO_DISCLAIMER=none \
